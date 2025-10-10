@@ -10,9 +10,7 @@
 
 - URL of the <u>Portflio Web-Page</u>: <a href="https://sites.wp.odu.edu/locky/" target="_blank" rel="noopener noreferrer">ODU ePortfolio</a>
 
-- URL of the <u>Resume</u> on GitHub: [Resume](https://CLochstampfor60.github.io/career-services/)
-
-<!-- <a href="https://github.com/CLochstampfor60.github.io/career-services/" target="_blank" rel="noopener noreferrer"> -->
+- URL of the <u>Resume</u> on GitHub: <a href="https://CLochstampfor60.github.io/career-services/" target="_blank" rel="noopener noreferrer">Resume</a>
 
 ## License
 
