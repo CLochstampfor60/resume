@@ -1,6 +1,6 @@
 # career-services
 
-- Material showcasing skills, talents, and achievements to potential employers.
+- Resume and material showcasing skills, talents, and achievements to potential employers.
 
 - This repo provides a place to develop and expand that information as I attain more skills, talents and achievements.
 
