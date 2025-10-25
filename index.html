@@ -1,3 +1,7 @@
+<!-- Chosen Palette: Tailwind Slate/Blue with an accent of Teal for interactivity -->
+<!-- Application Structure Plan: Dashboard approach with static navigation on the left (or top on mobile) and scrollable content organized into thematic cards. Structure chosen for high scannability and modularity, allowing a recruiter to quickly filter information (skills, experience, projects) without complex navigation. Key interactions involve dynamic highlighting of the active section and a simple toggle for a summary view (if needed). -->
+<!-- Visualization & Content Choices: Summary: The interactive resume replaces the traditional flat document by dynamically presenting skills and experience. -> Goal: Show breadth of technical ability, compliance, and leadership. -> Viz/Presentation Method: Interactive Skills Chart (Chart.js), Accordion/Card Layout for Labs, Timeline for Experience. -> Interaction: Hovering over skills to show tooltips, clicking navigation links to smoothly scroll to sections. -> Justification: Highlighting soft skills (Leadership, Compliance) alongside hard skills (Nmap, IR) is critical for a career transition. Canvas Chart confirms NO SVG/Mermaid. -> Library/Method - Chart.js for visualization, Vanilla JS for interaction/scrolling. -->
+<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #f7f7f7; }
+        /* Style for the chart container to manage responsiveness and size */
         .chart-container {
             position: relative;
             width: 100%;
@@ -24,86 +29,111 @@
                 height: 400px;
             }
         }
+        /* Custom scrollbar styling for a cleaner look */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #e0e0e0; }
         ::-webkit-scrollbar-thumb { background: #008080; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #005f5f; }
 
-        /* The main container for the timeline line */
+        /* Timeline Fix: Base positioning for the line and dots */
+        .timeline-item {
+            /* Ensures all children dots/lines are positioned relative to this container */
+            position: relative;
+            /* Applying left padding to the timeline container to give space */
+            padding-left: 2.5rem; /* Base padding for the whole section */
+        }
+        /* Vertical Line - Positioned absolutely relative to .timeline-item */
         .timeline-item:before {
             content: '';
             position: absolute;
-            left: 32px;
-            top: 8px; 
+            /* Position line accurately */
+            left: 1.25rem; /* 20px - Halfway point of the dot and padding */
+            top: 0;
             bottom: 0;
             width: 4px;
             background: #e5e7eb;
         }
 
+        /* Dot - Positioned absolutely relative to .timeline-item */
         .timeline-dot {
             position: absolute;
-            left: 26px; 
-            top: 8px; 
-            width: 12px; 
-            height: 12px; 
+            /* Center the dot over the line */
+            left: 0.75rem; /* 12px */
+            top: 0;
+            width: 20px;
+            height: 20px;
             background: #008080;
             border-radius: 50%;
+            border: 4px solid #ffffff;
             z-index: 10;
         }
     </style>
 </head>
 <body class="text-slate-800">
 
+    <!-- Header & Navigation -->
     <header class="sticky top-0 z-50 bg-white shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row justify-between items-center">
-            <h1 class="text-3xl font-extrabold text-blue-700 tracking-tight">Carl Lochstampfor, Jr.</h1>
+            <h1 class="text-3xl font-extrabold text-[#008080] tracking-tight">CARL LOCHSTAMPFOR, JR.</h1>
             <nav class="mt-3 md:mt-0 space-x-4 flex flex-wrap justify-center">
-                <a href="#summary" class="nav-link text-sm font-medium hover:text-blue-600 transition duration-150 ease-in-out text-slate-700">Summary</a>
-                <a href="#skills" class="nav-link text-sm font-medium hover:text-blue-600 transition duration-150 ease-in-out text-slate-700">Skills</a>
-                <a href="#labs" class="nav-link text-sm font-medium hover:text-blue-600 transition duration-150 ease-in-out text-slate-700">Labs</a>
-                <a href="#experience" class="nav-link text-sm font-medium hover:text-blue-600 transition duration-150 ease-in-out text-slate-700">Experience</a>
-                <a href="#education" class="nav-link text-sm font-medium hover:text-blue-600 transition duration-150 ease-in-out text-slate-700">Education</a>
+                <a href="#summary" class="nav-link text-sm font-medium hover:text-teal-600 transition duration-150 ease-in-out text-slate-700">Summary</a>
+                <a href="#skills" class="nav-link text-sm font-medium hover:text-teal-600 transition duration-150 ease-in-out text-slate-700">Skills</a>
+                <a href="#labs" class="nav-link text-sm font-medium hover:text-teal-600 transition duration-150 ease-in-out text-slate-700">Coursework</a>
+                <a href="#experience" class="nav-link text-sm font-medium hover:text-teal-600 transition duration-150 ease-in-out text-slate-700">Experience</a>
+                <a href="#education" class="nav-link text-sm font-medium hover:text-teal-600 transition duration-150 ease-in-out text-slate-700">Education</a>
             </nav>
         </div>
     </header>
 
+    <!-- Main Content Grid -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         
+        <!-- Contact & Links (Personal contact commented out as requested) -->
         <section class="mb-8 border-b pb-4">
             <div class="flex flex-wrap gap-4 text-sm text-slate-600 justify-center md:justify-start">
-                <a href="https://www.linkedin.com/in/carl-lochstampfor-jr-08b311223/" target="_blank" class="hover:text-blue-600 flex items-center">
+                <!-- <span>[Phone Number]</span> -->
+                <!-- <span>|</span> -->
+                <!-- <span>[Email Address]</span> -->
+                <a href="https://linkedin.com/in/carl-lochstampfor-jr-08b311223/" target="_blank" class="hover:text-blue-600 flex items-center">
                     LinkedIn
                 </a>
-                <a href="https://github.com/CLochstampfor60" target="_blank" class="hover:text-blue-600 flex items-center">
+                <span>|</span>
+                <a href="https://github.com/CLochstampfor60" target="_blank" class="hover:text-gray-900 flex items-center">
                     GitHub: CLochstampfor60
                 </a>
-                <a href="https://sites.wp.odu.edu/locky/" target="_blank" class="hover:text-blue-600 flex items-center">
+                <span>|</span>
+                <a href="https://sites.wp.odu.edu/locky/" target="_blank" class="hover:text-purple-600 flex items-center">
                     Portfolio
                 </a>
+                <span>|</span>
+                <span class="text-slate-900 font-medium">e-Resume</span>
             </div>
         </section>
 
+        <!-- Professional Summary (Updated with PDF content) -->
         <section id="summary" class="mb-12">
-            <h2 class="text-3xl font-bold mb-4 border-b-2 border-blue-500 pb-2">Professional Summary</h2>
+            <h2 class="text-3xl font-bold mb-4 border-b-2 border-teal-500 pb-2">PROFESSIONAL SUMMARY</h2>
             <p class="text-lg leading-relaxed bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#008080]">
-                Highly analytical and results-driven professional transitioning to <strong class="font-bold">Cybersecurity</strong> with <strong class="font-bold">CompTIA A+, Network+, and Security+</strong> knowledge. Over a decade of proven experience in high-risk, regulated financial environments (FNMA, FHLMC, FHA, VA) focused on <strong class="font-bold">Regulatory Compliance</strong>, <strong class="font-bold">Risk Mitigation</strong>, and <strong class="font-bold">Quality Control</strong>. Expertise includes <strong class="font-bold">System Hardening</strong>, <strong class="font-bold">Incident Response (IR) processes</strong>, and <strong class="font-bold">Network Defense</strong> principles demonstrated through hands-on technical application. Proven leader known for managing high-volume portfolios (<strong class="font-bold">3X the average</strong>), maintaining operational excellence (<strong class="font-bold">95%+ performance</strong>), and leveraging foundational skills in <strong class="font-bold">Data Integrity</strong> and <strong class="font-bold">Vulnerability Management</strong> to secure a complex systems.
+                Analytical and results-oriented professional transitioning into <strong class="font-bold">Cybersecurity</strong>, backed by <strong class="font-bold">CompTIA A+, Network+, and Security+</strong> knowledge. Brings over a decade of experience in high-risk, regulated financial environments (FNMA, FHLMC, FHA, VA) with a proven record of driving <strong class="font-bold">Regulatory Compliance, Risk Mitigation, and Quality Control</strong> initiatives. Skilled in <strong class="font-bold">System Hardening, Incident Response, and Network Defense</strong>, with technical application support across complex systems. Recognized for exceptional leadership and performance, managing portfolios up to <strong class="font-bold">3x the standard workload</strong> while consistently maintaining <strong class="font-bold">95%+ operational accuracy</strong>. Adept at applying strong foundations in <strong class="font-bold">Data Integrity</strong> and <strong class="font-bold">Vulnerability Management</strong> to improve organizational security posture and resilience.
             </p>
         </section>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
+            <!-- Skills & Chart Column -->
             <div class="lg:col-span-1 space-y-8">
                 
+                <!-- Technical Skills (Updated with PDF content) -->
                 <section id="skills" class="bg-white p-6 rounded-xl shadow-lg">
-                    <h2 class="text-xl font-bold mb-4 border-b pb-2 text-teal-700">Technical Skills & Certifications</h2>
+                    <h2 class="text-xl font-bold mb-4 border-b pb-2 text-teal-700">TECHNICAL SKILLS & CERTIFICATIONS</h2>
                     <ul class="space-y-3 text-sm">
                         <li>
                             <p class="font-semibold text-slate-700">Certifications:</p>
-                            <span class="text-gray-600">CompTIA A+ (Completed), Network+ (Completed), Security+ (Completed), <strong class="font-bold">Linux+ (In-Progress)</strong></span>
+                            <span class="text-gray-600">CompTIA A+ (Completed), Network+ (Completed), <strong class="font-bold">Security+ (Completed)</strong>; <strong class="font-bold">Linux+ (In-Progress)</strong>.</span>
                         </li>
                         <li>
                             <p class="font-semibold text-slate-700">Cybersecurity:</p>
-                            <span class="text-gray-600"><strong class="font-bold">Incident Response (IR)</strong>, <strong class="font-bold">Risk Mitigation</strong>, Regulatory Compliance, Vulnerability Assessment, <strong class="font-bold">System Hardening</strong>, Network Defense, Log Analysis, Data Integrity, Policy Enforcement.</span>
+                            <span class="text-gray-600"><strong class="font-bold">Incident Response</strong>, <strong class="font-bold">Risk Mitigation</strong>, Regulatory Compliance, Vulnerability Assessment, <strong class="font-bold">System Hardening</strong>, Network Defense, Log Analysis, Data Integrity, Policy Enforcement.</span>
                         </li>
                         <li>
                             <p class="font-semibold text-slate-700">Tools & Protocols:</p>
@@ -116,6 +146,7 @@
                     </ul>
                 </section>
 
+                <!-- Skill Distribution Chart -->
                 <section class="bg-white p-6 rounded-xl shadow-lg">
                     <h3 class="text-xl font-bold mb-4 border-b pb-2 text-teal-700">Skill Distribution (Hybrid Profile)</h3>
                     <div class="chart-container">
@@ -123,119 +154,152 @@
                     </div>
                 </section>
 
+                <!-- Education & Training (Updated with PDF content) -->
                 <section id="education" class="bg-white p-6 rounded-xl shadow-lg">
-                    <h2 class="text-xl font-bold mb-4 border-b pb-2 text-teal-700">Education & Training</h2>
+                    <h2 class="text-xl font-bold mb-4 border-b pb-2 text-teal-700">EDUCATION & TRAINING</h2>
                     <div class="space-y-4 text-sm">
+                        <!-- FIX APPLIED HERE: Removed external asterisks -->
                         <p class="font-semibold text-slate-800">OLD DOMINION UNIVERSITY (Online)</p>
-                        <p class="text-gray-600 -mt-2 mb-2">Cybersecurity | <em>Present (GPA: 4.0)</em></p>
+                        <p class="text-gray-600 -mt-2 mb-2">Cybersecurity | <span class="italic">Present (GPA: 4.0)</span></p>
                         
                         <p class="font-semibold text-slate-800">VIRGINIA PENINSULA COMMUNITY COLLEGE</p>
-                        <p class="text-gray-600 -mt-2 mb-2">Cybersecurity | <em>Present</em></p>
+                        <p class="text-gray-600 -mt-2 mb-2">Cybersecurity | <span class="italic">Present</span></p>
 
                         <p class="font-semibold text-slate-800">TRUECODERS (Online)</p>
-                        <p class="text-gray-600 -mt-2 mb-2">Software Engineering | <em>Present</em></p>
+                        <p class="text-gray-600 -mt-2 mb-2">Software Engineering | <span class="italic">Present</span></p>
                         
                         <p class="font-semibold text-slate-800">JAX CODE ACADEMY</p>
-                        <p class="text-gray-600 -mt-2 mb-2">Web Development | <em>2023 Graduate</em></p>
+                        <p class="text-gray-600 -mt-2 mb-2">Web Development | <span class="italic">2023 Graduate</span></p>
 
                         <p class="font-semibold text-slate-800">ROANOKE COLLEGE</p>
-                        <p class="text-gray-600 -mt-2 mb-2">Bachelor of Arts, Criminal Justice & Philosophy | <em>2009 Graduate</em></p>
+                        <p class="text-gray-600 -mt-2 mb-2">Bachelor of Arts, Criminal Justice & Philosophy | <span class="italic">2009 Graduate</span></p>
                     </div>
                 </section>
 
             </div>
 
+            <!-- Labs & Experience Column -->
             <div class="lg:col-span-2 space-y-8">
                 
+                <!-- Labs/Projects Section (Updated to use bullet points for scannability) -->
                 <section id="labs" class="bg-white p-6 rounded-xl shadow-lg">
-                    <h2 class="text-2xl font-bold mb-4 border-b-2 border-blue-500 pb-2">CYBERSECURITY COURSEWORK & TECHNICAL APPLICATION</h2>
-                    <p class="mb-6 text-slate-600">
-                        These lab exercises demonstrate hands-on mastery of core security concepts and tools required for entry-level analysis and defense roles, directly applying <strong>CompTIA Security+, Network+, and Linux+</strong> principles.
-                    </p>
-
+                    <h2 class="text-2xl font-bold mb-4 border-b-2 border-teal-500 pb-2">CYBERSECURITY COURSEWORK & TECHNICAL APPLICATION</h2>
                     <div class="space-y-6">
+                        
+                        <!-- Incident Response & Forensics (NIST Framework) -->
                         <div class="p-4 border border-teal-200 rounded-lg bg-teal-50">
-                            <h3 class="font-bold text-lg text-teal-800">Incident Response & Forensics (NIST IR Life Cycle)</h3>
-                            <ul class="list-disc list-inside space-y-1 text-sm text-slate-700 mt-2">
-                                <li>Executed a full <strong class="font-bold">Incident Response Life Cycle (NIST SP 800)</strong> following a brute-force compromise; performed <strong class="font-bold">Nmap</strong> scanning and <strong class="font-bold">log analysis</strong> to detect the intrusion.</li>
-                                <li>Collected volatile system data (<strong class="font-bold">netstat, tasklist</strong>) and recommended security controls (Group Policy) for mitigation.</li>
+                            <h3 class="font-bold text-lg text-teal-800">Incident Response & Forensics (NIST Framework):</h3>
+                            <ul class="list-disc list-outside ml-4 space-y-1 text-sm text-slate-700 mt-2">
+                                <li>Executed the full <strong class="font-bold">NIST SP 800-61 Incident Response Life Cycle</strong> following a brute-force attack.</li>
+                                <li>Conducted <strong class="font-bold">Nmap</strong> scans and log analysis to identify intrusion points and collected volatile data (<strong class="font-bold">netstat, tasklist</strong>).</li>
+                                <li>Implemented Group Policy-based controls to prevent recurrence.</li>
                             </ul>
                         </div>
                         
+                        <!-- Operating System Hardening & Policy Enforcement -->
                         <div class="p-4 border border-teal-200 rounded-lg bg-teal-50">
-                            <h3 class="font-bold text-lg text-teal-800">Operating System Hardening & Policy Enforcement</h3>
-                            <ul class="list-disc list-inside space-y-1 text-sm text-slate-700 mt-2">
-                                <li>Secured Windows and Linux systems by configuring <strong class="font-bold">Group Policy (gpedic.msc)</strong> to enforce security settings and auditing login failures.</li>
-                                <li>Hardened Metasploitable/Linux systems using <strong class="font-bold">iptables</strong> to restrict network access and minimize the attack surface.</li>
+                            <h3 class="font-bold text-lg text-teal-800">Operating System Hardening & Policy Enforcement:</h3>
+                            <ul class="list-disc list-outside ml-4 space-y-1 text-sm text-slate-700 mt-2">
+                                <li>Improved Windows and Linux security baselines by configuring <strong class="font-bold">Group Policy Objects</strong> for access control and auditing failed logins.</li>
+                                <li>Hardened Metasploitable and Linux systems using <strong class="font-bold">iptables</strong> to restrict inbound traffic and reduce the attack surface.</li>
                             </ul>
                         </div>
 
+                        <!-- Network Defense & Firewall Security (pfSense) -->
                         <div class="p-4 border border-teal-200 rounded-lg bg-teal-50">
-                            <h3 class="font-bold text-lg text-teal-800">Network Defense & pfSense Firewall Security</h3>
-                            <ul class="list-disc list-inside space-y-1 text-sm text-slate-700 mt-2">
-                                <li>Implemented <strong class="font-bold">Defense-in-Depth</strong> by securing the <strong class="font-bold">pfSense firewall</strong> through <strong class="font-bold">Nmap</strong> scanning and closing unnecessary/insecure ports (FTP, Telnet).</li>
-                                <li>Configured the appliance to use <strong class="font-bold">SSH</strong> for remote administration, protecting credentials transmitted over the network.</li>
+                            <h3 class="font-bold text-lg text-teal-800">Network Defense & Firewall Security (pfSense):</h3>
+                            <ul class="list-disc list-outside ml-4 space-y-1 text-sm text-slate-700 mt-2">
+                                <li>Applied <strong class="font-bold">Defense-in-Depth</strong> principles by securing <strong class="font-bold">pfSense</strong> through <strong class="font-bold">Nmap</strong> reconnaissance.</li>
+                                <li>Disabled insecure services (FTP, Telnet) and configured <strong class="font-bold">SSH</strong> for encrypted remote administration, enhancing network resilience and credential protection.</li>
                             </ul>
                         </div>
+
+                        <!-- Intrusion Detection & Packet Capture (Snort/Wireshark) -->
+                        <div class="p-4 border border-teal-200 rounded-lg bg-teal-50">
+                            <h3 class="font-bold text-lg text-teal-800">Intrusion Detection & Packet Capture (Snort/Wireshark):</h3>
+                            <ul class="list-disc list-outside ml-4 space-y-1 text-sm text-slate-700 mt-2">
+                                <li>Deployed a <strong class="font-bold">Snort Intrusion Detection System (IDS)</strong> on a Linux Sniffer machine to monitor and analyze network traffic for potential intrusions.</li>
+                                <li>Captured and inspected <strong class="font-bold">PCAP data</strong> using <strong class="font-bold">tcpdump</strong> and <strong class="font-bold">Wireshark</strong> to identify port scans, brute-force attempts, and other suspicious network activities.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Disaster Recovery & Data Resilience (CIA Triad) -->
+                        <div class="p-4 border border-teal-200 rounded-lg bg-teal-50">
+                            <h3 class="font-bold text-lg text-teal-800">Disaster Recovery & Data Resilience (CIA Triad):</h3>
+                            <ul class="list-disc list-outside ml-4 space-y-1 text-sm text-slate-700 mt-2">
+                                <li>Designed and implemented a <strong class="font-bold">multi-system backup solution</strong> for Windows, Linux, and BSD (<strong class="font-bold">pfSense</strong>) systems to maintain <strong class="font-bold">Availability</strong> and resilience against ransomware.</li>
+                                <li>Utilized <strong class="font-bold">WinSCP</strong> and various command-line tools to automate secure, encrypted file transfers and configuration backups.</li>
+                            </ul>
+                        </div>
+
                     </div>
                 </section>
 
+                <!-- Professional Experience Section (Updated with PDF content and new order) -->
                 <section id="experience" class="bg-white p-6 rounded-xl shadow-lg">
-                    <h2 class="text-2xl font-bold mb-6 border-b-2 border-blue-500 pb-2">WORK EXPERIENCE</h2>
+                    <h2 class="text-2xl font-bold mb-6 border-b-2 border-teal-500 pb-2">WORK EXPERIENCE</h2>
 
+                    <!-- Timeline Structure - ORDERED TO MATCH PDF -->
                     <div class="relative timeline-item">
                         
-                        <div class="relative pl-12 sm:pl-16 pb-8">
+                        <!-- CARDINAL HOUSING (2012-2024) -->
+                        <div class="pb-8 relative pl-10">
                             <div class="timeline-dot"></div>
-                            <h3 class="font-bold text-lg text-slate-800">CARDINAL HOUSING, LLC - Property Management</h3>
-                            <p class="text-sm text-slate-600 mb-2">Jacksonville, FL | 2012 – 2024 (Closed)</p>
+                            <h3 class="font-bold text-lg text-slate-800">CARDINAL HOUSING, LLC | Property Management (Closed)</h3>
+                            <p class="text-sm text-slate-600 mb-2">Jacksonville, FL | 2012 – 2024</p>
                             <ul class="list-disc list-outside ml-5 space-y-1 text-sm text-slate-700">
-                                <li>Managed self-employed real estate portfolio (three properties), including 10+ years of rental management, ensuring continuous policy adherence and full regulatory compliance with local and state contractual agreements.</li>
+                                <li><strong class="font-bold">Managed a self-owned real estate portfolio of three properties</strong>, overseeing rental operations for 10+ years.</li>
+                                <li>Ensured consistent tenant satisfaction, strict adherence to policies, and full compliance with housing regulations and contractual agreements.</li>
                             </ul>
                         </div>
 
-                        <div class="relative pl-12 sm:pl-16 pb-8">
+                        <!-- BLUEHUB CAPITAL (2021-2022) -->
+                        <div class="pb-8 relative pl-10">
                             <div class="timeline-dot"></div>
                             <h3 class="font-bold text-lg text-slate-800">BLUEHUB CAPITAL (SUN) | Foreclosure Relief Underwriter</h3>
                             <p class="text-sm text-slate-600 mb-2">Boston, MA | 2021 – 2022</p>
                             <ul class="list-disc list-outside ml-5 space-y-1 text-sm text-slate-700">
-                                <li>Assisted in internal bank exams and compliance audits to protect corporate financial interests, demonstrating strict adherence to federal regulations.</li>
-                                <li>Revised loan origination software system workflows to streamline application processes, enhancing data integrity and operational efficiency.</li>
-                                <li>Spearheaded research and implementation of a new SMS Texting application to improve secure client communication and data flow.</li>
+                                <li><strong class="font-bold">Supported internal bank examinations and compliance audits</strong>, safeguarding corporate financial interests through documentation and strict adherence to regulatory standards.</li>
+                                <li><strong class="font-bold">Redesigned loan origination system workflows</strong> to streamline application processing, improving data integrity and overall operational efficiency across departments.</li>
+                                <li><strong class="font-bold">Led research, vendor evaluation, and deployment of a secure SMS communication platform</strong>, enhancing client engagement while maintaining data protection and compliance.</li>
                             </ul>
                         </div>
                         
-                        <div class="relative pl-12 sm:pl-16 pb-8">
+                        <!-- EVERBANK & TIAA BANK (2017-2021) -->
+                        <div class="pb-8 relative pl-10">
                             <div class="timeline-dot"></div>
                             <h3 class="font-bold text-lg text-slate-800">EVERBANK & TIAA BANK | Loss Mitigation Underwriter</h3>
                             <p class="text-sm text-slate-600 mb-2">Jacksonville, FL | 2017 – 2021</p>
                             <ul class="list-disc list-outside ml-5 space-y-1 text-sm text-slate-700">
-                                <li>Analyzed complex loan files for compliance with federal, state, and investor guidelines, successfully identifying and mitigating financial risk exposure.</li>
-                                <li>Achieved a 97% average on Quality Right Party Contact Monitoring Reports, ensuring strict adherence to Office of the Comptroller of Currency Consent Orders.</li>
-                                <li>Maintained 95% job performance while managing a portfolio triple the average assigned volume.</li>
+                                <li>Reviewed and analyzed complex loan files for adherence to federal, state, and investor requirements, proactively identifying and <strong class="font-bold">mitigating potential financial risk exposures</strong>.</li>
+                                <li><strong class="font-bold">Maintained a 97% average on Quality Right Party Contact Monitoring Reports</strong>, ensuring compliance with Office the Currency Consent Orders and quality benchmarks.</li>
+                                <li><strong class="font-bold">Managed a loan portfolio 3 times the average workload, sustaining 95% performance accuracy</strong> through strong process management and risk control practices.</li>
                             </ul>
                         </div>
 
-                        <div class="relative pl-12 sm:pl-16 pb-8">
+                        <!-- EVERBANK & DITECH FINANCIAL (2011-2014) -->
+                        <div class="pb-8 relative pl-10">
                             <div class="timeline-dot"></div>
                             <h3 class="font-bold text-lg text-slate-800">EVERBANK & DITECH FINANCIAL | Relationship Manager</h3>
                             <p class="text-sm text-slate-600 mb-2">Jacksonville, FL | 2011 – 2014</p>
                             <ul class="list-disc list-outside ml-5 space-y-1 text-sm text-slate-700">
-                                <li>Managed a high-volume loss mitigation pipeline, exceeding investor perfection rate requirements by 30% through rigorous quality testing and documentation.</li>
+                                <li>Directed a high-volume loss mitigation pipeline, <strong class="font-bold">exceeding investor rate benchmarks by 30%</strong> through quality testing, documentation review, and workflow optimization.</li>
                             </ul>
                         </div>
 
-                        <div class="relative pl-12 sm:pl-16">
+                        <!-- AMERICORPS HABITAT FOR HUMANITY (2009-2011) -->
+                        <div class="relative pl-10">
                             <div class="timeline-dot"></div>
                             <h3 class="font-bold text-lg text-slate-800">AMERICORPS HABITAT FOR HUMANITY | Construction Team Leader</h3>
                             <p class="text-sm text-slate-600 mb-2">Jacksonville, FL | 2009 – 2011</p>
                             <ul class="list-disc list-outside ml-5 space-y-1 text-sm text-slate-700">
-                                <li>Led and supervised up to 150+ daily volunteers for the building and rehabilitation of 100+ homes; maintained a 98% Quality Rating.</li>
+                                <li><strong class="font-bold">Supervised and motivated up to 150+ volunteers per day</strong> across multiple residential construction projects, delivering <strong class="font-bold">100+ completed homes</strong> while maintaining <strong class="font-bold">98% quality standards</strong>.</li>
                             </ul>
                         </div>
 
                     </div>
-                    </section>
+                    <!-- End Timeline Structure -->
+                </section>
                 
             </div>
         </div>
@@ -253,19 +317,18 @@
                 labels: ['Compliance & Risk', 'Data Analysis', 'IR & Hardening', 'Network Security', 'Dev/Tools Basics'],
                 datasets: [{
                     label: 'Relevant Skill Strength (1-10)',
-                    data: [9, 8, 7, 6, 5], 
-                    // CHANGED: Chart color updated to complement new theme
+                    data: [9, 8, 7, 7, 5], /* Increased Network Security strength to reflect added labs */
                     backgroundColor: [
                         'rgba(0, 128, 128, 0.8)', 
                         'rgba(75, 192, 192, 0.8)', 
-                        'rgba(99, 102, 241, 0.8)', /* Changed from purple to indigo */
+                        'rgba(153, 102, 255, 0.8)', 
                         'rgba(255, 159, 64, 0.8)',
                         'rgba(54, 162, 235, 0.8)'
                     ],
                     borderColor: [
                         '#008080',
                         '#4bc0c0',
-                        '#6366f1', /* Changed from purple to indigo */
+                        '#9966ff',
                         '#ff9f40',
                         '#36a2eb'
                     ],
