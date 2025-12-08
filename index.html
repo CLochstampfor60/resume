@@ -339,10 +339,10 @@
             
             // Data derived from resume keyword analysis (Compliance & Risk being the highest)
             const skillData = {
-                labels: ['Compliance', 'Data Analysis', 'IR & Hardening', 'Network Security', 'AppSec'],
+                labels: ['Compliance', 'Data Ana', 'IR/Hardening', 'Network Sec', 'AppSec'],
                 datasets: [{
                     label: 'Relevant Skill Strength (1-10)',
-                    data: [9, 8, 7, 7, 5], /* Increased Network Security strength to reflect added labs */
+                    data: [9, 8, 7, 7, 6], /* Updated score to reflect new AppSec project */
                     backgroundColor: [
                         'rgba(30, 64, 175, 0.8)', /* Blue-700 */
                         'rgba(0, 128, 128, 0.8)', /* Teal/Green */
@@ -389,10 +389,7 @@
                         pointLabels: {
                             font: { size: 12 },
                             callback: function(label) {
-                                // Wrapping long labels at around 16 chars
-                                if (label.length > 16) {
-                                    return label.split(' ').join('\n');
-                                }
+                                // FIX APPLIED HERE: Using predefined, short labels
                                 return label;
                             }
                         },
