@@ -245,61 +245,34 @@
                             </div>
                         </div>
             
-            <div class="lg:col-span-2 space-y-8">
-                
-                <!-- Labs/Projects Section (Updated to use bullet points for scannability) -->
-                <section id="labs" class="bg-white p-6 rounded-xl shadow-lg">
-                    <!-- Updated Border to Blue -->
-                    <h2 class="text-2xl font-bold mb-4 border-b-2 border-blue-700 pb-2">CYBERSECURITY COURSEWORK & TECHNICAL APPLICATION</h2>
+
+            <!-- Applied Labs -->
+                    <div>
+                        <h2 class="text-2xl font-bold mb-4 border-b-2 border-blue-700 pb-2">CYBERSECURITY COURSEWORK & APPLIED LABS</h2>
                     <div class="space-y-6">
-                        
-                        <!-- Incident Response & Forensics (NIST Framework) -->
-                        <div class="p-4 border border-teal-200 rounded-lg bg-teal-50">
-                            <h3 class="font-bold text-lg text-teal-800">Incident Response & Forensics (NIST Framework):</h3>
-                            <ul class="list-disc list-outside ml-4 space-y-1 text-sm text-slate-700 mt-2">
-                                <li>Executed the full <strong class="font-bold">NIST SP 800-61 Incident Response Life Cycle</strong> following a brute-force attack.</li>
-                                <li>Conducted <strong class="font-bold">Nmap</strong> scans and log analysis to identify intrusion points and collected volatile data (<strong class="font-bold">netstat, tasklist</strong>).</li>
-                                <li>Implemented Group Policy-based controls to prevent recurrence.</li>
-                            </ul>
+                            <div class="grid grid-cols-1 gap-4">
+                                <div class="p-4 border border-teal-200 rounded-lg bg-teal-50">
+                                    <h4 class="font-bold text-teal-800">Incident Response & Forensics (NIST SP 800‑61)</h4>
+                                    <p class="text-sm text-slate-700 mt-1">Executed the full incident response lifecycle following a simulated brute‑force attack. Activities included reconnaissance detection with <strong class="font-bold">Nmap</strong>, log analysis, volatile data collection (<strong class="font-bold">netstat, tasklist</strong>), and implementation of <strong class="font-bold">Group Policy controls</strong> to mitigate recurrence.</p>
+                                </div>
+                                <div class="p-4 border border-teal-200 rounded-lg bg-teal-50">
+                                    <h4 class="font-bold text-teal-800">Operating System Hardening & Policy Enforcement</h4>
+                                    <p class="text-sm text-slate-700 mt-1">Strengthened Windows and Linux security baselines by configuring <strong class="font-bold">Group Policy Objects</strong>, auditing authentication failures, and reducing attack surface through <strong class="font-bold">iptables</strong> firewall rules on Linux and Metasploitable systems.</p>
+                                </div>
+                                <div class="p-4 border border-teal-200 rounded-lg bg-teal-50">
+                                    <h4 class="font-bold text-teal-800">Network Defense & Firewall Security (pfSense)</h4>
+                                    <p class="text-sm text-slate-700 mt-1">Applied defense‑in‑depth principles through firewall rule design, service hardening, disabling insecure protocols (FTP/Telnet), and configuring <strong class="font-bold">SSH</strong> for encrypted administrative access using <strong class="font-bold">pfSense</strong>.</p>
+                                </div>
+                                <div class="p-4 border border-teal-200 rounded-lg bg-teal-50">
+                                    <h4 class="font-bold text-teal-800">Intrusion Detection & Packet Analysis (Snort / Wireshark)</h4>
+                                    <p class="text-sm text-slate-700 mt-1">Deployed a <strong class="font-bold">Snort IDS</strong> on a Linux sniffer system and analyzed captured <strong class="font-bold">PCAP traffic</strong> using <strong class="font-bold">tcpdump</strong> and <strong class="font-bold">Wireshark</strong> to identify scanning activity, brute‑force attempts, and anomalous network behavior.</p>
+                                </div>
+                                <div class="p-4 border border-teal-200 rounded-lg bg-teal-50">
+                                    <h4 class="font-bold text-teal-800">Disaster Recovery & Data Resilience (CIA Triad)</h4>
+                                    <p class="text-sm text-slate-700 mt-1">Designed a multi‑system backup strategy across Windows, Linux, and BSD (pfSense) systems. Automated encrypted configuration and data transfers using <strong class="font-bold">WinSCP</strong> and command‑line tools to support availability and ransomware resilience.</p>
+                                </div>
+                            </div>
                         </div>
-                        
-                        <!-- Operating System Hardening & Policy Enforcement -->
-                        <div class="p-4 border border-teal-200 rounded-lg bg-teal-50">
-                            <h3 class="font-bold text-lg text-teal-800">Operating System Hardening & Policy Enforcement:</h3>
-                            <ul class="list-disc list-outside ml-4 space-y-1 text-sm text-slate-700 mt-2">
-                                <li>Improved Windows and Linux security baselines by configuring <strong class="font-bold">Group Policy Objects</strong> for access control and auditing failed logins.</li>
-                                <li>Hardened Metasploitable and Linux systems using <strong class="font-bold">iptables</strong> to restrict inbound traffic and reduce the attack surface.</li>
-                            </ul>
-                        </div>
-
-                        <!-- Network Defense & Firewall Security (pfSense) -->
-                        <div class="p-4 border border-teal-200 rounded-lg bg-teal-50">
-                            <h3 class="font-bold text-lg text-teal-800">Network Defense & Firewall Security (pfSense):</h3>
-                            <ul class="list-disc list-outside ml-4 space-y-1 text-sm text-slate-700 mt-2">
-                                <li>Applied <strong class="font-bold">Defense-in-Depth</strong> principles by securing <strong class="font-bold">pfSense</strong> through <strong class="font-bold">Nmap</strong> reconnaissance.</li>
-                                <li>Disabled insecure services (FTP, Telnet) and configured <strong class="font-bold">SSH</strong> for encrypted remote administration, enhancing network resilience and credential protection.</li>
-                            </ul>
-                        </div>
-
-                        <!-- Intrusion Detection & Packet Capture (Snort/Wireshark) -->
-                        <div class="p-4 border border-teal-200 rounded-lg bg-teal-50">
-                            <h3 class="font-bold text-lg text-teal-800">Intrusion Detection & Packet Capture (Snort/Wireshark):</h3>
-                            <ul class="list-disc list-outside ml-4 space-y-1 text-sm text-slate-700 mt-2">
-                                <li>Deployed a <strong class="font-bold">Snort Intrusion Detection System (IDS)</strong> on a Linux Sniffer machine to monitor and analyze network traffic for potential intrusions.</li>
-                                <li>Captured and inspected <strong class="font-bold">PCAP data</strong> using <strong class="font-bold">tcpdump</strong> and <strong class="font-bold">Wireshark</strong> to identify port scans, brute-force attempts, and other suspicious network activities.</li>
-                            </ul>
-                        </div>
-
-                        <!-- Disaster Recovery & Data Resilience (CIA Triad) -->
-                        <div class="p-4 border border-teal-200 rounded-lg bg-teal-50">
-                            <h3 class="font-bold text-lg text-teal-800">Disaster Recovery & Data Resilience (CIA Triad):</h3>
-                            <ul class="list-disc list-outside ml-4 space-y-1 text-sm text-slate-700 mt-2">
-                                <li>Designed and implemented a <strong class="font-bold">multi-system backup solution</strong> for Windows, Linux, and BSD (<strong class="font-bold">pfSense</strong>) systems to maintain <strong class="font-bold">Availability</strong> and resilience against ransomware.</li>
-                                <li>Utilized <strong class="font-bold">WinSCP</strong> and various command-line tools to automate secure, encrypted file transfers and configuration backups.</li>
-                            </ul>
-                        </div>
-
-                    </div>
                 </section>
 
                 <!-- Professional Experience Section (Updated with PDF content and new order) -->
@@ -339,7 +312,7 @@
                         </div>
 
                         <div>
-                            <h3 class="font-bold text-lg text-slate-800">EVERBANK & DITECH FINANCIAL | Relationship Manager</h3>
+                            <h3 class="font-bold text-lg text-slate-800">EVERBANK & DITECH FINANCIAL | Single Point of Contact Relationship Manager</h3>
                             <p class="text-sm text-blue-700 font-semibold mb-2">Jacksonville, FL | 2011 – 2014</p>
                             <ul class="list-disc list-outside ml-5 space-y-1 text-sm text-slate-700">
                                 <li>Directed a high-volume loss mitigation pipeline, <strong class="font-bold">exceeding investor rate benchmarks by 30%</strong> through quality testing, documentation review, and workflow optimization.</li>
