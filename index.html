@@ -103,7 +103,7 @@
                 </a>
                 <span>|</span>
                 <a href="https://sites.wp.odu.edu/locky/" target="_blank" class="hover:text-purple-600 flex items-center">
-                    Portfolio
+                    ODU Portfolio
                 </a>
                 <span>|</span>
                 <span class="text-slate-900 font-medium">e-Resume</span>
@@ -134,7 +134,7 @@
                     <ul class="space-y-3 text-sm">
                         <li>
                             <p class="font-semibold text-slate-700">Certifications:</p>
-                            <span class="text-gray-600">CompTIA A+ (Completed), Network+ (Completed), <strong class="font-bold">Security+ (Completed)</strong>; <strong class="font-bold">Linux+ (In-Progress)</strong>.</span>
+                            <span class="text-gray-600">CompTIA <strong class="font-bold">Security+</strong>, Network+, and A+ (Completed); <strong class="font-bold">Linux+ (In-Progress)</strong>.</span>
                         </li>
                         <li>
                             <p class="font-semibold text-slate-700">Cybersecurity:</p>
@@ -189,24 +189,61 @@
             <!-- Labs & Experience Column -->
             <div class="lg:col-span-2 space-y-8">
                 
-                <!-- NEW KEY PROJECTS SECTION - UPDATED FOR PYTHON -->
-                <section id="projects" class="bg-white p-6 rounded-xl shadow-lg">
-                    <!-- Updated Border to Blue -->
-                    <h2 class="text-2xl font-bold mb-4 border-b-2 border-blue-700 pb-2">KEY PROJECTS</h2>
+<section id="projects" class="bg-white p-6 rounded-xl shadow-lg">
+                    <h2 class="text-2xl font-bold mb-4 border-b-2 border-blue-700 pb-2">FEATURED PROJECT & APPLIED LABS</h2>
                     
-                    <!-- Secure File Sharing System Project - REVISED CONTENT -->
-                    <div class="p-4 border border-blue-200 rounded-lg bg-blue-50">
-                        <!-- Corrected Project Title and Language -->
-                        <h3 class="font-bold text-lg text-blue-800">Secure File Sharing System (Python TCP Socket Application)</h3>
-                        <ul class="list-disc list-outside ml-4 space-y-1 text-sm text-slate-700 mt-2">
-                            <li><strong class="font-bold">Encrypted Network Communication:</strong> Implemented <strong class="font-bold">TCP socket programming</strong> to establish client-server communication with <strong class="font-bold">Caesar cipher encryption</strong> on all transmitted messages, demonstrating data protection during transfer.</li>
-                            <li><strong class="font-bold">Access Control & Isolation:</strong> Designed secure registration/login and ensured <strong class="font-bold">user isolation</strong> by storing files in isolated directories, preventing unauthorized access between different accounts.</li>
-                            <li><strong class="font-bold">Data Integrity:</strong> Implemented <strong class="font-bold">secure user authentication</strong> with persistent storage and <strong class="font-bold">file management operations</strong> (upload, download, list, delete) with associated data integrity checks.</li>
-                            <li><strong class="font-bold">Secure Coding Practices:</strong> Developed using <strong class="font-bold">Python 3</strong> and standard library modules (`socket`, `os`), utilizing functions and error handling to ensure application stability and reliability.</li>
-                        </ul>
-                        <p class="text-xs text-blue-600 mt-3 italic">GitHub Repository: <a href="https://github.com/CLochstampfor60/file_system_project" target="_blank" class="hover:underline">CLochstampfor60/file_system_project</a></p>
-                    </div>
-                </section>
+                    <div class="space-y-8">
+                        <!-- Featured Project: Secure File Sharing System -->
+                        <div class="p-6 border border-blue-200 rounded-lg bg-blue-50 shadow-sm">
+                            <h3 class="font-bold text-xl text-blue-800">Secure File Sharing System (Python TCP Sockets)</h3>
+                            <p class="text-sm text-blue-600 mb-4 font-semibold italic">Milestone Project - Cybersecurity Programming & Networking</p>
+                            
+                            <div class="space-y-4 text-sm text-slate-700">
+                                <div>
+                                    <h4 class="font-bold text-slate-800 uppercase text-xs tracking-wider mb-1">Problem Addressed</h4>
+                                    <p>Organizations routinely transfer sensitive data over insecure channels, creating exposure to interception, tampering, and unauthorized access. This project explores secure design principles for client-server file exchange.</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-bold text-slate-800 uppercase text-xs tracking-wider mb-1">System Design</h4>
+                                    <ul class="list-disc ml-5 space-y-1">
+                                        <li>Custom TCP client-server architecture written in Python.</li>
+                                        <li>User authentication and per-user directory isolation.</li>
+                                        <li>Controlled file operations: upload, download, list, delete.</li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-bold text-slate-800 uppercase text-xs tracking-wider mb-1">Security Controls Implemented</h4>
+                                    <ul class="list-disc ml-5 space-y-1">
+                                        <li>Encrypted communication channel (custom cipher implementation for learning purposes).</li>
+                                        <li>Data-integrity checks during file transfer.</li>
+                                        <li>Defensive error handling to prevent crashes, data corruption, or unauthorized access.</li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-bold text-slate-800 uppercase text-xs tracking-wider mb-1">Technologies Used</h4>
+                                    <ul class="list-disc ml-5 space-y-1">
+                                        <li>Python (socket programming), OS-level file permissions, structured exception handling, GitHub version control.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-white p-3 rounded border border-blue-100 italic">
+                                    <h4 class="font-bold text-blue-800 not-italic uppercase text-xs mb-1">Key Takeaways</h4>
+                                    <ul class="list-disc ml-5 space-y-1">
+                                        <li>Practical experience translating security theory into working controls.</li>
+                                        <li>Exposure to threat modeling, access control, and secure coding practices.</li>
+                                        <li>Improved understanding of reliability, failure handling, and trust boundaries in networked systems.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <a href="https://github.com/CLochstampfor60/file_system_project" target="_blank" class="inline-flex items-center px-4 py-2 bg-blue-700 text-white rounded text-sm font-bold hover:bg-blue-800 transition">
+                                    View Source Code on GitHub
+                                </a>
+                            </div>
+                        </div>
             
             <div class="lg:col-span-2 space-y-8">
                 
@@ -266,29 +303,24 @@
                 </section>
 
                 <!-- Professional Experience Section (Updated with PDF content and new order) -->
+                 <!-- Professional Experience Section -->
                 <section id="experience" class="bg-white p-6 rounded-xl shadow-lg">
-                    <!-- Updated Border to Blue -->
                     <h2 class="text-2xl font-bold mb-6 border-b-2 border-blue-700 pb-2">WORK EXPERIENCE</h2>
 
-                    <!-- Timeline Structure - ORDERED TO MATCH PDF -->
-                    <div class="relative timeline-item">
+                    <div class="space-y-8">
                         
-                        <!-- CARDINAL HOUSING (2012-2024) -->
-                        <div class="pb-8 relative pl-10">
-                            <div class="timeline-dot"></div>
-                            <h3 class="font-bold text-lg text-slate-800">CARDINAL HOUSING, LLC | Property Management (Closed)</h3>
-                            <p class="text-sm text-slate-600 mb-2">Jacksonville, FL | 2012 – 2024</p>
+                        <div>
+                            <h3 class="font-bold text-lg text-slate-800">CARDINAL HOUSING, LLC - Property Management and Estate Fiduciary</h3>
+                            <p class="text-sm text-blue-700 font-semibold mb-2">Jacksonville, FL | 2012 – 2024 (Closed)</p>
                             <ul class="list-disc list-outside ml-5 space-y-1 text-sm text-slate-700">
-                                <li><strong class="font-bold">Managed a self-owned real estate portfolio of three properties</strong>, overseeing rental operations for 10+ years.</li>
-                                <li>Ensured consistent tenant satisfaction, strict adherence to policies, and full compliance with housing regulations and contractual agreements.</li>
+                                <li><strong class="font-bold">Operational Management & Fiduciary Trust:</strong> Managed a self-owned real estate portfolio for 12+ years and served as a fiduciary for two private estates, overseeing 100% of legal, financial, and physical asset distribution.</li>
+                                <li><strong class="font-bold">Compliance & Data Integrity:</strong> Ensured full adherence to housing regulations and probate laws through meticulous record-keeping, safeguarding sensitive financial documentation and confidential legal data.</li>
                             </ul>
                         </div>
 
-                        <!-- BLUEHUB CAPITAL (2021-2022) -->
-                        <div class="pb-8 relative pl-10">
-                            <div class="timeline-dot"></div>
+                        <div>
                             <h3 class="font-bold text-lg text-slate-800">BLUEHUB CAPITAL (SUN) | Foreclosure Relief Underwriter</h3>
-                            <p class="text-sm text-slate-600 mb-2">Boston, MA | 2021 – 2022</p>
+                            <p class="text-sm text-blue-700 font-semibold mb-2">Boston, MA | 2021 – 2022</p>
                             <ul class="list-disc list-outside ml-5 space-y-1 text-sm text-slate-700">
                                 <li><strong class="font-bold">Supported internal bank examinations and compliance audits</strong>, safeguarding corporate financial interests through documentation and strict adherence to regulatory standards.</li>
                                 <li><strong class="font-bold">Redesigned loan origination system workflows</strong> to streamline application processing, improving data integrity and overall operational efficiency across departments.</li>
@@ -296,11 +328,9 @@
                             </ul>
                         </div>
                         
-                        <!-- EVERBANK & TIAA BANK (2017-2021) -->
-                        <div class="pb-8 relative pl-10">
-                            <div class="timeline-dot"></div>
+                        <div>
                             <h3 class="font-bold text-lg text-slate-800">EVERBANK & TIAA BANK | Loss Mitigation Underwriter</h3>
-                            <p class="text-sm text-slate-600 mb-2">Jacksonville, FL | 2017 – 2021</p>
+                            <p class="text-sm text-blue-700 font-semibold mb-2">Jacksonville, FL | 2017 – 2021</p>
                             <ul class="list-disc list-outside ml-5 space-y-1 text-sm text-slate-700">
                                 <li>Reviewed and analyzed complex loan files for adherence to federal, state, and investor requirements, proactively identifying and <strong class="font-bold">mitigating potential financial risk exposures</strong>.</li>
                                 <li><strong class="font-bold">Maintained a 97% average on Quality Right Party Contact Monitoring Reports</strong>, ensuring compliance with Office the Currency Consent Orders and quality benchmarks.</li>
@@ -308,30 +338,24 @@
                             </ul>
                         </div>
 
-                        <!-- EVERBANK & DITECH FINANCIAL (2011-2014) -->
-                        <div class="pb-8 relative pl-10">
-                            <div class="timeline-dot"></div>
+                        <div>
                             <h3 class="font-bold text-lg text-slate-800">EVERBANK & DITECH FINANCIAL | Relationship Manager</h3>
-                            <p class="text-sm text-slate-600 mb-2">Jacksonville, FL | 2011 – 2014</p>
+                            <p class="text-sm text-blue-700 font-semibold mb-2">Jacksonville, FL | 2011 – 2014</p>
                             <ul class="list-disc list-outside ml-5 space-y-1 text-sm text-slate-700">
                                 <li>Directed a high-volume loss mitigation pipeline, <strong class="font-bold">exceeding investor rate benchmarks by 30%</strong> through quality testing, documentation review, and workflow optimization.</li>
                             </ul>
                         </div>
 
-                        <!-- AMERICORPS HABITAT FOR HUMANITY (2009-2011) -->
-                        <div class="relative pl-10">
-                            <div class="timeline-dot"></div>
+                        <div>
                             <h3 class="font-bold text-lg text-slate-800">AMERICORPS HABITAT FOR HUMANITY | Construction Team Leader</h3>
-                            <p class="text-sm text-slate-600 mb-2">Jacksonville, FL | 2009 – 2011</p>
+                            <p class="text-sm text-blue-700 font-semibold mb-2">Jacksonville, FL | 2009 – 2011</p>
                             <ul class="list-disc list-outside ml-5 space-y-1 text-sm text-slate-700">
-                                <li><strong class="font-bold">Supervised and motivated up to 150+ volunteers per day</strong> across multiple residential construction projects, delivering <strong class="font-bold">100+ completed homes</strong> while maintaining <strong class="font-bold">98% quality standards</strong>.</li>
+                               <strong class="font-bold">Supervised and motivated up to 150+ volunteers per day</strong> across multiple residential construction projects, delivering <strong class="font-bold">100+ completed homes</strong> while maintaining <strong class="font-bold">98% quality standards</strong>.
                             </ul>
                         </div>
 
                     </div>
-                    <!-- End Timeline Structure -->
                 </section>
-                
             </div>
         </div>
 
