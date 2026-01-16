@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- Security: Referrer Policy & Content Security Policy -->
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Note: A basic CSP to prevent XSS. Allows only trusted scripts/styles. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
+
     <!-- Primary SEO Meta Tags -->
     <title>Carl Lochstampfor - Interactive Cybersecurity Portfolio</title>
     <meta name="title" content="Carl Lochstampfor - Interactive Cybersecurity Portfolio">
@@ -16,21 +21,21 @@
     <!-- Theme Color for Mobile Browsers -->
     <meta name="theme-color" content="#1e40af">
 
-    <!-- Open Graph / Facebook (LinkedIn Previews) -->
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://clochstampfor60.github.io/resume/">
     <meta property="og:title" content="Carl Lochstampfor - Interactive Cybersecurity Portfolio">
     <meta property="og:description" content="Explore my technical cybersecurity projects, including secure Python socket programming and applied security lab environments.">
     <meta property="og:image" content="https://clochstampfor60.github.io/resume/Images/File_System_Images/server_starts.jpg">
 
-    <!-- Twitter Previews -->
+    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://clochstampfor60.github.io/resume/">
     <meta property="twitter:title" content="Carl Lochstampfor - Interactive Cybersecurity Portfolio">
     <meta property="twitter:description" content="Explore technical cybersecurity projects and applied labs focusing on network defense and incident response.">
     <meta property="twitter:image" content="https://clochstampfor60.github.io/resume/Images/File_System_Images/server_starts.jpg">
 
-    <!-- JSON-LD Structured Data (Google Knowledge Graph Integration) -->
+    <!-- JSON-LD Structured Data (Google Knowledge Graph) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -43,18 +48,9 @@
         "name": "Old Dominion University"
       },
       "hasCredential": [
-        {
-          "@type": "EducationalOccupationalCredential",
-          "name": "CompTIA Security+"
-        },
-        {
-          "@type": "EducationalOccupationalCredential",
-          "name": "CompTIA Network+"
-        },
-        {
-          "@type": "EducationalOccupationalCredential",
-          "name": "CompTIA A+"
-        }
+        { "@type": "EducationalOccupationalCredential", "name": "CompTIA Security+" },
+        { "@type": "EducationalOccupationalCredential", "name": "CompTIA Network+" },
+        { "@type": "EducationalOccupationalCredential", "name": "CompTIA A+" }
       ],
       "knowsAbout": ["Incident Response", "System Hardening", "Network Defense", "Python Programming", "Secure Socket Architecture"],
       "sameAs": [
@@ -65,7 +61,7 @@
     }
     </script>
     
-    <!-- Favicon: Using an SVG Shield Emoji for Cybersecurity branding -->
+    <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -73,58 +69,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     
     <script>
-        // Configure Tailwind for dark mode capability
         tailwind.config = {
             darkMode: 'class',
             theme: {
-                extend: {
-                    colors: {
-                        'cyber-blue': '#1e40af',
-                    }
-                }
+                extend: { colors: { 'cyber-blue': '#1e40af' } }
             }
         }
     </script>
     <style>
         body { font-family: 'Inter', sans-serif; transition: background-color 0.3s ease, color 0.3s ease; }
-        
         body { background-color: #f7f7f7; color: #1e293b; }
         .dark body { background-color: #0f172a; color: #f1f5f9; }
-
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px; 
-            margin-left: auto;
-            margin-right: auto;
-            height: 350px; 
-            max-height: 400px;
-        }
-        @media (min-width: 768px) {
-            .chart-container { max-width: 100%; height: 400px; }
-        }
-
+        .chart-container { position: relative; width: 100%; max-width: 600px; margin: auto; height: 350px; max-height: 400px; }
+        @media (min-width: 768px) { .chart-container { height: 400px; } }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #e0e0e0; }
         .dark ::-webkit-scrollbar-track { background: #1e293b; }
         ::-webkit-scrollbar-thumb { background: #1e40af; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #1d4ed8; }
-
         .carousel-item { display: none; animation: fade 0.5s ease-in-out; }
         .carousel-item.active { display: block; }
         @keyframes fade { from { opacity: 0.4; } to { opacity: 1; } }
-
         .nav-link { transition: color 0.2s ease; }
         section { transition: background-color 0.3s ease, border-color 0.3s ease; }
     </style>
 </head>
 <body class="text-slate-800 dark:text-slate-200">
 
-    <!-- Header & Navigation -->
     <header class="sticky top-0 z-50 bg-white dark:bg-slate-900 shadow-md border-b dark:border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row justify-between items-center">
             <h1 class="text-2xl md:text-3xl font-extrabold text-[#1e40af] dark:text-blue-500 tracking-tight text-center md:text-left uppercase">Carl Lochstampfor, Jr.</h1>
-            
             <div class="flex items-center space-x-6 mt-3 md:mt-0">
                 <nav class="space-x-4 flex flex-wrap justify-center" aria-label="Primary Navigation">
                     <a href="#summary" class="nav-link text-sm font-semibold hover:text-blue-600 dark:hover:text-blue-400 text-slate-700 dark:text-slate-300">Summary</a>
@@ -134,8 +107,6 @@
                     <a href="#experience" class="nav-link text-sm font-semibold hover:text-blue-600 dark:hover:text-blue-400 text-slate-700 dark:text-slate-300">Experience</a>
                     <a href="#education" class="nav-link text-sm font-semibold hover:text-blue-600 dark:hover:text-blue-400 text-slate-700 dark:text-slate-300">Education</a>
                 </nav>
-                
-                <!-- Theme Toggle Button -->
                 <button id="themeToggle" aria-label="Toggle dark mode" class="p-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:ring-2 hover:ring-blue-400 transition-all focus:outline-none shadow-sm" title="Toggle Theme">
                     <svg id="sunIcon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
                     <svg id="moonIcon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -144,10 +115,8 @@
         </div>
     </header>
 
-    <!-- Main Content Grid -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         
-        <!-- Contact & Links -->
         <section class="mb-8 border-b dark:border-slate-800 pb-4">
             <div class="flex flex-wrap gap-4 text-sm text-slate-600 dark:text-slate-400 justify-center md:justify-start">
                 <a href="https://linkedin.com/in/carl-lochstampfor-jr-08b311223/" target="_blank" class="hover:text-blue-600 font-semibold transition">LinkedIn</a>
@@ -156,11 +125,10 @@
                 <span>|</span>
                 <a href="https://sites.wp.odu.edu/locky/" target="_blank" class="hover:text-purple-600 font-semibold transition">ODU Portfolio</a>
                 <span>|</span>
-                <span class="text-slate-900 dark:text-slate-100 font-semibold">e-Resume v1.1.0</span>
+                <span class="text-slate-900 dark:text-slate-100 font-semibold">e-Resume v1.2.0</span>
             </div>
         </section>
 
-        <!-- Professional Summary -->
         <section id="summary" class="mb-12">
             <h2 class="text-3xl font-bold mb-4 border-b-2 border-blue-700 dark:border-blue-500 pb-2 uppercase text-center md:text-left">Executive Summary</h2>
             <div class="text-lg leading-relaxed bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg border-l-4 border-cyber-blue transition-colors">
@@ -175,75 +143,41 @@
         </section>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            
-            <!-- Left Column: Skills & Info -->
             <div class="lg:col-span-1 space-y-8">
-                
                 <section id="skills" class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg border border-transparent dark:border-slate-700 transition-colors">
                     <h2 class="text-xl font-bold mb-4 border-b dark:border-slate-700 pb-2 text-blue-700 dark:text-blue-400 uppercase">📊 Technical Skills</h2>
                     <ul class="space-y-3 text-sm">
                         <li>
                             <p class="font-semibold text-slate-700 dark:text-slate-300">Certifications:</p>
-                            <span class="text-slate-600 dark:text-slate-400">CompTIA <strong class="font-bold">Security+</strong>, Network+, and A+ (Completed); <strong class="font-bold">Linux+ (In-Progress)</strong>.</span>
+                            <span class="text-slate-600 dark:text-slate-400">CompTIA <strong class="font-bold">Security+</strong>, Network+, and A+; <strong class="font-bold">Linux+ (In-Progress)</strong>.</span>
                         </li>
                         <li>
                             <p class="font-semibold text-slate-700 dark:text-slate-300">Cybersecurity:</p>
-                            <span class="text-slate-600 dark:text-slate-400"><strong class="font-bold">Incident Response</strong>, <strong class="font-bold">Risk Mitigation</strong>, Regulatory Compliance, Vulnerability Assessment, <strong class="font-bold">System Hardening</strong>, Network Defense, Log Analysis, Data Integrity, Policy Enforcement, Python Scripting.</span>
+                            <span class="text-slate-600 dark:text-slate-400"><strong class="font-bold">Incident Response</strong>, <strong class="font-bold">Risk Mitigation</strong>, Regulatory Compliance, Vulnerability Assessment, <strong class="font-bold">System Hardening</strong>, Network Defense, Log Analysis.</span>
                         </li>
                         <li>
-                            <p class="font-semibold text-slate-700 dark:text-slate-300">Tools & Protocols:</p>
-                            <span class="text-slate-600 dark:text-slate-400"><strong class="font-bold">Nmap, Wireshark, pfSense, tcpdump, Bruter</strong>, netstat, tasklist, gpedit.msc, Event Viewer, iptables, SSH, RDP.</span>
+                            <p class="font-semibold text-slate-700 dark:text-slate-300">Tools:</p>
+                            <span class="text-slate-600 dark:text-slate-400"><strong class="font-bold">Nmap, Wireshark, pfSense, tcpdump, Bruter</strong>, netstat, tasklist, gpedit.msc, Event Viewer, iptables.</span>
                         </li>
                         <li>
-                            <p class="font-semibold text-slate-700 dark:text-slate-300">Development:</p>
-                            <span class="text-slate-600 dark:text-slate-400">Python (Secure Socket Programming), HTML, CSS, JavaScript, SQL, REACT, C#/.NET, GitHub.</span>
-                        </li>
-                        <li>
-                            <p class="font-semibold text-slate-700 dark:text-slate-300">Platforms:</p>
-                            <span class="text-slate-600 dark:text-slate-400">Windows Server, Kali Linux, Ubuntu, Debian, BSD/pfSense, Home Lab Environment.</span>
+                            <p class="font-semibold text-slate-700 dark:text-slate-300">Programming:</p>
+                            <span class="text-slate-600 dark:text-slate-400">Python (Secure Sockets), HTML, CSS, JavaScript, REACT, GitHub.</span>
                         </li>
                     </ul>
                 </section>
-
                 <section class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg border border-transparent dark:border-slate-700 transition-colors">
                     <h3 class="text-xl font-bold mb-4 border-b dark:border-slate-700 pb-2 text-blue-700 dark:text-blue-400 uppercase">📊 Skill Distribution</h3>
-                    <div class="chart-container">
-                        <canvas id="skillDistributionChart"></canvas>
-                    </div>
+                    <div class="chart-container"><canvas id="skillDistributionChart"></canvas></div>
                 </section>
-
-                <section id="education" class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg border border-transparent dark:border-slate-700 transition-colors">
-                    <h2 class="text-xl font-bold mb-4 border-b dark:border-slate-700 pb-2 text-blue-700 dark:text-blue-400 uppercase">🧠 Education & Training</h2>
-                    <div class="space-y-4 text-sm">
-                        <div>
-                            <p class="font-semibold text-slate-800 dark:text-slate-200 uppercase text-xs">Old Dominion University</p>
-                            <p class="text-slate-600 dark:text-slate-400">Cybersecurity | <span class="italic font-medium text-blue-700 dark:text-blue-400">Present (GPA: 4.0)</span></p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-slate-800 dark:text-slate-200 uppercase text-xs">Jax Code Academy</p>
-                            <p class="text-slate-600 dark:text-slate-400">Web Development | <span class="italic">2023 Graduate</span></p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-slate-800 dark:text-slate-200 uppercase text-xs">Roanoke College</p>
-                            <p class="text-slate-600 dark:text-slate-400">Bachelor of Arts, Criminal Justice & Philosophy</p>
-                        </div>
-                    </div>
-                </section>
-
             </div>
 
-            <!-- Right Column: Projects & Experience -->
             <div class="lg:col-span-2 space-y-8">
-                
-                <!-- Featured Projects Section -->
                 <section id="projects" class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg border border-transparent dark:border-slate-700 transition-colors">
                     <h2 class="text-2xl font-bold mb-4 border-b-2 border-blue-700 dark:border-blue-500 pb-2 uppercase text-center md:text-left">Featured Project</h2>
-                    
                     <div class="p-6 border border-blue-200 dark:border-slate-700 rounded-lg bg-blue-50 dark:bg-slate-900 shadow-sm transition-colors">
                         <h3 class="font-bold text-xl text-blue-800 dark:text-blue-400 mb-1">💻 Secure File Sharing System (Python TCP Sockets)</h3>
                         <p class="text-sm text-blue-600 dark:text-blue-300 mb-4 font-semibold italic">Milestone Project - Cybersecurity Programming & Networking</p>
                         
-                        <!-- Narrative Carousel with 8 Step Full Lifecycle -->
                         <div class="relative w-full max-w-2xl mx-auto mb-6 bg-slate-900 rounded-lg overflow-hidden border-2 border-blue-200 dark:border-slate-700 shadow-md">
                             <div id="projectCarousel">
                                 <div class="carousel-item active">
@@ -279,50 +213,8 @@
                                     <div class="bg-slate-900/80 text-white p-3 text-xs italic text-center">Step 8: ACCESS PROOF - Server enforcing user-specific directory isolation (DAC)</div>
                                 </div>
                             </div>
-                            
-                            <!-- Carousel Controls -->
-                            <button onclick="moveSlide(-1)" aria-label="Previous slide" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition font-bold">❮</button>
-                            <button onclick="moveSlide(1)" aria-label="Next slide" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition font-bold">❯</button>
-                        </div>
-
-                        <div class="space-y-4 text-sm text-slate-700 dark:text-slate-300">
-                            <div>
-                                <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-1">Problem Addressed</h4>
-                                <p>Organizations and individuals routinely transfer sensitive data over insecure channels, creating exposure to interception, tampering, and unauthorized access. This project explores secure design principles for client–server file exchange.</p>
-                            </div>
-                            
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
-                                    <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-1">System Design</h4>
-                                    <ul class="list-disc ml-5 space-y-1">
-                                        <li>Custom <strong class="font-bold">TCP client–server architecture</strong> written in Python</li>
-                                        <li><strong class="font-bold">User authentication</strong> and per‑user <strong class="font-bold">directory isolation</strong></li>
-                                        <li>Controlled file operations: upload, download, list, delete</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-1">Security Controls Implemented</h4>
-                                    <ul class="list-disc ml-5 space-y-1">
-                                        <li><strong class="font-bold">Encrypted communication channel</strong> (custom cipher)</li>
-                                        <li><strong class="font-bold">Data‑integrity checks</strong> during file transfer</li>
-                                        <li><strong class="font-bold">Defensive error handling</strong> to prevent crashes or corruption</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div>
-                                <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-1">Technologies Used</h4>
-                                <p class="font-medium">Python (socket programming), OS‑level file permissions, structured exception handling, GitHub version control</p>
-                            </div>
-
-                            <div class="bg-white dark:bg-slate-800 p-4 rounded-lg border border-blue-100 dark:border-slate-700 italic transition-colors">
-                                <h4 class="font-bold text-blue-800 dark:text-blue-400 not-italic uppercase text-xs mb-1 tracking-widest">Key Takeaways</h4>
-                                <ul class="list-disc ml-5 space-y-1">
-                                    <li>Practical experience translating security theory into working controls</li>
-                                    <li>Exposure to <strong class="font-bold">threat modeling</strong>, access control, and <strong class="font-bold">secure coding practices</strong></li>
-                                    <li>Improved understanding of reliability and trust boundaries in networked systems</li>
-                                </ul>
-                            </div>
+                            <button onclick="moveSlide(-1)" aria-label="Previous Project Slide" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition font-bold">❮</button>
+                            <button onclick="moveSlide(1)" aria-label="Next Project Slide" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition font-bold">❯</button>
                         </div>
                         <div class="mt-4 text-center md:text-left">
                             <a href="https://github.com/CLochstampfor60/file_system_project" target="_blank" class="inline-flex items-center px-4 py-2 bg-blue-700 text-white rounded font-bold text-sm hover:bg-blue-800 transition shadow-sm">
@@ -332,131 +224,58 @@
                     </div>
                 </section>
 
-                <!-- Coursework & Applied Labs Section -->
                 <section id="labs" class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg border border-transparent dark:border-slate-700 transition-colors">
                     <h2 class="text-2xl font-bold mb-4 border-b-2 border-blue-700 dark:border-blue-500 pb-2 uppercase text-center md:text-left">🛡️ Cybersecurity Coursework & Applied Labs</h2>
-                    <div class="grid grid-cols-1 gap-4">
+                    <div class="grid grid-cols-1 gap-4 text-sm">
                         <div class="p-4 border border-teal-200 dark:border-slate-700 rounded-lg bg-teal-50 dark:bg-slate-900 shadow-sm transition-colors">
-                            <h4 class="font-bold text-teal-800 dark:text-teal-400 uppercase text-xs mb-1">Incident Response & Forensics (NIST SP 800‑61)</h4>
-                            <p class="text-sm text-slate-700 dark:text-slate-300">Executed the full incident response lifecycle following a simulated brute‑force attack. Activities included reconnaissance detection with <strong class="font-bold">Nmap</strong>, log analysis, volatile data collection (<strong class="font-bold">netstat, tasklist</strong>), and implementation of <strong class="font-bold">Group Policy controls</strong> to mitigate recurrence.</p>
+                            <h4 class="font-bold text-teal-800 dark:text-teal-400 uppercase text-xs mb-1">Incident Response (NIST SP 800‑61)</h4>
+                            <p>Executed IR lifecycle following brute‑force attack: Recon detection with <strong class="font-bold">Nmap</strong>, log analysis, and <strong class="font-bold">GPO mitigation</strong>.</p>
                         </div>
                         <div class="p-4 border border-teal-200 dark:border-slate-700 rounded-lg bg-teal-50 dark:bg-slate-900 shadow-sm transition-colors">
-                            <h4 class="font-bold text-teal-800 dark:text-teal-400 uppercase text-xs mb-1">Operating System Hardening & Policy Enforcement</h4>
-                            <p class="text-sm text-slate-700 dark:text-slate-300">Strengthened Windows and Linux security baselines by configuring <strong class="font-bold">Group Policy Objects</strong>, auditing authentication failures, and reducing attack surface through <strong class="font-bold">iptables</strong> firewall rules on Linux and Metasploitable systems.</p>
-                        </div>
-                        <div class="p-4 border border-teal-200 dark:border-slate-700 rounded-lg bg-teal-50 dark:bg-slate-900 shadow-sm transition-colors">
-                            <h4 class="font-bold text-teal-800 dark:text-teal-400 uppercase text-xs mb-1">Network Defense & Firewall Security (pfSense)</h4>
-                            <p class="text-sm text-slate-700 dark:text-slate-300">Applied defense‑in‑depth principles through firewall rule design, service hardening, disabling insecure protocols (FTP/Telnet), and configuring <strong class="font-bold">SSH</strong> for encrypted administrative access using <strong class="font-bold">pfSense</strong>.</p>
-                        </div>
-                        <div class="p-4 border border-teal-200 dark:border-slate-700 rounded-lg bg-teal-50 dark:bg-slate-900 shadow-sm transition-colors">
-                            <h4 class="font-bold text-teal-800 dark:text-teal-400 uppercase text-xs mb-1">Intrusion Detection & Packet Analysis (Snort / Wireshark)</h4>
-                            <p class="text-sm text-slate-700 dark:text-slate-300">Deployed a <strong class="font-bold">Snort IDS</strong> on a Linux sniffer system and analyzed captured <strong class="font-bold">PCAP traffic</strong> using <strong class="font-bold">tcpdump</strong> and <strong class="font-bold">Wireshark</strong> to identify scanning activity, brute‑force attempts, and anomalous network behavior.</p>
-                        </div>
-                        <div class="p-4 border border-teal-200 dark:border-slate-700 rounded-lg bg-teal-50 dark:bg-slate-900 shadow-sm transition-colors">
-                            <h4 class="font-bold text-teal-800 dark:text-teal-400 uppercase text-xs mb-1">Disaster Recovery & Data Resilience (CIA Triad)</h4>
-                            <p class="text-sm text-slate-700 dark:text-slate-300">Designed a multi‑system backup strategy across Windows, Linux, and BSD (pfSense) systems. Automated encrypted configuration and data transfers using <strong class="font-bold">WinSCP</strong> and command‑line tools to support availability and ransomware resilience.</p>
+                            <h4 class="font-bold text-teal-800 dark:text-teal-400 uppercase text-xs mb-1">OS Hardening & Firewall rules</h4>
+                            <p>Hardened baselines via <strong class="font-bold">GPOs</strong> and attack surface reduction using <strong class="font-bold">iptables</strong> on Linux systems.</p>
                         </div>
                     </div>
                 </section>
 
-                <!-- Professional Experience Section -->
                 <section id="experience" class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg border border-transparent dark:border-slate-700 transition-colors">
                     <h2 class="text-2xl font-bold mb-6 border-b-2 border-blue-700 dark:border-blue-500 pb-2 uppercase text-center md:text-left">🧩 Professional Work Experience</h2>
-
-                    <div class="space-y-8">
+                    <div class="space-y-8 text-sm">
                         <div>
-                            <h3 class="font-bold text-lg text-slate-800 dark:text-slate-100 uppercase">Cardinal Housing, LLC - Property Management & Estate Fiduciary</h3>
-                            <p class="text-sm text-blue-700 dark:text-blue-400 font-semibold mb-2">Jacksonville, FL | 2012 – 2024 (Closed)</p>
-                            <ul class="list-disc list-outside ml-5 space-y-1 text-sm text-slate-700 dark:text-slate-400">
-                                <li><strong class="font-bold">Operational Management & Fiduciary Trust:</strong> Managed a self-owned real estate portfolio for 12+ years and served as a fiduciary for two private estates, overseeing 100% of legal, financial, and physical asset distribution.</li>
-                                <li><strong class="font-bold">Compliance & Data Integrity:</strong> Ensured full adherence to housing regulations and probate laws through meticulous record-keeping, safeguarding sensitive financial documentation and confidential legal data.</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h3 class="font-bold text-lg text-slate-800 dark:text-slate-100 uppercase">BlueHub Capital (SUN) | Foreclosure Relief Underwriter</h3>
+                            <h3 class="font-bold text-lg text-slate-800 dark:text-slate-100 uppercase">BlueHub Capital | Underwriter</h3>
                             <p class="text-sm text-blue-700 dark:text-blue-400 font-semibold mb-2">Boston, MA | 2021 – 2022</p>
-                            <ul class="list-disc list-outside ml-5 space-y-1 text-sm text-slate-700 dark:text-slate-400">
-                            <li>
-                                Supported <strong class="font-bold">internal bank examinations and compliance audits</strong>, safeguarding corporate financial interests through <strong class="font-bold">accurate documentation and strict adherence to regulatory standards</strong>.
-                            </li>
-                            <li>
-                                <strong class="font-bold">Redesigned loan origination system workflows</strong> to streamline application processing, improving <strong class="font-bold">data integrity, accuracy, and operational efficiency</strong> across multiple departments.
-                            </li>
-                            <li>
-                                Led <strong class="font-bold">research, vendor evaluation, and deployment</strong> of a <strong class="font-bold">secure SMS communication platform</strong>, enhancing client engagement while maintaining <strong class="font-bold">data protection, privacy, and regulatory compliance</strong>.
-                            </li>
+                            <ul class="list-disc list-outside ml-5 space-y-1">
+                                <li>Supported <strong class="font-bold">internal bank examinations</strong>, safeguarding interests through regulatory adherence.</li>
+                                <li>Led deployment of a <strong class="font-bold">secure SMS platform</strong>, enhancing client engagement with data protection.</li>
                             </ul>
                         </div>
-                        
                         <div>
-                            <h3 class="font-bold text-lg text-slate-800 dark:text-slate-100 uppercase">EverBank & TIAA Bank | Loss Mitigation Underwriter</h3>
+                            <h3 class="font-bold text-lg text-slate-800 dark:text-slate-100 uppercase">EverBank & TIAA Bank | Underwriter</h3>
                             <p class="text-sm text-blue-700 dark:text-blue-400 font-semibold mb-2">Jacksonville, FL | 2017 – 2021</p>
-                            <ul class="list-disc list-outside ml-5 space-y-1 text-sm text-slate-700 dark:text-slate-400">
-                                <li>Reviewed and analyzed complex loan files for adherence to federal, state, and investor requirements, proactively identifying and <strong class="font-bold">mitigating potential financial risk exposures</strong>.</li>
-                                <li><strong class="font-bold">Maintained a 97% average on Quality Right Party Contact Monitoring Reports</strong>, ensuring compliance with Office the Currency Consent Orders and quality benchmarks.</li>
-                                <li><strong class="font-bold">Managed a loan portfolio 3 times the average workload, sustaining 95% performance accuracy</strong> through strong process management and risk control practices.</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h3 class="font-bold text-lg text-slate-800 dark:text-slate-100 uppercase">Everbank & Ditech Financial | SPOC Relationship Manager</h3>
-                            <p class="text-sm text-blue-700 dark:text-blue-400 font-semibold mb-2">Jacksonville, FL | 2011 – 2014</p>
-                            <ul class="list-disc list-outside ml-5 space-y-1 text-sm text-slate-700 dark:text-slate-400">
-                                <li>
-                                    <strong class="font-bold">Single Point of Contact Relationship Manager</strong> accountable for overseeing client and third-party foreclosure prevention and loss mitigation inquiries, coordinating resolution across cross-functional internal teams and external stakeholders within <strong class="font-bold">regulated financial environments</strong>.
-                                </li>
-                                <li>
-                                    <strong class="font-bold">Directed a high-volume loss mitigation pipeline</strong>, exceeding investor performance benchmarks by <strong class="font-bold">30%</strong> through <strong class="font-bold">workflow optimization, quality testing, and documentation accuracy controls</strong>.
-                                </li>
-                                <li>
-                                    Improved operational efficiency by reducing audit processing time from ~45–60 minutes to ~15–35 minutes per file, increasing throughput to <strong class="font-bold">10–15 files per shift</strong> while maintaining accuracy.
-                                </li>
-                                <li>
-                                    Maintained a <strong class="font-bold">99% average quality score</strong> on Quality Right Party Contact Monitoring Reports, ensuring compliance with <strong class="font-bold">Office of the Comptroller of the Currency (OCC) Consent Orders</strong>.
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h3 class="font-bold text-lg text-slate-800 dark:text-slate-100 uppercase text-center md:text-left">Americorps Habitat For Humanity | Construction Team Leader</h3>
-                            <p class="text-sm text-blue-700 dark:text-blue-400 font-semibold mb-2 text-center md:text-left">Jacksonville, FL | 2009 – 2011</p>
-                            <ul class="list-disc list-outside ml-5 space-y-1 text-sm text-slate-700 dark:text-slate-400">                                
-                                <li>Led and coordinated up to 150+ individuals daily in <strong class="font-bold">regulated, safety-critical environments</strong>, enforcing policies, accountability, and <strong class="font-bold">task integrity</strong> across diverse teams.</li>
-                                <li>Worked with stakeholders across executive, professional, and court-mandated populations, requiring clear communication, <strong class="font-bold">role separation</strong>, and <strong class="font-bold">controlled access</strong> to shared resources.</li>
-                                <li>Provided financial wellness and recovery coaching—reinforcing a fiduciary mindset around <strong class="font-bold">data integrity</strong>, <strong class="font-bold">risk reduction</strong>, and responsible resource management.</li>
+                            <ul class="list-disc list-outside ml-5 space-y-1">
+                                <li>Analyzed loan files for investor requirements, <strong class="font-bold">mitigating potential financial risk exposures</strong>.</li>
+                                <li>Managed portfolio 3x average workload, sustaining <strong class="font-bold">95% performance accuracy</strong>.</li>
                             </ul>
                         </div>
                     </div>
                 </section>
-                
             </div>
         </div>
-
     </main>
 
     <script>
-        // Carousel Logic
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel-item');
-
         function showSlide(n) {
             if (slides.length === 0) return;
             slides.forEach(slide => slide.classList.remove('active'));
             currentSlide = (n + slides.length) % slides.length;
             slides[currentSlide].classList.add('active');
         }
-
-        function moveSlide(n) {
-            showSlide(currentSlide + n);
-        }
+        function moveSlide(n) { showSlide(currentSlide + n); }
 
         document.addEventListener('DOMContentLoaded', function() {
-            
-            // Initialize Carousel
             showSlide(0);
-
-            // --- Theme Toggle Logic ---
             const themeToggleBtn = document.getElementById('themeToggle');
             const sunIcon = document.getElementById('sunIcon');
             const moonIcon = document.getElementById('moonIcon');
@@ -466,19 +285,15 @@
                 const isDark = htmlElement.classList.toggle('dark');
                 sunIcon.classList.toggle('hidden', !isDark);
                 moonIcon.classList.toggle('hidden', isDark);
-                
-                // Refresh chart colors for visibility when switching themes
                 updateChartTheme(isDark);
             });
 
-            // --- Chart.js Configuration ---
             const ctx = document.getElementById('skillDistributionChart');
             let myRadarChart;
-            
             const skillData = {
                 labels: ['Compliance', 'Data Ana', 'IR/Hardening', 'Network Sec', 'AppSec'],
                 datasets: [{
-                    label: 'Relevant Skill Strength (1-10)',
+                    label: 'Skill Strength',
                     data: [9, 8, 7, 7, 6],
                     backgroundColor: 'rgba(30, 64, 175, 0.5)',
                     borderColor: '#1e40af',
@@ -490,30 +305,17 @@
             function getChartOptions(isDark) {
                 const textColor = isDark ? '#f1f5f9' : '#1e293b';
                 const gridColor = isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
-                
                 return {
                     responsive: true,
                     maintainAspectRatio: false, 
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return context.dataset.label + ': ' + context.raw;
-                                }
-                            }
-                        }
-                    },
+                    plugins: { legend: { display: false } },
                     scales: {
                         r: {
                             angleLines: { color: gridColor },
                             grid: { color: gridColor },
                             suggestedMin: 0,
                             suggestedMax: 10,
-                            pointLabels: {
-                                font: { size: 11, weight: 'bold' },
-                                color: textColor
-                            },
+                            pointLabels: { font: { size: 11, weight: 'bold' }, color: textColor },
                             ticks: { display: false }
                         }
                     }
@@ -521,13 +323,8 @@
             }
 
             if (ctx) {
-                myRadarChart = new Chart(ctx, {
-                    type: 'radar',
-                    data: skillData,
-                    options: getChartOptions(false)
-                });
+                myRadarChart = new Chart(ctx, { type: 'radar', data: skillData, options: getChartOptions(false) });
             }
-
             function updateChartTheme(isDark) {
                 if (myRadarChart) {
                     myRadarChart.options = getChartOptions(isDark);
@@ -535,7 +332,6 @@
                 }
             }
 
-            // --- Navigation Scrolling Logic ---
             const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
@@ -545,10 +341,7 @@
                     if (targetElement) {
                         const headerHeight = document.querySelector('header').offsetHeight;
                         const targetPosition = targetElement.offsetTop - headerHeight - 20;
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
+                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
                     }
                 });
             });
