@@ -1,6 +1,5 @@
-<!-- Purpose: Provides a map for Google to find your content and see when it was last updated. -->
-
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Purpose: Provides a map for Google to find your content and see when it was last updated. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
       <loc>https://clochstampfor60.github.io/resume/</loc>
