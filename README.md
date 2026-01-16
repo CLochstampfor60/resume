@@ -1,32 +1,42 @@
 # 🛡️ Interactive Cybersecurity Resume
 
-A high-fidelity, interactive professional portfolio showcasing technical expertise in cybersecurity, incident response, and secure systems architecture. 
+A high-fidelity, interactive professional portfolio showcasing technical expertise in cybersecurity, incident response, and secure systems architecture.
 
-**Live Demo:** [https://clochstampfor60.github.io/resume/](https://clochstampfor60.github.io/resume/)
-
----
+**Live Demo:** <https://clochstampfor60.github.io/resume/>
 
 ## 🚀 Technical Features
 
-This repository is more than a static document; it is a hardened, search-optimized web application designed to demonstrate cybersecurity proficiency in a production environment.
+This repository is more than a static document; it is a hardened, search-optimized web application designed to demonstrate cybersecurity proficiency and technical maturity in a production-grade environment.
 
-### 🛡️ Security Hardening
-- **Content Security Policy (CSP):** Strict policies implemented via meta tags to mitigate Cross-Site Scripting (XSS) and data injection attacks.
-- **Subresource Integrity (SRI):** Cryptographic verification of external scripts (Tailwind, Chart.js) to ensure code integrity from CDNs.
-- **Referrer Policy:** Configured to prevent sensitive data leakage during outbound navigation.
-- **Static Architecture:** Hosted on GitHub Pages to leverage a serverless, minimal attack surface.
+### 🛡️ Security & Integrity
 
-### 🔍 Search Engine & Knowledge Graph Optimization
-- **JSON-LD Structured Data:** Full Schema.org implementation (Person/Credential) for direct integration into Google's Knowledge Graph.
-- **Advanced Metadata:** Open Graph and Twitter Card support for professional social sharing previews.
-- **Crawl Efficiency:** Custom `robots.txt` and `sitemap.xml` for optimized search engine indexing.
-- **Accessibility:** WCAG-compliant semantic HTML and ARIA labels for mobile-first indexing.
+* **Enhanced Content Security Policy (CSP):** Strict script and resource governing to mitigate XSS and data injection vulnerabilities.
 
-### 💻 Technical Implementation
-- **Responsive Dashboard:** Mobile-optimized layout using **Tailwind CSS**.
-- **Data Visualization:** Interactive skill strength analysis powered by **Chart.js**.
-- **User Experience:** Dynamic Light/Dark mode toggle with synchronized SOC-style themes.
-- **Project Evidence:** Narrative carousels documenting full-lifecycle secure system design.
+* **Referrer Policy:** Configured to `no-referrer-when-downgrade` to ensure privacy and data integrity during outbound navigation.
+
+* **Static Security:** Hosted on GitHub Pages to maintain a serverless, minimal attack surface.
+
+### 🔍 SEO & Knowledge Graph Integration
+
+* **JSON-LD Structured Data:** Full **Schema.org** implementation (Person, Credential, EducationalOccupationalCredential) for direct Google Knowledge Graph integration.
+
+* **Crawl Optimization:** Custom `robots.txt` and `sitemap.xml` architecture for efficient search engine indexing.
+
+* **Social Metadata:** Robust Open Graph and Twitter Card support for professional link previews on LinkedIn and other platforms.
+
+### ⚡ Performance & Accessibility
+
+* **Performance Optimization:** Implemented `preconnect` resource hints and `lazy-loading` for high-speed content delivery and improved Core Web Vitals.
+
+* **WCAG Compliance:** Semantic HTML5 and ARIA-labeled navigation for maximum screen-reader accessibility and mobile-first indexing.
+
+* **Responsive Design:** Fluid layouts engineered with **Tailwind CSS** for seamless viewing across mobile, tablet, and desktop devices.
+
+### 🖨️ Recruiter-Centric Utility
+
+* **Print Optimization:** Custom CSS media queries optimized for PDF generation, automatically reformatting the interactive site into a clean, professional paper resume (Ctrl+P).
+
+* **Data Visualization:** Skill-set distribution mapped via **Chart.js** with synchronized light/dark mode logic.
 
 ---
 
