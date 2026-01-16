@@ -6,7 +6,6 @@
     
     <!-- Security: Referrer Policy & Content Security Policy -->
     <meta name="referrer" content="no-referrer-when-downgrade">
-    <!-- Basic CSP to prevent XSS. Allows only trusted scripts/styles. -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
 
     <!-- Primary SEO Meta Tags -->
@@ -201,6 +200,7 @@
                         <h3 class="font-bold text-xl text-blue-800 dark:text-blue-400 mb-1">💻 Secure File Sharing System (Python TCP Sockets)</h3>
                         <p class="text-sm text-blue-600 dark:text-blue-300 mb-4 font-semibold italic">Milestone Project - Cybersecurity Programming & Networking</p>
                         
+                        <!-- Narrative Carousel with 8 Step Full Lifecycle -->
                         <div class="relative w-full max-w-2xl mx-auto mb-6 bg-slate-900 rounded-lg overflow-hidden border-2 border-blue-200 dark:border-slate-700 shadow-md">
                             <div id="projectCarousel">
                                 <div class="carousel-item active">
@@ -239,6 +239,48 @@
                             <button onclick="moveSlide(-1)" aria-label="Previous Project Slide" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition font-bold">❮</button>
                             <button onclick="moveSlide(1)" aria-label="Next Project Slide" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition font-bold">❯</button>
                         </div>
+
+                        <!-- Project Details reinstated -->
+                        <div class="space-y-4 text-sm text-slate-700 dark:text-slate-300">
+                            <div>
+                                <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-1">Problem Addressed</h4>
+                                <p>Organizations routinely transfer sensitive data over insecure channels, creating exposure to interception, tampering, and unauthorized access. This project explores secure design principles for client–server file exchange.</p>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-1">System Design</h4>
+                                    <ul class="list-disc ml-5 space-y-1">
+                                        <li>Custom <strong class="font-bold">TCP client–server architecture</strong> written in Python</li>
+                                        <li><strong class="font-bold">User authentication</strong> and per‑user <strong class="font-bold">directory isolation</strong></li>
+                                        <li>Controlled file operations: upload, download, list, delete</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-1">Security Controls Implemented</h4>
+                                    <ul class="list-disc ml-5 space-y-1">
+                                        <li><strong class="font-bold">Encrypted communication channel</strong> (custom cipher)</li>
+                                        <li><strong class="font-bold">Data‑integrity checks</strong> during file transfer</li>
+                                        <li><strong class="font-bold">Defensive error handling</strong> to prevent crashes or corruption</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-1">Technologies Used</h4>
+                                <p class="font-medium">Python (socket programming), OS‑level file permissions, structured exception handling, GitHub version control</p>
+                            </div>
+
+                            <div class="bg-white dark:bg-slate-800 p-4 rounded-lg border border-blue-100 dark:border-slate-700 italic transition-colors">
+                                <h4 class="font-bold text-blue-800 dark:text-blue-400 not-italic uppercase text-xs mb-1 tracking-widest">Key Takeaways</h4>
+                                <ul class="list-disc ml-5 space-y-1">
+                                    <li>Practical experience translating security theory into working controls</li>
+                                    <li>Exposure to <strong class="font-bold">threat modeling</strong>, access control, and <strong class="font-bold">secure coding practices</strong></li>
+                                    <li>Improved understanding of reliability and trust boundaries in networked systems</li>
+                                </ul>
+                            </div>
+                        </div>
+
                         <div class="mt-4 text-center md:text-left">
                             <a href="https://github.com/CLochstampfor60/file_system_project" target="_blank" class="inline-flex items-center px-4 py-2 bg-blue-700 text-white rounded font-bold text-sm hover:bg-blue-800 transition shadow-sm">
                                 📎 View Source Code on GitHub
@@ -305,7 +347,7 @@
                         <div>
                             <h3 class="font-bold text-lg text-slate-800 dark:text-slate-100 uppercase">Everbank & Ditech Financial | SPOC Relationship Manager</h3>
                             <p class="text-sm text-blue-700 dark:text-blue-400 font-semibold mb-2">Jacksonville, FL | 2011 – 2014</p>
-                            <ul class="list-disc list-outside ml-5 space-y-1 text-sm text-slate-700 dark:text-slate-400">
+                            <ul class="list-disc list-outside ml-5 space-y-1 text-slate-700 dark:text-slate-400">
                                 <li>Managed client and third-party foreclosure prevention as a <strong class="font-bold">Single Point of Contact (SPOC)</strong>, coordinating resolution across cross-functional internal teams and external stakeholders within <strong class="font-bold">regulated financial environments</strong>.</li>
                                 <li><strong class="font-bold">Directed a high-volume loss mitigation pipeline</strong>, exceeding investor rate benchmarks by <strong class="font-bold">30%</strong> through <strong class="font-bold">quality testing, documentation review, and workflow optimization</strong>.</li>
                                 <li>Maintained a <strong class="font-bold">99% average quality score</strong> on monitoring reports, ensuring strict compliance with <strong class="font-bold">Office of the Comptroller of the Currency (OCC) Consent Orders</strong> and data integrity standards.</li>
