@@ -1,8 +1,4 @@
-for line in file:
-    if line.startswith("#"):
-        continue
-
-# Purpose: Tells search engine crawlers which pages they can or cannot visit.
+# Purpose: This file tells search engine crawlers which pages they can or cannot visit.
 
 User-agent: *
 Allow: /
