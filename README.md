@@ -1,21 +1,44 @@
-# career-services
+# 🛡️ Interactive Cybersecurity Resume
 
-- Resume and material showcasing skills, talents, and achievements to potential employers.
+A high-fidelity, interactive professional portfolio showcasing technical expertise in cybersecurity, incident response, and secure systems architecture. 
 
-- This repo provides a place to develop and expand that information as I attain more skills, talents and achievements.
-
-## Developer's Submitted Work:
-
-- URL of the <u>LinkedIn</u> account: <a href="https://www.linkedin.com/in/carl-lochstampfor-jr-08b311223/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-
-- URL of the <u>Portflio Web-Page</u>: <a href="https://sites.wp.odu.edu/locky/" target="_blank" rel="noopener noreferrer">ODU ePortfolio</a>
-
-- URL of the <u>Resume</u> on GitHub: <a href="https://CLochstampfor60.github.io/resume/" target="_blank" rel="noopener noreferrer">Resume</a>
-
-## License
-
-- This project is licensed under the terms of the MIT license.
-
-- This project is for developer use only.
+**Live Demo:** [https://clochstampfor60.github.io/resume/](https://clochstampfor60.github.io/resume/)
 
 ---
+
+## 🚀 Technical Features
+
+This repository is more than a static document; it is a hardened, search-optimized web application designed to demonstrate cybersecurity proficiency in a production environment.
+
+### 🛡️ Security Hardening
+- **Content Security Policy (CSP):** Strict policies implemented via meta tags to mitigate Cross-Site Scripting (XSS) and data injection attacks.
+- **Subresource Integrity (SRI):** Cryptographic verification of external scripts (Tailwind, Chart.js) to ensure code integrity from CDNs.
+- **Referrer Policy:** Configured to prevent sensitive data leakage during outbound navigation.
+- **Static Architecture:** Hosted on GitHub Pages to leverage a serverless, minimal attack surface.
+
+### 🔍 Search Engine & Knowledge Graph Optimization
+- **JSON-LD Structured Data:** Full Schema.org implementation (Person/Credential) for direct integration into Google's Knowledge Graph.
+- **Advanced Metadata:** Open Graph and Twitter Card support for professional social sharing previews.
+- **Crawl Efficiency:** Custom `robots.txt` and `sitemap.xml` for optimized search engine indexing.
+- **Accessibility:** WCAG-compliant semantic HTML and ARIA labels for mobile-first indexing.
+
+### 💻 Technical Implementation
+- **Responsive Dashboard:** Mobile-optimized layout using **Tailwind CSS**.
+- **Data Visualization:** Interactive skill strength analysis powered by **Chart.js**.
+- **User Experience:** Dynamic Light/Dark mode toggle with synchronized SOC-style themes.
+- **Project Evidence:** Narrative carousels documenting full-lifecycle secure system design.
+
+---
+
+## 🔗 Professional Links
+
+- **LinkedIn:** [Carl Lochstampfor, Jr.](https://www.linkedin.com/in/carl-lochstampfor-jr-08b311223/)
+- **ODU ePortfolio:** [University Academic Portfolio](https://sites.wp.odu.edu/locky/)
+- **Live Resume:** [GitHub Pages Deployment](https://clochstampfor60.github.io/resume/)
+
+---
+
+## ⚖️ License
+
+- This project is licensed under the terms of the **MIT license**.
+- Designed and maintained by Carl Lochstampfor, Jr.
