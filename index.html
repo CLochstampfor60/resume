@@ -229,9 +229,10 @@
             .reveal { opacity: 1 !important; transform: none !important; }
             .metric-card::before { display: none; }
             /* Force research accordions fully open for clean PDF export */
-            details.research-details > .research-details-body { display: block !important; }
+            details.research-details { display: block !important; }
+            details.research-details > summary { pointer-events: none; cursor: default; }
             details.research-details > summary .chevron { display: none; }
-            details.research-details > summary { cursor: default; }
+            details.research-details > summary::after { content: " (expanded)"; font-size: 0.7rem; color: #888; font-weight: normal; }
         }
 
         /* Reduced Motion */
@@ -279,7 +280,7 @@
                 <span class="text-slate-300 dark:text-slate-600">|</span>
                 <a href="https://sites.wp.odu.edu/locky/" target="_blank" rel="noopener noreferrer" class="hover:text-purple-600 font-semibold transition">ODU Portfolio</a>
                 <span class="text-slate-300 dark:text-slate-600">|</span>
-                <span class="text-slate-900 dark:text-slate-100 font-semibold">e-Resume v2.1.0</span>
+                <span class="text-slate-900 dark:text-slate-100 font-semibold">e-Resume v2.1.2</span>
             </div>
         </section>
 
@@ -382,7 +383,7 @@
                                         <ul class="list-disc ml-5 space-y-1">
                                             <li>Two independent LLM agents (attacker + victim) exchange turns iteratively, producing natural resistance and escalation dynamics across 8 elder-fraud categories and 16 prompt templates.</li>
                                             <li>Parameterized victim personas (age 65–85) with trust, scam-awareness, and tech-savviness traits; attacker knowledge tiers (cold-call 50% / partial 30% / full 20%).</li>
-                                            <li>Pivoted to local inference on an NVIDIA RTX 4080 Super after commercial API guardrails blocked scam role-play — enabling zero API cost and full data privacy.</li>
+                                            <li>Initially prototyped with commercial LLM APIs (including Anthropic Claude); transitioned to <strong>local Qwen 2.5 14B inference via Ollama on NVIDIA RTX 4080 Super (16 GB VRAM)</strong> after safety guardrails blocked scam role-play scenarios — enabling unrestricted generation, zero API cost, and full data privacy.</li>
                                             <li>Built a negation-aware v2 label-audit pipeline after discovering a 49.8% initial mismatch, relabeling 1,594 conversations for outcome-label integrity.</li>
                                         </ul>
                                     </div>
@@ -396,7 +397,7 @@
                                     </div>
                                     <div>
                                         <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-2">👤 My Contributions</h4>
-                                        <p><strong>Lead author.</strong> Designed and implemented the two-agent generation pipeline, engineered the 28-feature + TF-IDF representation, built the v2 label-audit and relabeling tooling, and trained and evaluated all eight baseline models.</p>
+                                        <p><strong>Lead author.</strong> I designed and implemented the multi-agent generation pipeline that produces realistic attacker-victim dialogue exchanges. I engineered the 28-feature extraction system and TF-IDF representation, built the v2 label-audit tooling that corrected 1,594 mislabeled conversations, and trained and evaluated all eight baseline classifiers.</p>
                                     </div>
                                 </div>
                             </details>
@@ -469,12 +470,13 @@
                                         <ul class="list-disc ml-5 space-y-1">
                                             <li><strong>Longformer overtook XGBoost on every metric</strong> (79.71% accuracy / 0.779 macro-F1 vs. 78.43% / 0.756), directly confirming the first paper's data-scale hypothesis.</li>
                                             <li>Transformers gained the most from scale (Longformer +11.2 macro-F1 points vs. XGBoost +6.5), with the biggest edge on the minority "complied" class.</li>
+                                            <li><strong>Key challenge identified:</strong> distinguishing partial compliance from rejection — victims who engage extensively before refusing present similar lexical patterns to those who partially comply, making this the dominant error boundary across all architectures.</li>
                                             <li>A pre/post-cleanup sensitivity analysis showed all three architectures improved — evidence the pipeline recovered genuine label-relevant signal, not architecture-specific noise.</li>
                                         </ul>
                                     </div>
                                     <div>
                                         <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-2">👤 My Contributions</h4>
-                                        <p><strong>Lead author.</strong> Scaled the generation pipeline across dual-GPU workstations, designed the three-role virtual-kidnapping architecture, built the multi-stage quality-lifecycle tooling (contamination scan, stage-direction stripping, automated relabeling), and retrained and evaluated all classifiers to validate the data-scale hypothesis.</p>
+                                        <p><strong>Lead author.</strong> I scaled the generation pipeline across dual-GPU workstations (RTX 4080 Super + RTX 5060 Ti), designed the three-role virtual-kidnapping architecture that reduced artifact rates by 20 percentage points, and built the complete multi-stage quality-lifecycle tooling — including contamination scanning, stage-direction stripping, and automated relabeling. I then retrained and evaluated all classifiers to validate our data-scale hypothesis.</p>
                                     </div>
                                 </div>
                             </details>
@@ -504,6 +506,9 @@
                                 <span class="tech-tag bg-purple-100 text-purple-800 dark:bg-purple-900/50 dark:text-purple-300">Dataset Distribution</span>
                                 <span class="tech-tag bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300">Trust Engineering</span>
                                 <span class="tech-tag bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300">Open Research</span>
+                                <span class="tech-tag bg-slate-100 text-slate-800 dark:bg-slate-700 dark:text-slate-300">GitHub Pages</span>
+                                <span class="tech-tag bg-orange-100 text-orange-800 dark:bg-orange-900/50 dark:text-orange-300">Static Site</span>
+                                <span class="tech-tag bg-teal-100 text-teal-800 dark:bg-teal-900/50 dark:text-teal-300">CSP Hardened</span>
                             </div>
                         </div>
                         <div class="flex flex-col gap-2 no-print">
