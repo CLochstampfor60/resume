@@ -9,10 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
     <!-- Security: Referrer Policy & Enhanced Content Security Policy -->
     <meta name="referrer" content="no-referrer-when-downgrade">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://cdn.jsdelivr.net https://gc.zgo.at 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://clochstampfor60.github.io https://carlresume.goatcounter.com https://scamlingua.org; connect-src 'self' https://carlresume.goatcounter.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://gc.zgo.at 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://clochstampfor60.github.io https://carlresume.goatcounter.com https://scamlingua.org; connect-src 'self' https://carlresume.goatcounter.com;">
 
     <!-- Primary SEO Meta Tags -->
     <title>Carl Lochstampfor - Cybersecurity & AI Security Researcher</title>
@@ -100,7 +101,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700&family=Inter:wght@100..900&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -120,6 +121,15 @@
         body { font-family: 'Inter', sans-serif; transition: background-color 0.3s ease, color 0.3s ease; }
         body { background-color: #f7f7f7; color: #1e293b; }
         .dark body { background-color: #0f172a; color: #f1f5f9; }
+
+        /* Academic serif display for the nameplate + section headings.
+           Reinforces the "research portfolio" identity (Crimson Pro, per UI/UX design system).
+           Scoped via selector — remove these two rules + the Crimson Pro font link to revert. */
+        header h1,
+        main section > h2 {
+            font-family: 'Crimson Pro', Georgia, 'Times New Roman', serif;
+            letter-spacing: 0;
+        }
         
         .chart-container { position: relative; width: 100%; max-width: 600px; margin: auto; height: 350px; max-height: 400px; }
         @media (min-width: 768px) { .chart-container { height: 400px; } }
@@ -147,6 +157,10 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* When GSAP/ScrollTrigger is active it owns the reveal animation via inline
+           styles, so we disable the CSS transition to avoid double-animating.
+           The CSS above remains the fallback for no-JS / reduced-motion / print. */
+        .js-gsap .reveal { transition: none; }
 
         /* Animated Counter */
         .counter-value {
@@ -280,7 +294,7 @@
                 <span class="text-slate-300 dark:text-slate-600">|</span>
                 <a href="https://sites.wp.odu.edu/locky/" target="_blank" rel="noopener noreferrer" class="hover:text-purple-600 font-semibold transition">ODU Portfolio</a>
                 <span class="text-slate-300 dark:text-slate-600">|</span>
-                <span class="text-slate-900 dark:text-slate-100 font-semibold">e-Resume v2.1.2</span>
+                <span class="text-slate-900 dark:text-slate-100 font-semibold">e-Resume v2.2.0</span>
             </div>
         </section>
 
@@ -533,8 +547,14 @@
                 </div>
             </div>
 
-            <!-- Research Demo Video (Placeholder - uncomment and add video when ready) -->
-            <!--
+            <!-- Research Demo Video (Placeholder).
+                 Wrapped in an inert <template> so NOTHING renders on the live site while the
+                 full markup is preserved for later use. (The old HTML-comment wrapper broke
+                 because HTML comments cannot nest: the inner "Option 1/2/3" comments closed it
+                 early, which is why the placeholder was still showing on the live page.)
+                 TO ENABLE LATER: delete the opening template tag on the next line and its
+                 matching closing template tag below, then uncomment the video option you want. -->
+            <template id="cova-demo-video" data-note="hidden-until-video-ready">
             <div class="mt-8 research-card p-6 rounded-xl shadow-lg">
                 <h3 class="font-bold text-lg text-purple-800 dark:text-purple-400 mb-4 flex items-center gap-2">
                     🎬 COVA Framework Demo
@@ -578,7 +598,7 @@
                     Watch the COVA framework generate realistic attacker-victim conversations in real-time.
                 </p>
             </div>
-            -->
+            </template>
         </section>
 
         <!-- Research Timeline -->
@@ -865,34 +885,40 @@
         // =====================
         function animateCounters() {
             const counters = document.querySelectorAll('.counter-value');
-            const duration = 2000; // 2 seconds
-            
+            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
             counters.forEach(counter => {
+                // Guard: only animate each counter once (metrics section can re-enter view).
+                if (counter.dataset.counted === 'true') return;
+                counter.dataset.counted = 'true';
+
                 const target = parseFloat(counter.getAttribute('data-target'));
                 const suffix = counter.getAttribute('data-suffix') || '';
                 const decimals = parseInt(counter.getAttribute('data-decimals')) || 0;
-                const startTime = performance.now();
-                
-                function updateCounter(currentTime) {
-                    const elapsed = currentTime - startTime;
-                    const progress = Math.min(elapsed / duration, 1);
-                    
-                    // Easing function (ease-out cubic)
-                    const easeOut = 1 - Math.pow(1 - progress, 3);
-                    const currentValue = target * easeOut;
-                    
+
+                const render = (value) => {
                     if (decimals > 0) {
-                        counter.textContent = currentValue.toFixed(decimals) + suffix;
+                        counter.textContent = value.toFixed(decimals) + suffix;
                     } else {
-                        counter.textContent = Math.floor(currentValue).toLocaleString() + suffix;
+                        counter.textContent = Math.floor(value).toLocaleString() + suffix;
                     }
-                    
-                    if (progress < 1) {
-                        requestAnimationFrame(updateCounter);
-                    }
+                };
+
+                // Fallback: no GSAP or reduced motion -> snap to final value.
+                if (prefersReduced || typeof gsap === 'undefined') {
+                    render(target);
+                    return;
                 }
-                
-                requestAnimationFrame(updateCounter);
+
+                // GSAP tween for smooth easing on a proxy object.
+                const proxy = { value: 0 };
+                gsap.to(proxy, {
+                    value: target,
+                    duration: 2,
+                    ease: 'power2.out',
+                    onUpdate: () => render(proxy.value),
+                    onComplete: () => render(target)
+                });
             });
         }
 
@@ -901,24 +927,47 @@
         // =====================
         function initScrollReveal() {
             const revealElements = document.querySelectorAll('.reveal');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        
-                        // Trigger counter animation when metrics section becomes visible
-                        if (entry.target.querySelector('.counter-value')) {
-                            animateCounters();
+            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const gsapReady = typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined';
+
+            // Fallback: reduced motion, or GSAP failed to load (e.g. CDN blocked).
+            // Reveal everything immediately and still run the counters.
+            if (prefersReduced || !gsapReady) {
+                revealElements.forEach(el => el.classList.add('visible'));
+                animateCounters();
+                return;
+            }
+
+            // GSAP now owns the reveal animation via inline styles.
+            document.documentElement.classList.add('js-gsap');
+            gsap.registerPlugin(ScrollTrigger);
+
+            revealElements.forEach(el => {
+                gsap.fromTo(el,
+                    { opacity: 0, y: 30 },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.7,
+                        ease: 'power2.out',
+                        scrollTrigger: {
+                            trigger: el,
+                            start: 'top 88%',
+                            once: true
+                        },
+                        onStart: () => {
+                            el.classList.add('visible');
+                            // Trigger counters the moment the metrics section reveals.
+                            if (el.querySelector('.counter-value')) {
+                                animateCounters();
+                            }
                         }
                     }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
+                );
             });
-            
-            revealElements.forEach(el => observer.observe(el));
+
+            // Ensure correct positions after fonts/images shift layout.
+            ScrollTrigger.refresh();
         }
 
         // =====================
@@ -1026,6 +1075,12 @@
             });
         });
     </script>
+
+    <!-- GSAP + ScrollTrigger (loaded before GoatCounter; synchronous so `gsap`/`ScrollTrigger`
+         are defined by the time the DOMContentLoaded handler above runs). If these fail to load,
+         the JS falls back to CSS reveals and instant counters — nothing breaks. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
     <!-- GoatCounter Analytics -->
     <script data-goatcounter="https://carlresume.goatcounter.com/count"

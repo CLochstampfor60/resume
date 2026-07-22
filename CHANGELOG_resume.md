@@ -4,6 +4,33 @@ All notable changes to Carl Lochstampfor's resume site are documented in this fi
 
 ---
 
+## [2.2.0] - 2026-07-22
+
+### Added — GSAP Animation Engine
+- **GSAP 3.12.5 + ScrollTrigger** loaded from cdnjs (before GoatCounter, synchronous so the plugins are ready when the DOMContentLoaded handler runs)
+- **CSP updated**: `https://cdnjs.cloudflare.com` added to `script-src`; `preconnect` hint added for cdnjs
+- **Counters rewritten on GSAP** (`gsap.to` proxy tween, `power2.out` easing) replacing the manual `requestAnimationFrame` loop — smoother easing, plus a one-time guard (`data-counted`) so re-entering the metrics section no longer restarts the count
+- **Scroll-reveal rewritten on ScrollTrigger** (`fromTo` per section, `start: 'top 88%'`, `once: true`) replacing the `IntersectionObserver` — more precise, professional reveal timing
+- **Graceful fallback**: if GSAP fails to load or `prefers-reduced-motion` is set, JS reveals all sections immediately and snaps counters to final values — nothing breaks with or without the CDN
+
+### Added — Typography (UI/UX design-system recommendation)
+- **Crimson Pro** academic serif applied to the nameplate (`header h1`) and section headings (`main section > h2`) to reinforce the research-portfolio identity; Inter retained for all body/UI text. Applied via a single CSS selector (zero HTML changes) — remove the two CSS rules + the Crimson Pro font link to revert. No CSP change needed (same Google Fonts origins)
+
+### Fixed
+- **Demo Video placeholder was rendering on the live site.** The block was wrapped in an HTML comment, but its inner "Option 1/2/3" comments contain `-->`, and **HTML comments cannot nest** — so the wrapper closed early and the "Demo Video Coming Soon" box leaked onto the page. Re-wrapped the entire block in an inert `<template id="cova-demo-video">` so nothing renders while **all markup is preserved** for later use (re-enable by removing the two template tags)
+
+### Changed
+- **Version bumped to v2.2.0**; visible version string updated in the social links bar
+
+### Preserved (per handoff requirements)
+- CSP header maintained and correctly extended for the new cdnjs domain
+- GoatCounter analytics kept as the last script before `</body>`
+- Dark mode intact on all elements (typography change is font-family only)
+- Print stylesheet still forces reveals visible and accordions open (`.reveal` print override beats GSAP inline styles via `!important`)
+- Mobile responsiveness (~380px) and `prefers-reduced-motion` respected (dedicated GSAP fallback path)
+
+---
+
 ## [2.1.0] - 2026-07-22
 
 ### Added — Research Content Expansion (extracted from COVA & COVA-X preprints)
