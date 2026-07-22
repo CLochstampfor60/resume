@@ -399,3 +399,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Internal working docs (prior prompts, handoffs, change notes) — keep local only
+internal_docs/
