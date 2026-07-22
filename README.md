@@ -52,3 +52,13 @@ This repository is more than a static document; it is a hardened, search-optimiz
 
 - This project is licensed under the terms of the **MIT license**.
 - Designed and maintained by Carl Lochstampfor, Jr.
+
+## 📈 Analytics & Privacy
+
+This site uses [GoatCounter](https://www.goatcounter.com) — a privacy-first, open-source,
+cookieless analytics service. No cookies are set, no personal data is collected, and no
+consent banner is required. Aggregate visit counts only.
+
+## 📜 Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for notable changes to the site.
