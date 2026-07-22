@@ -396,6 +396,16 @@
                                         </ul>
                                     </div>
                                     <div>
+                                        <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-2">🏗️ Pipeline Architecture</h4>
+                                        <div class="bg-white dark:bg-slate-700 rounded-lg p-2 border border-slate-200 dark:border-slate-600">
+                                            <img src="Images/cova_workflow/" 
+                                                 alt="COVA Pipeline Architecture diagram showing prompt templates flowing through Qwen 2.5 14B to multi-agent generation loop with attacker and victim agents, then through quality pipeline (contamination scan, stage-direction strip, automated relabeling) to produce 10,985 labeled conversations" 
+                                                 class="w-full rounded" 
+                                                 loading="lazy">
+                                        </div>
+                                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 italic">End-to-end pipeline: prompts → local LLM → multi-agent dialogue → quality checks → labeled dataset</p>
+                                    </div>
+                                    <div>
                                         <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-2">👤 My Contributions</h4>
                                         <p><strong>Lead author.</strong> I designed and implemented the multi-agent generation pipeline that produces realistic attacker-victim dialogue exchanges. I engineered the 28-feature extraction system and TF-IDF representation, built the v2 label-audit tooling that corrected 1,594 mislabeled conversations, and trained and evaluated all eight baseline classifiers.</p>
                                     </div>
