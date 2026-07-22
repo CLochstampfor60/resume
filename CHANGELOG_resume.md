@@ -4,6 +4,20 @@ All notable changes to Carl Lochstampfor's resume site are documented in this fi
 
 ---
 
+## [2.2.1] - 2026-07-22
+
+### Changed — Executive Summary rewrite (CCI research completed)
+- **Executive Summary rewritten** to reflect that the CCI Undergraduate Research Program is now complete: repositioned as an **AI security researcher with two arXiv preprints on synthetic fraud detection** (COVA framework, **under review at IEEE DASC and IEEE BigData 2026**) and a **live dataset platform (ScamLingua.org)**
+- Added specificity to the professional background: **high-risk, regulated financial environments (FNMA, FHLMC, FHA, VA)** and a **proven record of managing 3× standard workloads while sustaining 95%+ accuracy**
+- **JSON-LD `description`** updated to mirror the new summary for SEO/structured-data consistency
+- Research framing kept **internally consistent** with the "Under Review" research cards (arXiv preprints, not "peer-reviewed/published")
+- **GPA remains 3.9** (unchanged); **version bumped to v2.2.1**
+
+### Preserved
+- CSP header, GoatCounter placement, dark mode, print stylesheet, mobile responsiveness, and `prefers-reduced-motion` — all unchanged (content-only edit)
+
+---
+
 ## [2.2.0] - 2026-07-22
 
 ### Added — GSAP Animation Engine
