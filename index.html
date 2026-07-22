@@ -66,8 +66,20 @@
         "Python Programming",
         "Large Language Models (LLMs)",
         "Synthetic Data Generation",
+        "Multi-Agent LLM Systems",
+        "Prompt Engineering",
         "Transformer Fine-Tuning",
+        "Longformer",
+        "DistilBERT",
+        "Hugging Face Transformers",
+        "PyTorch",
+        "XGBoost",
+        "scikit-learn",
+        "TF-IDF Text Classification",
+        "Conversational AI Classification",
         "Dataset Engineering",
+        "Smishing Detection",
+        "Social Engineering Defense",
         "Elder Fraud Detection",
         "AI Governance",
         "Trust-Focused Web Engineering",
@@ -169,6 +181,21 @@
             border-color: rgba(124, 58, 237, 0.4);
         }
 
+        /* Research "Technical Details" Accordion (native <details>) */
+        details.research-details > summary {
+            cursor: pointer;
+            list-style: none;
+        }
+        details.research-details > summary::-webkit-details-marker { display: none; }
+        details.research-details > summary .chevron {
+            display: inline-block;
+            transition: transform 0.2s ease;
+        }
+        details.research-details[open] > summary .chevron { transform: rotate(90deg); }
+        @media (prefers-reduced-motion: reduce) {
+            details.research-details > summary .chevron { transition: none; }
+        }
+
         /* Metric Card Pulse */
         .metric-card {
             position: relative;
@@ -201,6 +228,10 @@
             main { padding-bottom: 0 !important; }
             .reveal { opacity: 1 !important; transform: none !important; }
             .metric-card::before { display: none; }
+            /* Force research accordions fully open for clean PDF export */
+            details.research-details > .research-details-body { display: block !important; }
+            details.research-details > summary .chevron { display: none; }
+            details.research-details > summary { cursor: default; }
         }
 
         /* Reduced Motion */
@@ -248,7 +279,7 @@
                 <span class="text-slate-300 dark:text-slate-600">|</span>
                 <a href="https://sites.wp.odu.edu/locky/" target="_blank" rel="noopener noreferrer" class="hover:text-purple-600 font-semibold transition">ODU Portfolio</a>
                 <span class="text-slate-300 dark:text-slate-600">|</span>
-                <span class="text-slate-900 dark:text-slate-100 font-semibold">e-Resume v2.0.0</span>
+                <span class="text-slate-900 dark:text-slate-100 font-semibold">e-Resume v2.1.0</span>
             </div>
         </section>
 
@@ -313,8 +344,10 @@
                                 Established baseline classification using <strong class="font-semibold">XGBoost + TF-IDF</strong> achieving <strong class="font-semibold">72.5% accuracy</strong> across 8 elder-fraud categories.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-3">
-                                <span class="tech-tag bg-purple-100 text-purple-800 dark:bg-purple-900/50 dark:text-purple-300">LLM Agents</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300">Synthetic Data</span>
+                                <span class="tech-tag bg-purple-100 text-purple-800 dark:bg-purple-900/50 dark:text-purple-300">Multi-Agent LLM</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300">Qwen 2.5 14B</span>
+                                <span class="tech-tag bg-teal-100 text-teal-800 dark:bg-teal-900/50 dark:text-teal-300">Ollama</span>
+                                <span class="tech-tag bg-orange-100 text-orange-800 dark:bg-orange-900/50 dark:text-orange-300">scikit-learn</span>
                                 <span class="tech-tag bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300">XGBoost</span>
                                 <span class="tech-tag bg-teal-100 text-teal-800 dark:bg-teal-900/50 dark:text-teal-300">TF-IDF</span>
                                 <span class="tech-tag bg-slate-100 text-slate-800 dark:bg-slate-700 dark:text-slate-300">3,201 Samples</span>
@@ -322,6 +355,51 @@
                             <div class="text-xs text-slate-500 dark:text-slate-400">
                                 <strong>Venue:</strong> IEEE DASC 2026 (Under Review) • <strong>arXiv:</strong> 2604.11752
                             </div>
+
+                            <!-- Technical Details Accordion -->
+                            <details class="research-details mt-4 border-t border-purple-200/60 dark:border-purple-800/50 pt-3">
+                                <summary class="flex items-center gap-2 text-sm font-semibold text-purple-800 dark:text-purple-300 select-none hover:text-purple-600 dark:hover:text-purple-200 transition">
+                                    <span class="chevron text-purple-500 dark:text-purple-400">▶</span>
+                                    Technical Details
+                                </summary>
+                                <div class="research-details-body mt-4 space-y-4 text-sm text-slate-700 dark:text-slate-300">
+                                    <div>
+                                        <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-2">🛠️ Tools &amp; Frameworks</h4>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="tech-tag bg-slate-100 text-slate-800 dark:bg-slate-700 dark:text-slate-300">Python</span>
+                                            <span class="tech-tag bg-orange-100 text-orange-800 dark:bg-orange-900/50 dark:text-orange-300">scikit-learn</span>
+                                            <span class="tech-tag bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300">XGBoost</span>
+                                            <span class="tech-tag bg-yellow-100 text-yellow-800 dark:bg-yellow-900/50 dark:text-yellow-300">Hugging Face</span>
+                                            <span class="tech-tag bg-red-100 text-red-800 dark:bg-red-900/50 dark:text-red-300">PyTorch</span>
+                                            <span class="tech-tag bg-indigo-100 text-indigo-800 dark:bg-indigo-900/50 dark:text-indigo-300">DistilBERT</span>
+                                            <span class="tech-tag bg-purple-100 text-purple-800 dark:bg-purple-900/50 dark:text-purple-300">Longformer</span>
+                                            <span class="tech-tag bg-teal-100 text-teal-800 dark:bg-teal-900/50 dark:text-teal-300">Ollama</span>
+                                            <span class="tech-tag bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300">Qwen 2.5 14B</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-2">🔬 Methodology Highlights</h4>
+                                        <ul class="list-disc ml-5 space-y-1">
+                                            <li>Two independent LLM agents (attacker + victim) exchange turns iteratively, producing natural resistance and escalation dynamics across 8 elder-fraud categories and 16 prompt templates.</li>
+                                            <li>Parameterized victim personas (age 65–85) with trust, scam-awareness, and tech-savviness traits; attacker knowledge tiers (cold-call 50% / partial 30% / full 20%).</li>
+                                            <li>Pivoted to local inference on an NVIDIA RTX 4080 Super after commercial API guardrails blocked scam role-play — enabling zero API cost and full data privacy.</li>
+                                            <li>Built a negation-aware v2 label-audit pipeline after discovering a 49.8% initial mismatch, relabeling 1,594 conversations for outcome-label integrity.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-2">📊 Notable Results</h4>
+                                        <ul class="list-disc ml-5 space-y-1">
+                                            <li>Benchmarked 8 models (6 classical ML + 2 transformers); <strong>XGBoost + TF-IDF led at 72.5% accuracy / 0.691 macro-F1</strong>.</li>
+                                            <li>TF-IDF lexical features beat 28 hand-engineered features by 16 points — quantifying how much discriminative signal lives in the raw text.</li>
+                                            <li>Isolated input truncation and limited data scale as the transformer bottleneck — a hypothesis directly tested (and confirmed) in COVA-X.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-2">👤 My Contributions</h4>
+                                        <p><strong>Lead author.</strong> Designed and implemented the two-agent generation pipeline, engineered the 28-feature + TF-IDF representation, built the v2 label-audit and relabeling tooling, and trained and evaluated all eight baseline models.</p>
+                                    </div>
+                                </div>
+                            </details>
                         </div>
                         <div class="flex flex-col gap-2 no-print">
                             <a href="https://arxiv.org/abs/2604.11752" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 bg-purple-700 text-white rounded-lg font-semibold text-sm hover:bg-purple-800 transition shadow-sm">
@@ -347,14 +425,59 @@
                             </p>
                             <div class="flex flex-wrap gap-2 mb-3">
                                 <span class="tech-tag bg-purple-100 text-purple-800 dark:bg-purple-900/50 dark:text-purple-300">Longformer</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300">Transformer Fine-Tuning</span>
+                                <span class="tech-tag bg-yellow-100 text-yellow-800 dark:bg-yellow-900/50 dark:text-yellow-300">Hugging Face</span>
+                                <span class="tech-tag bg-red-100 text-red-800 dark:bg-red-900/50 dark:text-red-300">PyTorch</span>
                                 <span class="tech-tag bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300">Ollama</span>
-                                <span class="tech-tag bg-teal-100 text-teal-800 dark:bg-teal-900/50 dark:text-teal-300">Qwen</span>
+                                <span class="tech-tag bg-teal-100 text-teal-800 dark:bg-teal-900/50 dark:text-teal-300">Qwen 2.5 14B</span>
                                 <span class="tech-tag bg-slate-100 text-slate-800 dark:bg-slate-700 dark:text-slate-300">10,985 Samples</span>
                             </div>
                             <div class="text-xs text-slate-500 dark:text-slate-400">
                                 <strong>Venue:</strong> IEEE BigData 2026 (Under Review) • <strong>arXiv:</strong> 2606.06879
                             </div>
+
+                            <!-- Technical Details Accordion -->
+                            <details class="research-details mt-4 border-t border-purple-200/60 dark:border-purple-800/50 pt-3">
+                                <summary class="flex items-center gap-2 text-sm font-semibold text-purple-800 dark:text-purple-300 select-none hover:text-purple-600 dark:hover:text-purple-200 transition">
+                                    <span class="chevron text-purple-500 dark:text-purple-400">▶</span>
+                                    Technical Details
+                                </summary>
+                                <div class="research-details-body mt-4 space-y-4 text-sm text-slate-700 dark:text-slate-300">
+                                    <div>
+                                        <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-2">🛠️ Tools &amp; Frameworks</h4>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="tech-tag bg-purple-100 text-purple-800 dark:bg-purple-900/50 dark:text-purple-300">Longformer</span>
+                                            <span class="tech-tag bg-indigo-100 text-indigo-800 dark:bg-indigo-900/50 dark:text-indigo-300">DistilBERT</span>
+                                            <span class="tech-tag bg-yellow-100 text-yellow-800 dark:bg-yellow-900/50 dark:text-yellow-300">Hugging Face</span>
+                                            <span class="tech-tag bg-red-100 text-red-800 dark:bg-red-900/50 dark:text-red-300">PyTorch</span>
+                                            <span class="tech-tag bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300">XGBoost</span>
+                                            <span class="tech-tag bg-teal-100 text-teal-800 dark:bg-teal-900/50 dark:text-teal-300">Ollama</span>
+                                            <span class="tech-tag bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300">Qwen 2.5 14B</span>
+                                            <span class="tech-tag bg-slate-100 text-slate-800 dark:bg-slate-700 dark:text-slate-300">Dual-GPU (RTX 4080S + 5060 Ti)</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-2">🔬 Methodology Highlights</h4>
+                                        <ul class="list-disc ml-5 space-y-1">
+                                            <li>Scaled the corpus 3.4× to <strong>10,985 conversations (88,852 turns)</strong> with five distinct victim/attacker profiles per scam type for behavioral diversity.</li>
+                                            <li>Engineered a three-role generation architecture for virtual-kidnapping scenarios, cutting artifact flag rates from 67.1% to 46.5%.</li>
+                                            <li>Built a multi-stage quality lifecycle — contamination scanning, stage-direction stripping, and automated relabeling — driving a <strong>12.7× label-consistency gain (49.8% → 3.9% correction rate)</strong>.</li>
+                                            <li>Characterized Qwen 2.5 14B capability limits under sustained emotional pressure, including a salience-bias effect where enumerating forbidden patterns increased their production.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-2">📊 Notable Results</h4>
+                                        <ul class="list-disc ml-5 space-y-1">
+                                            <li><strong>Longformer overtook XGBoost on every metric</strong> (79.71% accuracy / 0.779 macro-F1 vs. 78.43% / 0.756), directly confirming the first paper's data-scale hypothesis.</li>
+                                            <li>Transformers gained the most from scale (Longformer +11.2 macro-F1 points vs. XGBoost +6.5), with the biggest edge on the minority "complied" class.</li>
+                                            <li>A pre/post-cleanup sensitivity analysis showed all three architectures improved — evidence the pipeline recovered genuine label-relevant signal, not architecture-specific noise.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-2">👤 My Contributions</h4>
+                                        <p><strong>Lead author.</strong> Scaled the generation pipeline across dual-GPU workstations, designed the three-role virtual-kidnapping architecture, built the multi-stage quality-lifecycle tooling (contamination scan, stage-direction stripping, automated relabeling), and retrained and evaluated all classifiers to validate the data-scale hypothesis.</p>
+                                    </div>
+                                </div>
+                            </details>
                         </div>
                         <div class="flex flex-col gap-2 no-print">
                             <a href="https://arxiv.org/abs/2606.06879" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 bg-purple-700 text-white rounded-lg font-semibold text-sm hover:bg-purple-800 transition shadow-sm">
@@ -396,6 +519,37 @@
             </div>
         </section>
 
+        <!-- Research Timeline -->
+        <section class="mb-12 reveal">
+            <h2 class="text-2xl font-bold mb-6 border-b-2 border-indigo-600 dark:border-indigo-500 pb-2 uppercase text-center md:text-left">🗓️ Research Timeline</h2>
+            <ol class="relative ml-3 border-l-2 border-purple-300 dark:border-purple-700">
+                <li class="mb-8 ml-6">
+                    <span class="absolute -left-2 flex h-4 w-4 items-center justify-center rounded-full bg-purple-600 ring-4 ring-white dark:ring-slate-900"></span>
+                    <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
+                        <time class="text-xs font-bold uppercase tracking-wide text-purple-700 dark:text-purple-400">Apr 2026</time>
+                        <h3 class="font-bold text-slate-800 dark:text-slate-100">COVA Framework &amp; Dataset</h3>
+                    </div>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">First public multi-turn smishing dataset — 3,201 conversations, 8-model baseline (XGBoost + TF-IDF, 72.5%). <span class="text-slate-500 dark:text-slate-500">arXiv:2604.11752</span></p>
+                </li>
+                <li class="mb-8 ml-6">
+                    <span class="absolute -left-2 flex h-4 w-4 items-center justify-center rounded-full bg-indigo-600 ring-4 ring-white dark:ring-slate-900"></span>
+                    <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
+                        <time class="text-xs font-bold uppercase tracking-wide text-indigo-700 dark:text-indigo-400">Jun 2026</time>
+                        <h3 class="font-bold text-slate-800 dark:text-slate-100">COVA-X Expanded Benchmark</h3>
+                    </div>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Scaled to 10,985 conversations; Longformer surpasses XGBoost at 79.71% accuracy, confirming the data-scale hypothesis. <span class="text-slate-500 dark:text-slate-500">arXiv:2606.06879</span></p>
+                </li>
+                <li class="ml-6">
+                    <span class="absolute -left-2 flex h-4 w-4 items-center justify-center rounded-full bg-teal-600 ring-4 ring-white dark:ring-slate-900"></span>
+                    <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
+                        <time class="text-xs font-bold uppercase tracking-wide text-teal-700 dark:text-teal-400">2026</time>
+                        <h3 class="font-bold text-slate-800 dark:text-slate-100">ScamLingua Platform</h3>
+                    </div>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Self-built distribution platform bringing the COVA research datasets and benchmarks to the broader AI-safety community.</p>
+                </li>
+            </ol>
+        </section>
+
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <!-- Left Column: Skills & Education -->
             <div class="lg:col-span-1 space-y-8">
@@ -404,11 +558,15 @@
                     <ul class="space-y-3 text-sm">
                         <li>
                             <p class="font-semibold text-slate-700 dark:text-slate-300">Certifications:</p>
-                            <span class="text-slate-600 dark:text-slate-400">CompTIA <strong class="font-bold">Security+</strong>, Network+, A+; <strong class="font-bold">Linux+ (In-Progress)</strong></span>
+                            <span class="text-slate-600 dark:text-slate-400">CompTIA <strong class="font-bold">Security+</strong>, Network+, A+<!-- ; <strong class="font-bold">Linux+ (In-Progress)</strong> — paused; kept for possible later resumption --></span>
                         </li>
                         <li>
                             <p class="font-semibold text-slate-700 dark:text-slate-300">AI/ML Research:</p>
-                            <span class="text-slate-600 dark:text-slate-400"><strong class="font-bold">LLMs</strong>, Synthetic Data Generation, <strong class="font-bold">Transformer Fine-Tuning</strong>, Dataset Engineering, Ollama/Qwen Local Inference</span>
+                            <span class="text-slate-600 dark:text-slate-400"><strong class="font-bold">Multi-Agent LLMs</strong>, Synthetic Data Generation, <strong class="font-bold">Transformer Fine-Tuning</strong>, Prompt Engineering, Dataset Engineering, Ollama/Qwen Local Inference</span>
+                        </li>
+                        <li>
+                            <p class="font-semibold text-slate-700 dark:text-slate-300">ML Frameworks:</p>
+                            <span class="text-slate-600 dark:text-slate-400"><strong class="font-bold">Hugging Face Transformers, PyTorch</strong>, scikit-learn, <strong class="font-bold">XGBoost</strong>, Longformer/DistilBERT, TF-IDF</span>
                         </li>
                         <li>
                             <p class="font-semibold text-slate-700 dark:text-slate-300">Cybersecurity:</p>

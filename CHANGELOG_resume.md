@@ -1,6 +1,31 @@
-# CHANGELOG Update Entry
+# Resume Changelog
 
-Add this entry to the top of your existing `CHANGELOG_resume.md`:
+All notable changes to Carl Lochstampfor's resume site are documented in this file.
+
+---
+
+## [2.1.0] - 2026-07-22
+
+### Added — Research Content Expansion (extracted from COVA & COVA-X preprints)
+- **"Technical Details" accordion** on the COVA and COVA-X research cards (native `<details>`/`<summary>`, no JS), each covering Tools & Frameworks, Methodology Highlights, Notable Results, and a **"My Contributions"** statement written for interview readiness
+- **Research Timeline** section visualizing the COVA → COVA-X → ScamLingua progression (Apr 2026, Jun 2026, 2026)
+- **Expanded tech tags** on research cards reflecting the actual stack: Qwen 2.5 14B, Ollama, scikit-learn, Hugging Face Transformers, PyTorch, DistilBERT, Longformer, dual-GPU training
+- **New "ML Frameworks" skills line**: Hugging Face Transformers, PyTorch, scikit-learn, XGBoost, Longformer/DistilBERT, TF-IDF
+- **COVA-X methodology detail**: three-role virtual-kidnapping architecture (67.1% → 46.5% artifact rate), quality-lifecycle pipeline (contamination scan, stage-direction stripping, automated relabeling), 12.7× label-consistency improvement, documented Qwen 2.5 14B capability limits
+
+### Changed
+- **JSON-LD `knowsAbout`** expanded with specific technologies discovered in the papers (Multi-Agent LLM Systems, Prompt Engineering, Longformer, DistilBERT, Hugging Face Transformers, PyTorch, XGBoost, scikit-learn, TF-IDF Text Classification, Conversational AI Classification, Smishing Detection, Social Engineering Defense)
+- **AI/ML Research skills line** expanded with concrete framework names and Prompt Engineering
+- **Certifications:** `Linux+ (In-Progress)` commented out (study paused) — kept in source as an HTML comment for possible later resumption
+- **Version bumped to v2.1.0**; visible version string updated
+
+### Preserved (per handoff requirements)
+- Content Security Policy (CSP) — no new external resources required; unchanged
+- GoatCounter analytics script placement
+- Dark mode across all new elements
+- Print stylesheet — accordions force-open and chevrons hidden when printing
+- Mobile responsiveness (verified at ~380px) and reduced-motion support
+- Scroll-reveal (`reveal` class) on the new Research Timeline section
 
 ---
 
