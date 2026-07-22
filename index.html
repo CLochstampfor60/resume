@@ -25,7 +25,7 @@
     <link rel="canonical" href="https://clochstampfor60.github.io/resume/">
     
     <!-- Theme Color for Mobile Browsers -->
-    <meta name="theme-color" content="#1e40af">
+    <meta name="theme-color" content="#1E3A5F">
 
     <!-- Open Graph / Facebook Previews -->
     <meta property="og:type" content="website">
@@ -104,15 +104,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700&family=Inter:wght@100..900&display=swap" rel="stylesheet">
     
     <script>
+        // ============================================================
+        //  NAVY / GOLD / PERIWINKLE prototype palette  (branch: color-navy-gold)
+        //  Navy       = structure / authority   (headings, borders, primary buttons, scrollbar)
+        //  Gold       = highlights / achievements (GPA, metric accents, key stats)
+        //  Periwinkle = AI / research-specific   (research cards, AI badges, paper links, timeline)
+        //  Implementation: the built-in `blue` family is remapped to navy and
+        //  `purple`/`indigo` to periwinkle, so existing utility classes recolor
+        //  automatically. `gold` is a new token used for achievement accents.
+        // ============================================================
+        const navyScale = { 50:'#EEF3F8', 100:'#D6E1EE', 200:'#B0C6DD', 300:'#7F9EC0', 400:'#6E97C4', 500:'#4A76A8', 600:'#305C8C', 700:'#1E3A5F', 800:'#172E4B', 900:'#0F1E33' };
+        const periScale = { 50:'#EEF0FE', 100:'#E0E3FD', 200:'#C7CDFB', 300:'#A5AEF9', 400:'#818CF8', 500:'#6670F0', 600:'#4F57D6', 700:'#3F45AD', 800:'#313686', 900:'#262A66' };
+        const goldScale = { 50:'#FBF5E9', 100:'#F5E7C6', 200:'#E9CD86', 300:'#DDB44A', 400:'#C88A1E', 500:'#A16207', 600:'#835006', 700:'#653D05', 800:'#4B2E04', 900:'#331F02' };
         tailwind.config = {
             darkMode: 'class',
             theme: {
-                extend: { 
-                    colors: { 
-                        'cyber-blue': '#1e40af',
-                        'research-purple': '#7c3aed',
-                        'research-indigo': '#4f46e5'
-                    } 
+                extend: {
+                    colors: {
+                        'cyber-blue': '#1E3A5F',
+                        'research-purple': '#818CF8',
+                        'research-indigo': '#6670F0',
+                        navy:       { ...navyScale, DEFAULT: '#1E3A5F' },
+                        gold:       { ...goldScale, DEFAULT: '#A16207' },
+                        periwinkle: { ...periScale, DEFAULT: '#818CF8' },
+                        // Remap built-in brand families -> new palette:
+                        blue:   navyScale,   // navy  (structure/authority)
+                        purple: periScale,   // periwinkle (AI/research)
+                        indigo: periScale    // periwinkle (AI/research)
+                    }
                 }
             }
         }
@@ -137,8 +156,8 @@
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #e0e0e0; }
         .dark ::-webkit-scrollbar-track { background: #1e293b; }
-        ::-webkit-scrollbar-thumb { background: #1e40af; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #1d4ed8; }
+        ::-webkit-scrollbar-thumb { background: #1E3A5F; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #305C8C; }
         
         .carousel-item { display: none; animation: fade 0.5s ease-in-out; }
         .carousel-item.active { display: block; }
@@ -187,12 +206,12 @@
         /* Research Card Gradient Border */
         .research-card {
             position: relative;
-            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(79, 70, 229, 0.1));
-            border: 1px solid rgba(124, 58, 237, 0.3);
+            background: linear-gradient(135deg, rgba(129, 140, 248, 0.12), rgba(30, 58, 95, 0.06));
+            border: 1px solid rgba(129, 140, 248, 0.35);
         }
         .dark .research-card {
-            background: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(79, 70, 229, 0.1));
-            border-color: rgba(124, 58, 237, 0.4);
+            background: linear-gradient(135deg, rgba(129, 140, 248, 0.16), rgba(30, 58, 95, 0.10));
+            border-color: rgba(129, 140, 248, 0.40);
         }
 
         /* Research "Technical Details" Accordion (native <details>) */
@@ -236,7 +255,7 @@
             .no-print { display: none !important; }
             body { background: white !important; color: black !important; }
             section { break-inside: avoid; box-shadow: none; border: 1px solid #eee !important; margin-bottom: 1rem; padding: 1rem !important; }
-            a { text-decoration: underline; color: #1e40af !important; }
+            a { text-decoration: underline; color: #1E3A5F !important; }
             a[href]:after { content: " (" attr(href) ")"; font-size: 0.75rem; color: #666; }
             .chart-container { max-height: 300px; }
             main { padding-bottom: 0 !important; }
@@ -262,7 +281,7 @@
 
     <header class="sticky top-0 z-50 bg-white dark:bg-slate-900 shadow-md border-b dark:border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row justify-between items-center">
-            <h1 class="text-2xl md:text-3xl font-extrabold text-[#1e40af] dark:text-blue-500 tracking-tight text-center md:text-left uppercase">Carl Lochstampfor, Jr.</h1>
+            <h1 class="text-2xl md:text-3xl font-extrabold text-navy dark:text-blue-400 tracking-tight text-center md:text-left uppercase">Carl Lochstampfor, Jr.</h1>
             <div class="flex items-center space-x-6 mt-3 md:mt-0">
                 <nav class="space-x-4 flex flex-wrap justify-center no-print" aria-label="Primary Navigation">
                     <a href="#summary" class="nav-link text-sm font-semibold hover:text-blue-600 dark:hover:text-blue-400 text-slate-700 dark:text-slate-300">Summary</a>
@@ -294,7 +313,7 @@
                 <span class="text-slate-300 dark:text-slate-600">|</span>
                 <a href="https://sites.wp.odu.edu/locky/" target="_blank" rel="noopener noreferrer" class="hover:text-purple-600 font-semibold transition">ODU Portfolio</a>
                 <span class="text-slate-300 dark:text-slate-600">|</span>
-                <span class="text-slate-900 dark:text-slate-100 font-semibold">e-Resume v2.2.1</span>
+                <span class="text-slate-900 dark:text-slate-100 font-semibold">e-Resume v2.2.1 <span class="text-[#A16207] dark:text-[#C88A1E]">· navy-gold preview</span></span>
             </div>
         </section>
 
@@ -303,7 +322,7 @@
             <h2 class="text-3xl font-bold mb-4 border-b-2 border-blue-700 dark:border-blue-500 pb-2 uppercase text-center md:text-left">Executive Summary</h2>
             <div class="text-lg leading-relaxed bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg border-l-4 border-cyber-blue transition-colors">
                 <p>
-                    <strong class="font-bold">Cybersecurity undergraduate at Old Dominion University (3.9 GPA)</strong> with
+                    <strong class="font-bold">Cybersecurity undergraduate at Old Dominion University <span class="text-[#A16207] dark:text-[#DDB44A]">(3.9 GPA)</span></strong> with
                     <strong class="font-bold">CompTIA Security+, Network+, and A+</strong> certifications. <strong class="font-bold">AI security researcher</strong> with <strong class="font-bold">two arXiv preprints</strong> on synthetic fraud detection (COVA framework, under review at <strong class="font-bold">IEEE DASC</strong> and <strong class="font-bold">IEEE BigData 2026</strong>) and a <strong class="font-bold">live dataset platform (ScamLingua.org)</strong>.
                     Background includes over a decade in <strong class="font-bold">high-risk, regulated financial environments (FNMA, FHLMC, FHA, VA)</strong>, applying the same rigor to <strong class="font-bold">incident response, system hardening, and AI governance</strong>.
                     <strong class="font-bold">Proven record of managing 3× standard workloads while sustaining 95%+ accuracy.</strong>
@@ -314,19 +333,19 @@
         <!-- Research Metrics - Animated Counters -->
         <section class="mb-12 reveal">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="metric-card bg-gradient-to-br from-purple-600 to-indigo-700 text-white p-5 rounded-xl shadow-lg text-center">
+                <div class="metric-card bg-gradient-to-br from-[#1E3A5F] to-[#4F57D6] text-white p-5 rounded-xl shadow-lg text-center border-t-4 border-[#C88A1E]">
                     <div class="text-3xl md:text-4xl font-black counter-value" data-target="10985" data-suffix="">0</div>
                     <div class="text-xs md:text-sm font-medium opacity-90 mt-1 uppercase tracking-wide">Synthetic Conversations</div>
                 </div>
-                <div class="metric-card bg-gradient-to-br from-indigo-600 to-blue-700 text-white p-5 rounded-xl shadow-lg text-center">
+                <div class="metric-card bg-gradient-to-br from-[#4F57D6] to-[#6670F0] text-white p-5 rounded-xl shadow-lg text-center border-t-4 border-[#C88A1E]">
                     <div class="text-3xl md:text-4xl font-black counter-value" data-target="79.71" data-suffix="%" data-decimals="2">0</div>
                     <div class="text-xs md:text-sm font-medium opacity-90 mt-1 uppercase tracking-wide">Model Accuracy</div>
                 </div>
-                <div class="metric-card bg-gradient-to-br from-blue-600 to-cyan-700 text-white p-5 rounded-xl shadow-lg text-center">
+                <div class="metric-card bg-gradient-to-br from-[#305C8C] to-[#1E3A5F] text-white p-5 rounded-xl shadow-lg text-center border-t-4 border-[#C88A1E]">
                     <div class="text-3xl md:text-4xl font-black counter-value" data-target="8" data-suffix="">0</div>
                     <div class="text-xs md:text-sm font-medium opacity-90 mt-1 uppercase tracking-wide">Fraud Categories</div>
                 </div>
-                <div class="metric-card bg-gradient-to-br from-cyan-600 to-teal-700 text-white p-5 rounded-xl shadow-lg text-center">
+                <div class="metric-card bg-gradient-to-br from-[#3F45AD] to-[#4F57D6] text-white p-5 rounded-xl shadow-lg text-center border-t-4 border-[#C88A1E]">
                     <div class="text-3xl md:text-4xl font-black counter-value" data-target="2" data-suffix="">0</div>
                     <div class="text-xs md:text-sm font-medium opacity-90 mt-1 uppercase tracking-wide">Papers Under Review</div>
                 </div>
@@ -620,9 +639,9 @@
                     <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Scaled to 10,985 conversations; Longformer surpasses XGBoost at 79.71% accuracy, confirming the data-scale hypothesis. <span class="text-slate-500 dark:text-slate-500">arXiv:2606.06879</span></p>
                 </li>
                 <li class="ml-6">
-                    <span class="absolute -left-2 flex h-4 w-4 items-center justify-center rounded-full bg-teal-600 ring-4 ring-white dark:ring-slate-900"></span>
+                    <span class="absolute -left-2 flex h-4 w-4 items-center justify-center rounded-full bg-periwinkle-600 ring-4 ring-white dark:ring-slate-900"></span>
                     <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
-                        <time class="text-xs font-bold uppercase tracking-wide text-teal-700 dark:text-teal-400">2026</time>
+                        <time class="text-xs font-bold uppercase tracking-wide text-periwinkle-700 dark:text-periwinkle-400">2026</time>
                         <h3 class="font-bold text-slate-800 dark:text-slate-100">ScamLingua Platform</h3>
                     </div>
                     <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Self-built distribution platform bringing the COVA research datasets and benchmarks to the broader AI-safety community.</p>
@@ -673,7 +692,7 @@
                     <div class="space-y-4 text-sm">
                         <div>
                             <p class="font-semibold text-slate-800 dark:text-slate-200 uppercase text-xs">Old Dominion University</p>
-                            <p class="text-slate-600 dark:text-slate-400">B.S. Cybersecurity | <span class="italic font-medium text-blue-700 dark:text-blue-400">GPA: 3.9</span></p>
+                            <p class="text-slate-600 dark:text-slate-400">B.S. Cybersecurity | <span class="italic font-medium text-[#A16207] dark:text-[#DDB44A]">GPA: 3.9</span></p>
                             <p class="text-xs text-purple-600 dark:text-purple-400 mt-1">CCI Undergraduate Research Program</p>
                         </div>
                         <div>
@@ -1014,10 +1033,10 @@
                 datasets: [{
                     label: 'Skill Strength (1-10)',
                     data: [8, 9, 7, 7, 6],
-                    backgroundColor: 'rgba(124, 58, 237, 0.4)',
-                    borderColor: '#7c3aed',
+                    backgroundColor: 'rgba(129, 140, 248, 0.4)',
+                    borderColor: '#818CF8',
                     borderWidth: 2,
-                    pointBackgroundColor: '#7c3aed'
+                    pointBackgroundColor: '#6670F0'
                 }]
             };
 
