@@ -4,6 +4,28 @@ All notable changes to Carl Lochstampfor's resume site are documented in this fi
 
 ---
 
+## [2.4.0] - 2026-07-22
+
+### Added — Pipeline demo screenshots in the research accordions
+- **COVA → "🖼️ Pipeline in Action"**: new 2-slide carousel below the Pipeline Architecture section — generation demo ("Generating 10 bank conversations via Qwen 2.5 14B (8m 50s)") and a sample dialogue ("skeptical victim resists social engineering")
+- **COVA-X → "🖼️ Scaling to 10K+"**: new 2-slide carousel — quality scan ("94.1% clean rate, artifact taxonomy breakdown") and the final dataset status ("10,995 conversations across 8 fraud categories")
+- **🏗️ Pipeline Architecture** remains a standalone image section (not folded into a carousel)
+- Five screenshots added under `Images/cova_workflow/`: `cova_pipeline_architecture.png`, `cova_generation_demo.png`, `cova_sample_dialogue_bank.png`, `cova_quality_scan.png`, `cova_dataset_complete.png`
+
+### Technical
+- **New container-scoped carousel** (`moveCarousel(id, dir)` + `.cova-carousel-item`): each research carousel operates only on its own container's slides, so COVA and COVA-X carousels are independent of each other and of the File System project's global `.carousel-item` carousel
+- Images constrained to `max-w-2xl`, `loading="lazy"`, dark-mode frames, reduced-motion disables the crossfade, nav buttons are `.no-print`, and the print stylesheet reveals all carousel slides stacked for a complete PDF export
+
+### Notes
+- The dataset screenshot shows **10,995** conversations (current live repo, +10 bank conversations generated 2026-07-22); the published benchmark figures elsewhere remain **10,985** (the paper snapshot) — intentionally distinct, so the caption reads "Final dataset" for the live scan
+- Removed two unused alternate architecture renders (`cova_pipeline_arc_GROK.jpg`, `cova_pipeline_architecture_Gemini.png`)
+- **Version bumped to v2.4.0**
+
+### Preserved
+- CSP header (same-origin images need no change), GoatCounter placement, dark mode, print stylesheet, mobile responsiveness, GSAP animations, and `prefers-reduced-motion`
+
+---
+
 ## [2.3.0] - 2026-07-22
 
 ### Changed — Navy / Gold / Periwinkle color system

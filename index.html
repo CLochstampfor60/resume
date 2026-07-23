@@ -162,6 +162,11 @@
         .carousel-item { display: none; animation: fade 0.5s ease-in-out; }
         .carousel-item.active { display: block; }
         @keyframes fade { from { opacity: 0.4; } to { opacity: 1; } }
+
+        /* COVA "Pipeline in Action" mini-carousel — scoped class so it stays fully
+           independent of the File System project's global .carousel-item state. */
+        .cova-carousel-item { display: none; animation: fade 0.5s ease-in-out; }
+        .cova-carousel-item.active { display: block; }
         
         .nav-link { transition: color 0.2s ease; }
         section { transition: background-color 0.3s ease, border-color 0.3s ease; }
@@ -266,6 +271,8 @@
             details.research-details > summary { pointer-events: none; cursor: default; }
             details.research-details > summary .chevron { display: none; }
             details.research-details > summary::after { content: " (expanded)"; font-size: 0.7rem; color: #888; font-weight: normal; }
+            /* Reveal every COVA "Pipeline in Action" screenshot (not just the active slide) for a complete PDF */
+            .cova-carousel-item { display: block !important; break-inside: avoid; margin-bottom: 0.5rem; }
         }
 
         /* Reduced Motion */
@@ -273,6 +280,7 @@
             .reveal { transition: none; opacity: 1; transform: none; }
             .metric-card::before { animation: none; }
             .carousel-item { animation: none; }
+            .cova-carousel-item { animation: none; }
         }
     </style>
 </head>
@@ -313,7 +321,7 @@
                 <span class="text-slate-300 dark:text-slate-600">|</span>
                 <a href="https://sites.wp.odu.edu/locky/" target="_blank" rel="noopener noreferrer" class="hover:text-purple-600 font-semibold transition">ODU Portfolio</a>
                 <span class="text-slate-300 dark:text-slate-600">|</span>
-                <span class="text-slate-900 dark:text-slate-100 font-semibold">e-Resume v2.3.0</span>
+                <span class="text-slate-900 dark:text-slate-100 font-semibold">e-Resume v2.4.0</span>
             </div>
         </section>
 
@@ -437,6 +445,24 @@
                                         <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 italic text-center">End-to-end pipeline: prompts → local LLM → multi-agent dialogue → quality checks → labeled dataset</p>
                                     </div>
                                     <div>
+                                        <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-2">🖼️ Pipeline in Action</h4>
+                                        <div class="max-w-2xl mx-auto">
+                                            <div id="covaCarousel" class="relative bg-slate-900 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-600 shadow-md">
+                                                <div class="cova-carousel-item active">
+                                                    <img src="Images/cova_workflow/cova_generation_demo.png" alt="Terminal output showing the COVA generation pipeline completing 10 bank scam conversations via Qwen 2.5 14B in 8 minutes 50 seconds" loading="lazy" class="w-full h-auto object-contain bg-slate-800">
+                                                    <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center">Generating 10 bank conversations via Qwen 2.5 14B (8m 50s)</div>
+                                                </div>
+                                                <div class="cova-carousel-item">
+                                                    <img src="Images/cova_workflow/cova_sample_dialogue_bank.png" alt="Sample generated bank scam conversation (turns 0-5) in which a skeptical victim persona resists the attacker's social engineering" loading="lazy" class="w-full h-auto object-contain bg-slate-800">
+                                                    <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center">Sample output: skeptical victim resists social engineering</div>
+                                                </div>
+                                                <button type="button" onclick="moveCarousel('covaCarousel', -1)" aria-label="Previous screenshot" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition font-bold no-print">❮</button>
+                                                <button type="button" onclick="moveCarousel('covaCarousel', 1)" aria-label="Next screenshot" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition font-bold no-print">❯</button>
+                                            </div>
+                                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 italic text-center">Live pipeline screenshots: generation → sample dialogue</p>
+                                        </div>
+                                    </div>
+                                    <div>
                                         <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-2">👤 My Contributions</h4>
                                         <p><strong>Lead author.</strong> I designed and implemented the multi-agent generation pipeline that produces realistic attacker-victim dialogue exchanges. I engineered the 28-feature extraction system and TF-IDF representation, built the v2 label-audit tooling that corrected 1,594 mislabeled conversations, and trained and evaluated all eight baseline classifiers.</p>
                                     </div>
@@ -514,6 +540,24 @@
                                             <li><strong>Key challenge identified:</strong> distinguishing partial compliance from rejection — victims who engage extensively before refusing present similar lexical patterns to those who partially comply, making this the dominant error boundary across all architectures.</li>
                                             <li>A pre/post-cleanup sensitivity analysis showed all three architectures improved — evidence the pipeline recovered genuine label-relevant signal, not architecture-specific noise.</li>
                                         </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-2">🖼️ Scaling to 10K+</h4>
+                                        <div class="max-w-2xl mx-auto">
+                                            <div id="covaxCarousel" class="relative bg-slate-900 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-600 shadow-md">
+                                                <div class="cova-carousel-item active">
+                                                    <img src="Images/cova_workflow/cova_quality_scan.png" alt="COVA-X quality-assurance report showing a 94.1% clean rate with an artifact taxonomy breakdown" loading="lazy" class="w-full h-auto object-contain bg-slate-800">
+                                                    <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center">Quality scan: 94.1% clean rate, artifact taxonomy breakdown</div>
+                                                </div>
+                                                <div class="cova-carousel-item">
+                                                    <img src="Images/cova_workflow/cova_dataset_complete.png" alt="COVA dataset status report showing a total of 10,995 conversations across 8 fraud categories (romance, government impersonation, medicare, virtual kidnapping, grandparent, bank, lottery, investment), scanned 2026-07-22" loading="lazy" class="w-full h-auto object-contain bg-slate-800">
+                                                    <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center">Final dataset: 10,995 conversations across 8 fraud categories</div>
+                                                </div>
+                                                <button type="button" onclick="moveCarousel('covaxCarousel', -1)" aria-label="Previous screenshot" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition font-bold no-print">❮</button>
+                                                <button type="button" onclick="moveCarousel('covaxCarousel', 1)" aria-label="Next screenshot" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition font-bold no-print">❯</button>
+                                            </div>
+                                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 italic text-center">Scaling &amp; QA screenshots: quality scan → final dataset</p>
+                                        </div>
                                     </div>
                                     <div>
                                         <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-2">👤 My Contributions</h4>
@@ -1000,8 +1044,27 @@
             slides[currentSlide].classList.add('active');
         }
         
-        function moveSlide(n) { 
-            showSlide(currentSlide + n); 
+        function moveSlide(n) {
+            showSlide(currentSlide + n);
+        }
+
+        // =====================
+        // Research Mini-Carousels (container-scoped)
+        // Each carousel acts only on the .cova-carousel-item children of its own
+        // container id, so multiple carousels (COVA "Pipeline in Action" and
+        // COVA-X "Scaling to 10K+") stay independent — and never collide with the
+        // File System project's global .carousel-item carousel above.
+        // =====================
+        function moveCarousel(containerId, dir) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            const items = container.querySelectorAll('.cova-carousel-item');
+            if (items.length === 0) return;
+            let idx = Array.from(items).findIndex(item => item.classList.contains('active'));
+            if (idx < 0) idx = 0;
+            items[idx].classList.remove('active');
+            idx = (idx + dir + items.length) % items.length;
+            items[idx].classList.add('active');
         }
 
         // =====================
