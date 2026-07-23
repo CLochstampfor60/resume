@@ -61,4 +61,4 @@ consent banner is required. Aggregate visit counts only.
 
 ## 📜 Changelog
 
-See [CHANGELOG.md](CHANGELOG.md) for notable changes to the site.
+See [CHANGELOG_resume.md](CHANGELOG_resume.md) for notable changes to the site.
