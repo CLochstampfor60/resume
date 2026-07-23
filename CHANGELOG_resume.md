@@ -4,6 +4,26 @@ All notable changes to Carl Lochstampfor's resume site are documented in this fi
 
 ---
 
+## [2.3.0] - 2026-07-22
+
+### Changed — Navy / Gold / Periwinkle color system
+- **Site-wide palette overhaul** replacing the previous cyber-blue/purple/indigo scheme with a conservative, academic-research color system organized by a clear hierarchy:
+  - **Navy `#1E3A5F`** — structure/authority: header nameplate, all section headings + underlines, structural borders, primary/project buttons, scrollbar, executive-summary left border, print links, and the mobile `theme-color`
+  - **Gold `#A16207`** — highlights/achievements: GPA (Executive Summary + Education), and a gold top stripe on each research metric card as an achievement marker
+  - **Periwinkle `#818CF8`** — AI/research-specific: research cards (gradient + border), AI/paper badges, arXiv + ScamLingua buttons, research section + timeline headings/dots, and the skills radar chart
+- **Implementation**: Tailwind config remaps the built-in `blue`→navy and `purple`/`indigo`→periwinkle families (so existing utility classes recolor automatically) and adds a new `gold` token plus navy/periwinkle scales
+- **Metric cards** rewritten to cohesive navy/periwinkle gradients (two cards previously used cyan/teal that fell outside the new system)
+- **Radar chart** dataset colors updated to periwinkle
+
+### Notes
+- Teal (Labs section, ResearchGate link) and the multi-color tech-tag categories were intentionally left as-is; the recolor targets the core brand surfaces
+- **Version bumped to v2.3.0**
+
+### Preserved
+- CSP header, GoatCounter placement, dark mode (light/dark variants tuned together), print stylesheet, mobile responsiveness, GSAP animations, and `prefers-reduced-motion` — all unchanged
+
+---
+
 ## [2.2.1] - 2026-07-22
 
 ### Changed — Executive Summary rewrite (CCI research completed)
