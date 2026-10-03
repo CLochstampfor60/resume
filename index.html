@@ -767,6 +767,83 @@
                     <!-- Personal Projects Subsection -->
                     <div class="mt-6 pt-5 border-t border-slate-200 dark:border-slate-700">
                         <h3 class="text-sm font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-3">🔧 Personal Projects</h3>
+                        <div class="p-4 mb-4 border border-slate-300 dark:border-slate-700 rounded-lg bg-slate-50 dark:bg-slate-900 shadow-sm transition-colors">
+                            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
+                                <div>
+                                    <h4 class="font-bold text-base text-slate-800 dark:text-slate-200">Self-Hosted Research NAS &amp; Private AI Server</h4>
+                                    <p class="text-xs text-slate-600 dark:text-slate-400 font-semibold italic">Self-Directed Home Lab • Built &amp; Operational</p>
+                                </div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-tag bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-300">ZFS</span>
+                                    <span class="tech-tag bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-300">Docker</span>
+                                    <span class="tech-tag bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-300">3-2-1 Backup</span>
+                                    <span class="tech-tag bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-300">Least Privilege</span>
+                                    <span class="tech-tag bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-300">Ollama</span>
+                                    <span class="tech-tag bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-300">RAG</span>
+                                </div>
+                            </div>
+
+                            <div class="max-w-2xl mx-auto mb-4 no-print">
+                                <div id="homeLabCarousel" class="relative bg-slate-900 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-600 shadow-md">
+                                    <div class="cova-carousel-item active">
+                                        <a href="Images/homelab_nas/1_architecture_diagram.webp" target="_blank" rel="noopener noreferrer" class="block">
+                                            <img src="Images/homelab_nas/1_architecture_diagram.webp" alt="Architecture diagram of the home-lab research server: a reference manager feeds a primary NAS on a ZFS mirror, which sends a nightly encrypted copy off-site and a copy to an air-gapped offline drive, plus a separate copy to a local AI assistant" width="2688" height="1440" loading="lazy" class="w-full h-auto aspect-[4/3] object-contain bg-slate-800">
+                                        </a>
+                                        <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center min-h-[3rem] flex items-center justify-center">Architecture: storage, three backup copies, and the private AI layer</div>
+                                    </div>
+                                    <div class="cova-carousel-item">
+                                        <a href="Images/homelab_nas/2_build_motherboard.webp" target="_blank" rel="noopener noreferrer" class="block">
+                                            <img src="Images/homelab_nas/2_build_motherboard.webp" alt="Server build in progress: motherboard in an open case with a tower CPU cooler, two memory modules, and an M.2 solid-state drive installed" width="2000" height="1500" loading="lazy" class="w-full h-auto aspect-[4/3] object-contain bg-slate-800">
+                                        </a>
+                                        <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center min-h-[3rem] flex items-center justify-center">Build in progress: board, cooler, memory, and NVMe drive installed</div>
+                                    </div>
+                                    <div class="cova-carousel-item">
+                                        <a href="Images/homelab_nas/3_build_drive_bay.webp" target="_blank" rel="noopener noreferrer" class="block">
+                                            <img src="Images/homelab_nas/3_build_drive_bay.webp" alt="A 6 TB WD Red Plus NAS hard drive mounted in the case's drive cage, above the power supply and cabling" width="2000" height="1500" loading="lazy" class="w-full h-auto aspect-[4/3] object-contain bg-slate-800">
+                                        </a>
+                                        <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center min-h-[3rem] flex items-center justify-center">One of the two mirrored 6 TB NAS drives in the drive cage</div>
+                                    </div>
+                                    <div class="cova-carousel-item">
+                                        <a href="Images/homelab_nas/4_build_finished_gpu.webp" target="_blank" rel="noopener noreferrer" class="block">
+                                            <img src="Images/homelab_nas/4_build_finished_gpu.webp" alt="Interior of a compact home-lab server build showing a tower CPU cooler, two memory modules, a GeForce RTX graphics card, and bundled power cables" width="1810" height="1500" loading="lazy" class="w-full h-auto aspect-[4/3] object-contain bg-slate-800">
+                                        </a>
+                                        <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center min-h-[3rem] flex items-center justify-center">The completed build, with the GPU installed</div>
+                                    </div>
+                                    <div class="cova-carousel-item">
+                                        <a href="Images/homelab_nas/5_ups_power_panel.webp" target="_blank" rel="noopener noreferrer" class="block">
+                                            <img src="Images/homelab_nas/5_ups_power_panel.webp" alt="Server dashboard power panel showing the UPS online at a 90 W (10%) load, with 100% battery charge and 87 minutes of runtime remaining" width="884" height="344" loading="lazy" class="w-full h-auto aspect-[4/3] object-contain bg-slate-800">
+                                        </a>
+                                        <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center min-h-[3rem] flex items-center justify-center">UPS monitored by the server, with about 87 minutes of runtime at a 90 W load</div>
+                                    </div>
+                                    <div class="cova-carousel-item">
+                                        <a href="Images/homelab_nas/6_gpu_model_loaded.webp" target="_blank" rel="noopener noreferrer" class="block">
+                                            <img src="Images/homelab_nas/6_gpu_model_loaded.webp" alt="GPU status table showing an NVIDIA GeForce RTX 4060 Ti with about 4.9 GB of its 16 GB memory held by a local Ollama model server process, at 0% utilization" width="1133" height="509" loading="lazy" class="w-full h-auto aspect-[4/3] object-contain bg-slate-800">
+                                        </a>
+                                        <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center min-h-[3rem] flex items-center justify-center">Local model loaded in GPU memory on the 16 GB card</div>
+                                    </div>
+                                    <div class="cova-carousel-item">
+                                        <a href="Images/homelab_nas/7_research_assistant.webp" target="_blank" rel="noopener noreferrer" class="block">
+                                            <img src="Images/homelab_nas/7_research_assistant.webp" alt="A local AI assistant answering a question about adversarial robustness in machine learning with a ten-point summary, followed by six cited source papers" width="1395" height="1448" loading="lazy" class="w-full h-auto aspect-[4/3] object-contain bg-slate-800">
+                                        </a>
+                                        <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center min-h-[3rem] flex items-center justify-center">Private research assistant answering from the local library, with cited sources</div>
+                                    </div>
+                                    <button type="button" onclick="moveCarousel('homeLabCarousel', -1)" aria-label="Previous screenshot" class="absolute left-2 top-1/2 -translate-y-1/2 bg-slate-900/60 hover:bg-slate-700/60 text-white ring-1 ring-white/40 hover:ring-white/70 w-11 h-11 inline-flex items-center justify-center rounded-full transition font-bold no-print">❮</button>
+                                    <button type="button" onclick="moveCarousel('homeLabCarousel', 1)" aria-label="Next screenshot" class="absolute right-2 top-1/2 -translate-y-1/2 bg-slate-900/60 hover:bg-slate-700/60 text-white ring-1 ring-white/40 hover:ring-white/70 w-11 h-11 inline-flex items-center justify-center rounded-full transition font-bold no-print">❯</button>
+                                </div>
+                            </div>
+
+                            <div class="text-sm text-slate-700 dark:text-slate-300 space-y-3">
+                                <p>Designed, built, and hardened a research storage server on Unraid with native ZFS (mirrored ~5.4 TB data pool plus an NVMe app pool), paired with a private, on-premises AI research assistant, so prompts and unpublished research never reach a cloud AI service.</p>
+                                <ul class="list-disc ml-5 space-y-1">
+                                    <li><strong class="font-bold">Data protection:</strong> Engineered a layered 3-2-1 backup posture, automated end to end except a deliberately manual air-gapped drive: daily ZFS snapshots with retention, replication to the mirrored pool, monthly integrity scrubs, UPS-triggered clean shutdown, and a nightly off-site copy to encrypted cloud storage.</li>
+                                    <li><strong class="font-bold">Security-first design:</strong> Least-privilege, per-purpose shares with separate service and interactive accounts, no inbound internet exposure, and cloud AI APIs disabled. The AI layer is treated as an untrusted component with a bounded blast radius.</li>
+                                    <li><strong class="font-bold">Private AI assistant:</strong> Deployed GPU-accelerated local LLM inference (Ollama in Docker with GPU passthrough, 16 GB GPU) and a retrieval-augmented assistant over ~360 research papers in four per-topic knowledge bases, returning citation-backed answers.</li>
+                                    <li><strong class="font-bold">Evidence-based tuning:</strong> Chose the production model by running four candidates against the same knowledge base and a fixed three-question test (lookup, topical retrieval, and correct refusal of an out-of-corpus question). Traced inconsistent retrieval to a known upstream front-end issue rather than the model and adopted a reliable workaround.</li>
+                                </ul>
+                                <p class="text-xs text-slate-600 dark:text-slate-400">Built with: Unraid, ZFS, Sanoid/Syncoid, Docker, Ollama, Open WebUI, Zotero.</p>
+                                <p class="text-xs text-slate-600 dark:text-slate-400">Next: VPN-only remote access, VLAN segmentation, and a security audit of a self-hosted AI agent workspace in an isolated segment.</p>
+                            </div>
+                        </div>
                         <div class="p-4 border border-slate-300 dark:border-slate-700 rounded-lg bg-slate-50 dark:bg-slate-900 shadow-sm transition-colors">
                             <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
                                 <div>
