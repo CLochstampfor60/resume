@@ -11,7 +11,7 @@ A hardened, interactive résumé site for a cybersecurity undergraduate and AI s
 | Section | Contents |
 | --- | --- |
 | **Executive Summary** | Positioning statement plus animated metric counters (dataset size, model accuracy, credential counts). |
-| **Research** | The three-part research program — **COVA Framework**, **COVA-X Benchmark**, and the **ScamLingua Platform** — each with an arXiv preprint link, expandable technical-detail accordions, and image carousels of the pipeline in action. |
+| **Research** | The three-part research program. **COVA Framework** and **COVA-X Benchmark** are arXiv preprints: each card links its paper and has an expandable technical-detail accordion and an image carousel of the pipeline in action. **ScamLingua Platform** links the live site and its source repo. |
 | **Research Timeline** | Chronological view of COVA → COVA-X → ScamLingua → COVA-B → multi-model comparison study. |
 | **Technical Skills** | Categorized skill rows (security, AI/ML, tools, development, platforms), certifications, and a **Verify on Credly** button linking third-party proof of the CompTIA credentials. |
 | **Skill Distribution** | Chart.js doughnut chart that re-themes with light/dark mode. |
@@ -108,6 +108,8 @@ Accessibility is treated as a measured requirement, not an assumption — contra
 | `_source/Carl_Lochstampfor_Resume.docx` | Internal Word source the PDF is exported from. Tracked so résumé edits carry history; not part of the published site. |
 
 Both use stable, unversioned filenames so links never break, and version history lives in git rather than in the filename.
+
+The PDF links to LinkedIn, GitHub, the e-Resume and the ODU Portfolio, and each arXiv preprint ID links to its abstract page. By design it has no email address link.
 
 `_source/` is kept out of the GitHub Pages build by Jekyll's default rule of skipping underscore-prefixed paths, so the site itself only ever offers the PDF. It is still visible in this public repo, which is intentional: the point is that the site and the PDF are what people find first, not that the source is hidden. (Adding a `.nojekyll` file would start serving `_source/` from the website too.)
 
