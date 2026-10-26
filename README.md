@@ -2,7 +2,7 @@
 
 A hardened, interactive résumé site for a cybersecurity undergraduate and AI security researcher — published research, live project work, and a recruiter-ready PDF, all served as static HTML from GitHub Pages.
 
-**Live site:** <https://clochstampfor60.github.io/resume/> · **Current release:** e-Resume v2.17.0
+**Live site:** <https://clochstampfor60.github.io/resume/> · **Current release:** e-Resume v2.17.1
 
 ---
 
