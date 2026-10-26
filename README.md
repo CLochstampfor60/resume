@@ -2,7 +2,7 @@
 
 A hardened, interactive résumé site for a cybersecurity undergraduate and AI security researcher — published research, live project work, and a recruiter-ready PDF, all served as static HTML from GitHub Pages.
 
-**Live site:** <https://clochstampfor60.github.io/resume/> · **Current release:** e-Resume v2.15.1
+**Live site:** <https://clochstampfor60.github.io/resume/> · **Current release:** e-Resume v2.17.0
 
 ---
 
@@ -11,8 +11,8 @@ A hardened, interactive résumé site for a cybersecurity undergraduate and AI s
 | Section | Contents |
 | --- | --- |
 | **Executive Summary** | Positioning statement plus animated metric counters (dataset size, model accuracy, credential counts). |
-| **Research** | The three-part research program. **COVA Framework** and **COVA-X Benchmark** are arXiv preprints: each card links its paper and has an expandable technical-detail accordion and an image carousel of the pipeline in action. **ScamLingua Platform** links the live site and its source repo. |
-| **Research Timeline** | Chronological view of COVA → COVA-X → ScamLingua → COVA-B → multi-model comparison study. |
+| **Research** | **Tuteliq Phase 1** leads the section: an independent black-box evaluation of a commercial AI safety API, with a technical-detail accordion and a link to the published reports on ScamLingua. Then the three-part research program. **COVA Framework** and **COVA-X Benchmark** are arXiv preprints: each card links its paper and has an expandable technical-detail accordion and an image carousel of the pipeline in action. **ScamLingua Platform** links the live site and its source repo. |
+| **Research Timeline** | Chronological view of COVA → COVA-X → ScamLingua → Tuteliq Phase 1 → COVA-B → multi-model comparison study. |
 | **Technical Skills** | Categorized skill rows (security, AI/ML, tools, development, platforms), certifications, and a **Verify on Credly** button linking third-party proof of the CompTIA credentials. |
 | **Skill Distribution** | Chart.js doughnut chart that re-themes with light/dark mode. |
 | **Education · Featured Project · Personal Projects · Labs** | ODU coursework, the Secure File Sharing System walkthrough with screenshots, side projects, and applied lab work (NIST SP 800‑61 IR, OS hardening, pfSense, Snort/Wireshark). |

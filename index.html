@@ -49,7 +49,7 @@
       "name": "Carl Lochstampfor, Jr.",
       "url": "https://clochstampfor60.github.io/resume/",
       "jobTitle": "B.S. Cybersecurity Candidate & Undergraduate AI Security Researcher",
-      "description": "Cybersecurity undergraduate at Old Dominion University (3.9 GPA) with CompTIA Security+, Network+, and A+ certifications. AI security researcher with two arXiv preprints on synthetic fraud detection (COVA and COVA-X, both in the peer-review process) and a live dataset platform (ScamLingua.org). Background includes over a decade in high-risk, regulated financial environments (FNMA, FHLMC, FHA, VA), applying the same rigor to incident response, system hardening, and AI governance. Proven record of managing 3x standard workloads while sustaining 95%+ accuracy.",
+      "description": "Cybersecurity undergraduate at Old Dominion University (3.9 GPA) with CompTIA Security+, Network+, and A+ certifications. AI security researcher with two arXiv preprints on synthetic fraud detection (COVA and COVA-X, both in the peer-review process), an independent evaluation of a commercial AI safety API (Tuteliq, 2026), and a live dataset platform (ScamLingua.org). Background includes over a decade in high-risk, regulated financial environments (FNMA, FHLMC, FHA, VA), applying the same rigor to incident response, system hardening, and AI governance. Proven record of managing 3x standard workloads while sustaining 95%+ accuracy.",
       "affiliation": {
         "@type": "CollegeOrUniversity",
         "name": "Old Dominion University",
@@ -85,6 +85,7 @@
         "AI Governance",
         "Trust-Focused Web Engineering",
         "Ollama/Qwen Local Inference",
+        "Gemma 3 12B",
         "Retrieval-Augmented Generation (RAG)",
         "Open WebUI",
         "Docker",
@@ -185,7 +186,7 @@
                 <!-- Inherits the row's slate-600/slate-400 rather than overriding it: this is
                      the one non-link in the bar, so it should sit quieter than the navy links
                      while still clearing 4.5:1 in both themes. -->
-                <span class="font-semibold">e-Resume v2.16.3</span>
+                <span class="font-semibold">e-Resume v2.17.0</span>
             </div>
         </section>
 
@@ -195,7 +196,7 @@
             <div class="text-lg leading-relaxed bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg border-l-4 border-cyber-blue transition-colors">
                 <p>
                     <strong class="font-bold">Cybersecurity undergraduate at Old Dominion University <span class="text-[#A16207] dark:text-[#DDB44A]">(3.9 GPA)</span></strong> with
-                    <strong class="font-bold">CompTIA Security+, Network+, and A+</strong> certifications. <strong class="font-bold">AI security researcher</strong> with <strong class="font-bold">two arXiv preprints</strong> on synthetic fraud detection (COVA and COVA-X, both in the peer-review process) and a <strong class="font-bold">live dataset platform (ScamLingua.org)</strong>.
+                    <strong class="font-bold">CompTIA Security+, Network+, and A+</strong> certifications. <strong class="font-bold">AI security researcher</strong> with <strong class="font-bold">two arXiv preprints</strong> on synthetic fraud detection (COVA and COVA-X, both in the peer-review process), an <strong class="font-bold">independent evaluation of a commercial AI safety API</strong> (Tuteliq, 2026), and a <strong class="font-bold">live dataset platform (ScamLingua.org)</strong>.
                     Background includes over a decade in <strong class="font-bold">high-risk, regulated financial environments (FNMA, FHLMC, FHA, VA)</strong>, applying the same rigor to <strong class="font-bold">incident response, system hardening, and AI governance</strong>.
                     <strong class="font-bold">Proven record of managing 3× standard workloads while sustaining 95%+ accuracy.</strong>
                 </p>
@@ -242,6 +243,76 @@
             </p>
 
             <div class="space-y-6">
+                <!-- Tuteliq Phase 1 Evaluation -->
+                <div class="research-card p-6 rounded-xl shadow-lg transition-colors">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                        <div class="flex-1">
+                            <!-- flex-wrap (unlike the COVA cards): this title is long enough
+                                 that, unwrapped, the badge squeezes it to ~15 chars per line
+                                 at phone width. -->
+                            <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2">
+                                <span class="text-2xl">🧪</span>
+                                <h3 class="font-bold text-xl text-purple-800 dark:text-purple-400">Tuteliq Phase 1: Independent Evaluation of a Commercial AI Safety API</h3>
+                                <span class="tech-tag bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300">Published</span>
+                            </div>
+                            <p class="text-xs font-semibold text-slate-600 dark:text-slate-400 mb-2">Lead Evaluator | Sep&ndash;Oct 2026</p>
+                            <p class="text-sm text-slate-700 dark:text-slate-300 mb-3">
+                                Designed and ran an independent, unpaid black-box evaluation of Tuteliq's text-safety detection API
+                                across five harm categories, on 1,344 synthetic test cases generated locally with Gemma 3 12B. Froze and
+                                fingerprinted every dataset, scored results offline with 95% Wilson intervals, and validated labels through
+                                a blind second-evaluator check (82% agreement, Cohen's kappa 0.64). Reported strengths and clear weaknesses
+                                (social engineering: 83.8% detected, 15.9% false alarms). Authored a 36-page full report and a public
+                                summary, both published with Tuteliq's permission.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="tech-tag bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300">Gemma 3 12B</span>
+                                <span class="tech-tag bg-purple-100 text-purple-800 dark:bg-purple-900/50 dark:text-purple-300">Black-Box Testing</span>
+                                <span class="tech-tag bg-teal-100 text-teal-800 dark:bg-teal-900/50 dark:text-teal-300">5 Harm Categories</span>
+                                <span class="tech-tag bg-orange-100 text-orange-800 dark:bg-orange-900/50 dark:text-orange-300">Wilson Intervals</span>
+                                <span class="tech-tag bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300">Cohen's Kappa</span>
+                                <span class="tech-tag bg-slate-100 text-slate-800 dark:bg-slate-700 dark:text-slate-300">1,344 Cases</span>
+                            </div>
+                            <div class="text-xs text-slate-600 dark:text-slate-400">
+                                Synthetic, English-language text only; not a certification or audit.
+                            </div>
+
+                            <!-- Technical Details Accordion -->
+                            <details class="research-details mt-4 border-t border-purple-200/60 dark:border-purple-800/50 pt-3">
+                                <summary class="flex items-center gap-2 py-3 text-sm md:text-lg font-semibold text-purple-800 dark:text-purple-300 select-none hover:text-purple-900 dark:hover:text-purple-100 transition">
+                                    <span class="chevron text-purple-500 dark:text-purple-400">▶</span>
+                                    Technical Details
+                                </summary>
+                                <div class="research-details-body mt-4 space-y-4 text-sm text-slate-700 dark:text-slate-300">
+                                    <div>
+                                        <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-2">🔬 Evaluation Scope</h4>
+                                        <ul class="list-disc ml-5 space-y-1">
+                                            <li>Five harm categories.</li>
+                                            <li>1,344 test cases: 1,294 conversations + 50 single messages.</li>
+                                            <li>Second evaluator: Dr. Ayan Roy (Christopher Newport University).</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-2">📊 Results</h4>
+                                        <ul class="list-disc ml-5 space-y-1">
+                                            <li><strong>Romance scams:</strong> 100% (130/130) detected, 6.9% false alarms</li>
+                                            <li><strong>Coercive control:</strong> 99.2% detected, 0.8% false alarms</li>
+                                            <li><strong>Self-harm and emotional distress:</strong> 96.1% detected, 0.8% false alarms</li>
+                                            <li><strong>Bullying:</strong> 84.5% detected, 4.6% false alarms</li>
+                                            <li><strong>Social engineering:</strong> 83.8% detected, 15.9% false alarms</li>
+                                        </ul>
+                                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-2">Weakest areas: government-pretext identity scams (7 of 28 detected) and bullying that builds gradually from teasing (65.2%). Synthetic, English-language text; detector tuteliq-detect-v5.20261015, tested October 19, 2026.</p>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+                        <div class="flex flex-col gap-2 no-print">
+                            <a href="https://scamlingua.org/#evaluations" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-3 bg-purple-700 text-white rounded-lg font-semibold text-sm hover:bg-purple-800 transition shadow-sm">
+                                📎 Reports
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- COVA Paper -->
                 <div class="research-card p-6 rounded-xl shadow-lg transition-colors">
                     <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
@@ -554,13 +625,21 @@
                     </div>
                     <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Scaled to 10,985 conversations; Longformer surpasses XGBoost at 79.71% accuracy, confirming the data-scale hypothesis. <span class="text-slate-600 dark:text-slate-400">arXiv:2606.06879</span></p>
                 </li>
-                <li class="ml-6">
+                <li class="mb-8 ml-6">
                     <span class="absolute -left-2 flex h-4 w-4 items-center justify-center rounded-full bg-periwinkle-600 ring-4 ring-white dark:ring-slate-900"></span>
                     <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
                         <time class="text-xs font-bold uppercase tracking-wide text-periwinkle-700 dark:text-periwinkle-400">Jul 2026</time>
                         <h3 class="font-bold text-slate-800 dark:text-slate-100">ScamLingua Platform</h3>
                     </div>
                     <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Self-built distribution platform bringing the COVA research datasets and benchmarks to the broader AI-safety community.</p>
+                </li>
+                <li class="ml-6">
+                    <span class="absolute -left-2 flex h-4 w-4 items-center justify-center rounded-full bg-purple-600 ring-4 ring-white dark:ring-slate-900"></span>
+                    <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
+                        <time class="text-xs font-bold uppercase tracking-wide text-purple-700 dark:text-purple-400">Oct 2026</time>
+                        <h3 class="font-bold text-slate-800 dark:text-slate-100">Tuteliq Phase 1 Independent Evaluation</h3>
+                    </div>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Black-box evaluation of a commercial AI safety API across five harm categories; full report and public summary published.</p>
                 </li>
             </ol>
             <!-- Future / planning items: dashed line, muted styling to separate "done" from "in progress" -->
@@ -612,7 +691,7 @@
                         </li>
                         <li>
                             <p class="font-semibold text-slate-700 dark:text-slate-300">AI/ML Research:</p>
-                            <span class="text-slate-600 dark:text-slate-400"><strong class="font-bold">Multi-Agent LLMs</strong>, Synthetic Data Generation, <strong class="font-bold">Transformer Fine-Tuning</strong>, Prompt Engineering, Dataset Engineering, Ollama/Qwen Local Inference, RAG, Open WebUI</span>
+                            <span class="text-slate-600 dark:text-slate-400"><strong class="font-bold">Multi-Agent LLMs</strong>, Synthetic Data Generation, <strong class="font-bold">Transformer Fine-Tuning</strong>, Prompt Engineering, Dataset Engineering, Ollama/Qwen Local Inference, Gemma 3 12B, RAG, Open WebUI</span>
                         </li>
                         <li>
                             <p class="font-semibold text-slate-700 dark:text-slate-300">ML Frameworks:</p>
