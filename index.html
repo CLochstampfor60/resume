@@ -186,7 +186,7 @@
                 <!-- Inherits the row's slate-600/slate-400 rather than overriding it: this is
                      the one non-link in the bar, so it should sit quieter than the navy links
                      while still clearing 4.5:1 in both themes. -->
-                <span class="font-semibold">e-Resume v2.18.3</span>
+                <span class="font-semibold">e-Resume v2.19.0</span>
             </div>
         </section>
 
@@ -380,10 +380,12 @@
                                     <div>
                                         <h4 class="font-bold text-slate-800 dark:text-slate-100 uppercase text-xs tracking-wider mb-2">🏗️ Pipeline Architecture</h4>
                                         <div class="bg-white dark:bg-slate-700 rounded-lg p-2 border border-slate-200 dark:border-slate-600 max-w-2xl mx-auto">
-                                            <img src="Images/cova_workflow/cova_pipeline_architecture.png"
-                                                 alt="COVA Pipeline Architecture diagram showing prompt templates flowing through Qwen 2.5 14B to multi-agent generation loop with attacker and victim agents, then through quality pipeline (contamination scan, stage-direction strip, automated relabeling) to produce 10,985 labeled conversations" 
-                                                 class="w-full rounded" 
-                                                 loading="lazy">
+                                            <a href="Images/cova_workflow/cova_pipeline_architecture.png" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
+                                                <img src="Images/cova_workflow/cova_pipeline_architecture.png"
+                                                     alt="COVA Pipeline Architecture diagram showing prompt templates flowing through Qwen 2.5 14B to multi-agent generation loop with attacker and victim agents, then through quality pipeline (contamination scan, stage-direction strip, automated relabeling) to produce 10,985 labeled conversations" 
+                                                     class="w-full rounded" 
+                                                     loading="lazy">
+                                            </a>
                                         </div>
                                         <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 italic text-center">End-to-end pipeline: prompts → local LLM → multi-agent dialogue → quality checks → labeled dataset</p>
                                     </div>
@@ -392,11 +394,15 @@
                                         <div class="max-w-2xl mx-auto">
                                             <div id="covaCarousel" class="relative bg-slate-900 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-600 shadow-md">
                                                 <div class="cova-carousel-item active">
-                                                    <img src="Images/cova_workflow/cova_generation_demo.png" alt="Terminal output showing the COVA generation pipeline completing 10 bank scam conversations via Qwen 2.5 14B in 8 minutes 50 seconds" loading="lazy" class="w-full h-auto object-contain bg-slate-800">
+                                                    <a href="Images/cova_workflow/cova_generation_demo.png" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
+                                                        <img src="Images/cova_workflow/cova_generation_demo.png" alt="Terminal output showing the COVA generation pipeline completing 10 bank scam conversations via Qwen 2.5 14B in 8 minutes 50 seconds" loading="lazy" class="w-full h-auto object-contain bg-slate-800">
+                                                    </a>
                                                     <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center">Generating 10 bank conversations via Qwen 2.5 14B (8m 50s)</div>
                                                 </div>
                                                 <div class="cova-carousel-item">
-                                                    <img src="Images/cova_workflow/cova_sample_dialogue_bank.png" alt="Sample generated bank scam conversation (turns 0-5) in which a skeptical victim persona resists the attacker's social engineering" loading="lazy" class="w-full h-auto object-contain bg-slate-800">
+                                                    <a href="Images/cova_workflow/cova_sample_dialogue_bank.png" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
+                                                        <img src="Images/cova_workflow/cova_sample_dialogue_bank.png" alt="Sample generated bank scam conversation (turns 0-5) in which a skeptical victim persona resists the attacker's social engineering" loading="lazy" class="w-full h-auto object-contain bg-slate-800">
+                                                    </a>
                                                     <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center">Sample output: skeptical victim resists social engineering</div>
                                                 </div>
                                                 <button type="button" onclick="moveCarousel('covaCarousel', -1)" aria-label="Previous screenshot" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white w-11 h-11 inline-flex items-center justify-center rounded-full transition font-bold no-print">❮</button>
@@ -489,11 +495,15 @@
                                         <div class="max-w-2xl mx-auto">
                                             <div id="covaxCarousel" class="relative bg-slate-900 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-600 shadow-md">
                                                 <div class="cova-carousel-item active">
-                                                    <img src="Images/cova_workflow/cova_quality_scan.png" alt="COVA-X quality-assurance report showing a 94.1% clean rate with an artifact taxonomy breakdown" loading="lazy" class="w-full h-auto object-contain bg-slate-800">
+                                                    <a href="Images/cova_workflow/cova_quality_scan.png" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
+                                                        <img src="Images/cova_workflow/cova_quality_scan.png" alt="COVA-X quality-assurance report showing a 94.1% clean rate with an artifact taxonomy breakdown" loading="lazy" class="w-full h-auto object-contain bg-slate-800">
+                                                    </a>
                                                     <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center">Quality scan: 94.1% clean rate, artifact taxonomy breakdown</div>
                                                 </div>
                                                 <div class="cova-carousel-item">
-                                                    <img src="Images/cova_workflow/cova_dataset_complete.png" alt="COVA dataset status report showing a total of 10,995 conversations across 8 fraud categories (romance, government impersonation, medicare, virtual kidnapping, grandparent, bank, lottery, investment), scanned 2026-07-22" loading="lazy" class="w-full h-auto object-contain bg-slate-800">
+                                                    <a href="Images/cova_workflow/cova_dataset_complete.png" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
+                                                        <img src="Images/cova_workflow/cova_dataset_complete.png" alt="COVA dataset status report showing a total of 10,995 conversations across 8 fraud categories (romance, government impersonation, medicare, virtual kidnapping, grandparent, bank, lottery, investment), scanned 2026-07-22" loading="lazy" class="w-full h-auto object-contain bg-slate-800">
+                                                    </a>
                                                     <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center">Final dataset: 10,995 conversations across 8 fraud categories</div>
                                                 </div>
                                                 <button type="button" onclick="moveCarousel('covaxCarousel', -1)" aria-label="Previous screenshot" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white w-11 h-11 inline-flex items-center justify-center rounded-full transition font-bold no-print">❮</button>
@@ -774,35 +784,51 @@
                         <div class="relative w-full max-w-2xl mx-auto mb-6 bg-slate-900 rounded-lg overflow-hidden border-2 border-blue-200 dark:border-slate-700 shadow-md">
                             <div id="projectCarousel">
                                 <div class="carousel-item active">
-                                    <img src="Images/File_System_Images/server_starts.jpg" alt="Terminal screenshot showing Python TCP server initialization on port 5555 with listener confirmation" width="464" height="165" loading="lazy" class="w-full h-auto aspect-video print:aspect-auto object-contain bg-slate-800">
+                                    <a href="Images/File_System_Images/server_starts.jpg" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
+                                        <img src="Images/File_System_Images/server_starts.jpg" alt="Terminal screenshot showing Python TCP server initialization on port 5555 with listener confirmation" width="464" height="165" loading="lazy" class="w-full h-auto aspect-video print:aspect-auto object-contain bg-slate-800">
+                                    </a>
                                     <div class="bg-slate-900/80 text-white p-3 text-xs italic text-center">Step 1: INFRASTRUCTURE - Initializing TCP listener on secure port 5555</div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="Images/File_System_Images/client_auth_starts.jpg" alt="Command line interface displaying client-side authentication prompt for secure file sharing system" width="436" height="276" loading="lazy" class="w-full h-auto aspect-video print:aspect-auto object-contain bg-slate-800">
+                                    <a href="Images/File_System_Images/client_auth_starts.jpg" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
+                                        <img src="Images/File_System_Images/client_auth_starts.jpg" alt="Command line interface displaying client-side authentication prompt for secure file sharing system" width="436" height="276" loading="lazy" class="w-full h-auto aspect-video print:aspect-auto object-contain bg-slate-800">
+                                    </a>
                                     <div class="bg-slate-900/80 text-white p-3 text-xs italic text-center">Step 2: INTERACTION - Python-based CLI for client-side command entry</div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="Images/File_System_Images/client_login_success.jpg" alt="Terminal output showing successful user authentication with encrypted credentials" width="566" height="508" loading="lazy" class="w-full h-auto aspect-video print:aspect-auto object-contain bg-slate-800">
+                                    <a href="Images/File_System_Images/client_login_success.jpg" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
+                                        <img src="Images/File_System_Images/client_login_success.jpg" alt="Terminal output showing successful user authentication with encrypted credentials" width="566" height="508" loading="lazy" class="w-full h-auto aspect-video print:aspect-auto object-contain bg-slate-800">
+                                    </a>
                                     <div class="bg-slate-900/80 text-white p-3 text-xs italic text-center">Step 3: AUTH ACTION - User providing credentials for encrypted handshake</div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="Images/File_System_Images/server_login_success_response.jpg" alt="Server log confirming receipt and decryption of encrypted authentication data" width="438" height="180" loading="lazy" class="w-full h-auto aspect-video print:aspect-auto object-contain bg-slate-800">
+                                    <a href="Images/File_System_Images/server_login_success_response.jpg" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
+                                        <img src="Images/File_System_Images/server_login_success_response.jpg" alt="Server log confirming receipt and decryption of encrypted authentication data" width="438" height="180" loading="lazy" class="w-full h-auto aspect-video print:aspect-auto object-contain bg-slate-800">
+                                    </a>
                                     <div class="bg-slate-900/80 text-white p-3 text-xs italic text-center">Step 4: AUTH PROOF - Server log confirming ciphertext receipt and decryption</div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="Images/File_System_Images/client_upload_file_success.jpg" alt="Client terminal showing successful encrypted file upload operation" width="614" height="353" loading="lazy" class="w-full h-auto aspect-video print:aspect-auto object-contain bg-slate-800">
+                                    <a href="Images/File_System_Images/client_upload_file_success.jpg" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
+                                        <img src="Images/File_System_Images/client_upload_file_success.jpg" alt="Client terminal showing successful encrypted file upload operation" width="614" height="353" loading="lazy" class="w-full h-auto aspect-video print:aspect-auto object-contain bg-slate-800">
+                                    </a>
                                     <div class="bg-slate-900/80 text-white p-3 text-xs italic text-center">Step 5: DATA ACTION - Client initiating encrypted file transfer loop</div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="Images/File_System_Images/server_upload_file_response.jpg" alt="Server validating file integrity and confirming save to isolated user storage" width="515" height="234" loading="lazy" class="w-full h-auto aspect-video print:aspect-auto object-contain bg-slate-800">
+                                    <a href="Images/File_System_Images/server_upload_file_response.jpg" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
+                                        <img src="Images/File_System_Images/server_upload_file_response.jpg" alt="Server validating file integrity and confirming save to isolated user storage" width="515" height="234" loading="lazy" class="w-full h-auto aspect-video print:aspect-auto object-contain bg-slate-800">
+                                    </a>
                                     <div class="bg-slate-900/80 text-white p-3 text-xs italic text-center">Step 6: DATA PROOF - Server validating file integrity and saving to isolated storage</div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="Images/File_System_Images/client_list_files.jpg" alt="Client requesting and receiving directory listing of hosted files" width="592" height="321" loading="lazy" class="w-full h-auto aspect-video print:aspect-auto object-contain bg-slate-800">
+                                    <a href="Images/File_System_Images/client_list_files.jpg" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
+                                        <img src="Images/File_System_Images/client_list_files.jpg" alt="Client requesting and receiving directory listing of hosted files" width="592" height="321" loading="lazy" class="w-full h-auto aspect-video print:aspect-auto object-contain bg-slate-800">
+                                    </a>
                                     <div class="bg-slate-900/80 text-white p-3 text-xs italic text-center">Step 7: ACCESS ACTION - Client requesting directory listing of hosted files</div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="Images/File_System_Images/server_list_response.jpg" alt="Server enforcing user-specific directory isolation using discretionary access control" width="448" height="187" loading="lazy" class="w-full h-auto aspect-video print:aspect-auto object-contain bg-slate-800">
+                                    <a href="Images/File_System_Images/server_list_response.jpg" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
+                                        <img src="Images/File_System_Images/server_list_response.jpg" alt="Server enforcing user-specific directory isolation using discretionary access control" width="448" height="187" loading="lazy" class="w-full h-auto aspect-video print:aspect-auto object-contain bg-slate-800">
+                                    </a>
                                     <div class="bg-slate-900/80 text-white p-3 text-xs italic text-center">Step 8: ACCESS PROOF - Server enforcing user-specific directory isolation (DAC)</div>
                                 </div>
                             </div>
@@ -862,43 +888,43 @@
                             <div class="max-w-2xl mx-auto mb-4 no-print">
                                 <div id="homeLabCarousel" class="relative bg-slate-900 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-600 shadow-md">
                                     <div class="cova-carousel-item active">
-                                        <a href="Images/homelab_nas/1_architecture_diagram.webp" target="_blank" rel="noopener noreferrer" class="block">
+                                        <a href="Images/homelab_nas/1_architecture_diagram.webp" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
                                             <img src="Images/homelab_nas/1_architecture_diagram.webp" alt="Architecture diagram of the home-lab research server: a reference manager feeds a primary NAS on a ZFS mirror, which sends a nightly encrypted copy off-site and a copy to an air-gapped offline drive, plus a separate copy to a local AI assistant" width="2688" height="1440" loading="lazy" class="w-full h-auto aspect-[4/3] object-contain bg-slate-800">
                                         </a>
                                         <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center min-h-[3rem] flex items-center justify-center">Architecture: storage, three backup copies, and the private AI layer</div>
                                     </div>
                                     <div class="cova-carousel-item">
-                                        <a href="Images/homelab_nas/2_build_motherboard.webp" target="_blank" rel="noopener noreferrer" class="block">
+                                        <a href="Images/homelab_nas/2_build_motherboard.webp" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
                                             <img src="Images/homelab_nas/2_build_motherboard.webp" alt="Server build in progress: motherboard in an open case with a tower CPU cooler, two memory modules, and an M.2 solid-state drive installed" width="2000" height="1500" loading="lazy" class="w-full h-auto aspect-[4/3] object-contain bg-slate-800">
                                         </a>
                                         <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center min-h-[3rem] flex items-center justify-center">Build in progress: board, cooler, memory, and NVMe drive installed</div>
                                     </div>
                                     <div class="cova-carousel-item">
-                                        <a href="Images/homelab_nas/3_build_drive_bay.webp" target="_blank" rel="noopener noreferrer" class="block">
+                                        <a href="Images/homelab_nas/3_build_drive_bay.webp" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
                                             <img src="Images/homelab_nas/3_build_drive_bay.webp" alt="A 6 TB WD Red Plus NAS hard drive mounted in the case's drive cage, above the power supply and cabling" width="2000" height="1500" loading="lazy" class="w-full h-auto aspect-[4/3] object-contain bg-slate-800">
                                         </a>
                                         <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center min-h-[3rem] flex items-center justify-center">One of the two mirrored 6 TB NAS drives in the drive cage</div>
                                     </div>
                                     <div class="cova-carousel-item">
-                                        <a href="Images/homelab_nas/4_build_finished_gpu.webp" target="_blank" rel="noopener noreferrer" class="block">
+                                        <a href="Images/homelab_nas/4_build_finished_gpu.webp" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
                                             <img src="Images/homelab_nas/4_build_finished_gpu.webp" alt="Interior of a compact home-lab server build showing a tower CPU cooler, two memory modules, a GeForce RTX graphics card, and bundled power cables" width="1810" height="1500" loading="lazy" class="w-full h-auto aspect-[4/3] object-contain bg-slate-800">
                                         </a>
                                         <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center min-h-[3rem] flex items-center justify-center">The completed build, with the GPU installed</div>
                                     </div>
                                     <div class="cova-carousel-item">
-                                        <a href="Images/homelab_nas/5_ups_power_panel.webp" target="_blank" rel="noopener noreferrer" class="block">
+                                        <a href="Images/homelab_nas/5_ups_power_panel.webp" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
                                             <img src="Images/homelab_nas/5_ups_power_panel.webp" alt="Server dashboard power panel showing the UPS online at a 90 W (10%) load, with 100% battery charge and 87 minutes of runtime remaining" width="884" height="344" loading="lazy" class="w-full h-auto aspect-[4/3] object-contain bg-slate-800">
                                         </a>
                                         <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center min-h-[3rem] flex items-center justify-center">UPS monitored by the server, with about 87 minutes of runtime at a 90 W load</div>
                                     </div>
                                     <div class="cova-carousel-item">
-                                        <a href="Images/homelab_nas/6_gpu_model_loaded.webp" target="_blank" rel="noopener noreferrer" class="block">
+                                        <a href="Images/homelab_nas/6_gpu_model_loaded.webp" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
                                             <img src="Images/homelab_nas/6_gpu_model_loaded.webp" alt="GPU status table showing an NVIDIA GeForce RTX 4060 Ti with about 4.9 GB of its 16 GB memory held by a local Ollama model server process, at 0% utilization" width="1133" height="509" loading="lazy" class="w-full h-auto aspect-[4/3] object-contain bg-slate-800">
                                         </a>
                                         <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center min-h-[3rem] flex items-center justify-center">Local model loaded in GPU memory on the 16 GB card</div>
                                     </div>
                                     <div class="cova-carousel-item">
-                                        <a href="Images/homelab_nas/7_research_assistant.webp" target="_blank" rel="noopener noreferrer" class="block">
+                                        <a href="Images/homelab_nas/7_research_assistant.webp" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
                                             <img src="Images/homelab_nas/7_research_assistant.webp" alt="A local AI assistant answering a question about adversarial robustness in machine learning with a ten-point summary, followed by six cited source papers" width="1395" height="1448" loading="lazy" class="w-full h-auto aspect-[4/3] object-contain bg-slate-800">
                                         </a>
                                         <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center min-h-[3rem] flex items-center justify-center">Private research assistant answering from the local library, with cited sources</div>
@@ -940,37 +966,37 @@
                             <div class="max-w-xs mx-auto mb-4 no-print">
                                 <div id="hrCarousel" class="relative bg-slate-900 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-600 shadow-md">
                                     <div class="cova-carousel-item active">
-                                        <a href="Images/heavenly-restriction/today-plum-dark.webp" target="_blank" rel="noopener noreferrer" class="block">
+                                        <a href="Images/heavenly-restriction/today-plum-dark.webp" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
                                             <img src="Images/heavenly-restriction/today-plum-dark.webp" alt="Today's workout view in dark theme with Plum accent, showing one exercise done and one in progress" width="1080" height="1920" loading="lazy" class="w-full h-auto aspect-[9/16] object-contain bg-slate-800">
                                         </a>
                                         <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center min-h-[3rem] flex items-center justify-center">Today's workout: dark theme with Plum accent</div>
                                     </div>
                                     <div class="cova-carousel-item">
-                                        <a href="Images/heavenly-restriction/today-blue-light.webp" target="_blank" rel="noopener noreferrer" class="block">
+                                        <a href="Images/heavenly-restriction/today-blue-light.webp" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
                                             <img src="Images/heavenly-restriction/today-blue-light.webp" alt="Today's workout view in light theme with Blue accent" width="1080" height="1920" loading="lazy" class="w-full h-auto aspect-[9/16] object-contain bg-slate-800">
                                         </a>
                                         <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center min-h-[3rem] flex items-center justify-center">Light theme with Blue (Six Eyes) accent</div>
                                     </div>
                                     <div class="cova-carousel-item">
-                                        <a href="Images/heavenly-restriction/swap-sheet.webp" target="_blank" rel="noopener noreferrer" class="block">
+                                        <a href="Images/heavenly-restriction/swap-sheet.webp" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
                                             <img src="Images/heavenly-restriction/swap-sheet.webp" alt="Swap sheet showing substitution options for an exercise" width="1080" height="1920" loading="lazy" class="w-full h-auto aspect-[9/16] object-contain bg-slate-800">
                                         </a>
                                         <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center min-h-[3rem] flex items-center justify-center">Swap sheet: your substitutions, then same-muscle options</div>
                                     </div>
                                     <div class="cova-carousel-item">
-                                        <a href="Images/heavenly-restriction/library.webp" target="_blank" rel="noopener noreferrer" class="block">
+                                        <a href="Images/heavenly-restriction/library.webp" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
                                             <img src="Images/heavenly-restriction/library.webp" alt="Exercise library with search, filters, and body region expansion" width="1080" height="1920" loading="lazy" class="w-full h-auto aspect-[9/16] object-contain bg-slate-800">
                                         </a>
                                         <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center min-h-[3rem] flex items-center justify-center">Exercise library: search, filter, browse by body region</div>
                                     </div>
                                     <div class="cova-carousel-item">
-                                        <a href="Images/heavenly-restriction/progress.webp" target="_blank" rel="noopener noreferrer" class="block">
+                                        <a href="Images/heavenly-restriction/progress.webp" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
                                             <img src="Images/heavenly-restriction/progress.webp" alt="Progress view showing sessions completed, cardio minutes, and bodyweight tab" width="1080" height="1920" loading="lazy" class="w-full h-auto aspect-[9/16] object-contain bg-slate-800">
                                         </a>
                                         <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center min-h-[3rem] flex items-center justify-center">Progress: sessions, cardio, and bodyweight tracking</div>
                                     </div>
                                     <div class="cova-carousel-item">
-                                        <a href="Images/heavenly-restriction/progress-calendar.webp" target="_blank" rel="noopener noreferrer" class="block">
+                                        <a href="Images/heavenly-restriction/progress-calendar.webp" target="_blank" rel="noopener noreferrer" class="block lightbox-link">
                                             <img src="Images/heavenly-restriction/progress-calendar.webp" alt="Calendar view with done, cardio, and recovery days marked, plus recent personal records" width="1080" height="1920" loading="lazy" class="w-full h-auto aspect-[9/16] object-contain bg-slate-800">
                                         </a>
                                         <div class="bg-slate-900/80 text-white p-2 text-xs italic text-center min-h-[3rem] flex items-center justify-center">Calendar: done, cardio, recovery days and PRs</div>
@@ -1011,7 +1037,9 @@
                             </div>
 
                             <div class="flex flex-col sm:flex-row gap-4 items-start">
-                                <img src="Images/lockbadges/lockbadges_settings.png" alt="LockBadges settings window showing per-badge font, color, position, and behavior options, with three translucent badges placed on the Windows taskbar" loading="lazy" class="w-full sm:w-40 md:w-48 flex-shrink-0 h-auto rounded border border-slate-300 dark:border-slate-700 shadow-sm">
+                                <a href="Images/lockbadges/lockbadges_settings.png" target="_blank" rel="noopener noreferrer" class="block lightbox-link w-full sm:w-40 md:w-48 flex-shrink-0">
+                                    <img src="Images/lockbadges/lockbadges_settings.png" alt="LockBadges settings window showing per-badge font, color, position, and behavior options, with three translucent badges placed on the Windows taskbar" loading="lazy" class="w-full h-auto rounded border border-slate-300 dark:border-slate-700 shadow-sm">
+                                </a>
                                 <div class="text-sm text-slate-700 dark:text-slate-300 space-y-3">
                                     <p>Movable, translucent on-screen indicators for Caps Lock, Num Lock, Scroll Lock, and Mute — built for keyboards that ship without status LEDs. Each badge is independently positioned, styled, and configured through a full settings GUI, renders click-through, and hides automatically during fullscreen apps.</p>
                                     <p><strong class="font-bold">Privacy by construction:</strong> lock state is read from Windows toggle bits rather than a keyboard hook, so keystrokes are never intercepted — with no network access, no telemetry, and no logging.</p>
@@ -1185,6 +1213,16 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"></path>
         </svg>
     </button>
+
+    <!-- Image viewer: one shared modal for every .lightbox-link on the page (app.js opens it).
+         Without JS the links still open the image in a new tab. -->
+    <dialog id="lightbox" class="lightbox" closedby="any" aria-labelledby="lightbox-caption">
+        <form method="dialog" class="lightbox-bar">
+            <button type="submit" class="lightbox-close" autofocus><span aria-hidden="true">&#10005;</span> Close</button>
+        </form>
+        <img id="lightbox-img" class="lightbox-img" alt="">
+        <p id="lightbox-caption" class="lightbox-caption"></p>
+    </dialog>
 
     <script src="app.js"></script>
 

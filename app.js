@@ -125,6 +125,53 @@ function moveCarousel(containerId, dir) {
 }
 
 // =====================
+// Image Viewer (lightbox)
+// One shared <dialog id="lightbox"> for every a.lightbox-link on the page.
+// Delegated from document, so any image link added later works with no
+// extra wiring. The links keep their href/target, so without JS (or on a
+// modified click: Ctrl/Cmd/Shift/middle) the image still opens in a new tab.
+// Caption: the carousel slide's caption if there is one, else the image alt.
+// The native modal provides focus trapping, Esc / Android back to close,
+// and focus return to the link; closedby="any" adds tap-outside to close.
+// =====================
+document.addEventListener('click', function (e) {
+    const link = e.target.closest('a.lightbox-link');
+    if (!link) return;
+    if (e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+    const dialog = document.getElementById('lightbox');
+    if (!dialog || typeof dialog.showModal !== 'function') return;
+    e.preventDefault();
+
+    const thumb = link.querySelector('img');
+    const slide = link.closest('.cova-carousel-item, .carousel-item');
+    const slideCaption = slide ? slide.querySelector(':scope > div') : null;
+    const alt = thumb ? thumb.alt : '';
+
+    const img = document.getElementById('lightbox-img');
+    img.src = link.getAttribute('href');
+    img.alt = alt;
+    document.getElementById('lightbox-caption').textContent =
+        (slideCaption && slideCaption.textContent.trim()) || alt || 'Image';
+    dialog.showModal();
+});
+
+// Tap-outside fallback where closedby is unsupported (Safari). Uses the
+// pointer position rather than event.target, because the dialog itself is
+// the target for its own padding; requires press AND release outside so a
+// drag that ends on the backdrop doesn't close it.
+(function () {
+    const dialog = document.getElementById('lightbox');
+    if (!dialog || 'closedBy' in HTMLDialogElement.prototype) return;
+    const outside = (e) => {
+        const r = dialog.getBoundingClientRect();
+        return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
+    };
+    let pressedOutside = false;
+    dialog.addEventListener('pointerdown', (e) => { pressedOutside = outside(e); });
+    dialog.addEventListener('pointerup', (e) => { if (pressedOutside && outside(e)) dialog.close(); });
+})();
+
+// =====================
 // Theme Toggle Logic
 // =====================
 document.addEventListener('DOMContentLoaded', function() {

@@ -2,7 +2,7 @@
 
 A hardened, interactive résumé site for a cybersecurity undergraduate and AI security researcher — published research, live project work, and a recruiter-ready PDF, all served as static HTML from GitHub Pages.
 
-**Live site:** <https://clochstampfor60.github.io/resume/> · **Current release:** e-Resume v2.18.3
+**Live site:** <https://clochstampfor60.github.io/resume/> · **Current release:** e-Resume v2.19.0
 
 ---
 
@@ -42,6 +42,7 @@ Accessibility is treated as a measured requirement, not an assumption — contra
 * **WCAG-verified contrast:** Body, link, hover, and button states are held to the 4.5:1 AA floor for text and 3:1 for UI component boundaries. Hover always **brightens** — an earlier pass where hover dimmed links was found and fixed.
 * **Semantic structure:** Landmark elements (`<header>`, `<main>`, `<nav>`, `<section>`, `<footer>`), a single `<h1>`, ordered headings, and native `<details>` accordions rather than scripted show/hide.
 * **ARIA where it earns its place:** `aria-expanded` / `aria-controls` on the mobile menu, `aria-pressed` on the theme toggle announcing which mode is *currently* active, `aria-label` on icon-only controls, `aria-hidden` on decorative SVGs, and `sr-only` text warning when a link opens in a new tab.
+* **Image viewer:** every screenshot and diagram opens full size in one shared native `<dialog>` (opened with `showModal()`), with a visible Close button, its caption, and Esc / tap outside / Android back to close. The browser handles focus trapping and returns focus to the image afterward. The images are ordinary links, so without JavaScript, or on a Ctrl/Cmd/middle click, they still open in a new tab.
 * **Focus management:** Back-to-top returns focus to `#main-content` so keyboard and screen-reader users resume from the top rather than from where they left off; the button uses `visibility` (not opacity alone) so it leaves the tab order while hidden.
 * **Reduced motion:** `prefers-reduced-motion: reduce` disables scroll reveals, counters, carousel fades, shimmer, and chevron rotation — content is revealed immediately rather than animated in.
 * **No-JS / CDN-failure fallback:** If GSAP is blocked or fails to load, CSS reveals everything and the counters snap to their final values. The page is fully readable with scripts disabled.
@@ -77,7 +78,7 @@ Accessibility is treated as a measured requirement, not an assumption — contra
 
 ### 🖨️ Print & PDF
 
-* **Print stylesheet** that hides interactive chrome, expands every research accordion, reveals all carousel frames rather than just the active one, forces the availability badge to keep its fill, and appends URLs after links — so a browser print (Ctrl+P) produces a complete, readable document.
+* **Print stylesheet** that hides interactive chrome, expands every research accordion, reveals all carousel frames rather than just the active one, forces the availability badge to keep its fill, and appends URLs after links (except image links, whose image is already printed) — so a browser print (Ctrl+P) produces a complete, readable document.
 
 ---
 
@@ -87,7 +88,7 @@ Accessibility is treated as a measured requirement, not an assumption — contra
 | --- | --- |
 | `index.html` | Site markup and metadata (JSON-LD, OG tags, CSP). |
 | `styles.css` | All custom styling — named components, print rules, reduced-motion. |
-| `app.js` | Behavior: counters, carousels, Chart.js radar, scroll reveals, nav. |
+| `app.js` | Behavior: counters, carousels, image viewer, Chart.js radar, scroll reveals, nav. |
 | `theme.js` | Light/dark restore. Render-blocking in `<head>` by design — prevents a flash of the light theme. |
 | `tailwind-config.js` | Navy/gold/periwinkle palette for the Tailwind Play CDN. Must load after the CDN and stay synchronous. |
 | `docs/Carl_Lochstampfor_Resume.pdf` | **The published résumé.** Served by the site's download button. |

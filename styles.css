@@ -29,6 +29,62 @@ main section > h2 {
 .cova-carousel-item { display: none; animation: fade 0.5s ease-in-out; }
 .cova-carousel-item.active { display: block; }
 
+/* Image viewer: links that open the shared #lightbox dialog (app.js). */
+.lightbox-link { cursor: zoom-in; }
+
+/* The dialog sizes to its image so the backdrop stays visible (and tappable)
+   around it. Colors are fixed dark in both themes: it is a photo viewer. */
+.lightbox:modal {
+    max-width: min(96vw, 1400px);
+    max-height: 96dvh;
+    padding: 0.75rem;
+    border: 0;
+    border-radius: 0.75rem;
+    background: #0F172A;           /* slate-900 */
+    color: #F8FAFC;                /* slate-50 */
+    overscroll-behavior: contain;  /* scroll in the dialog doesn't move the page */
+}
+.lightbox[open] { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+.lightbox::backdrop {
+    background: rgba(2, 6, 23, 0.85);  /* slate-950 */
+    overflow: hidden;                  /* makes ::backdrop honor overscroll-behavior */
+    overscroll-behavior: contain;
+}
+.lightbox-bar { align-self: stretch; display: flex; justify-content: flex-end; }
+.lightbox-close {
+    min-height: 44px;
+    padding: 0 1rem;
+    border-radius: 9999px;
+    background: #1E293B;               /* slate-800 */
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 0.875rem;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4);
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+/* Hover brightens, never dims. */
+.lightbox-close:hover { background: #334155; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.75); }  /* slate-700 */
+/* The viewer is dark in both themes, so the ring is always gold-300 (the site rule
+   would draw indigo here in light mode, about 3:1 on slate-900; gold is about 9:1). */
+.lightbox-close:focus-visible { outline-color: #DDB44A; }
+.lightbox-img {
+    display: block;
+    max-width: 100%;
+    max-height: calc(96dvh - 8.5rem);  /* leaves room for the Close bar and a 2-line caption */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0.375rem;
+}
+.lightbox-caption {
+    max-width: 60ch;
+    margin: 0;
+    font-size: 0.875rem;
+    font-style: italic;
+    text-align: center;
+    color: #E2E8F0;                    /* slate-200 */
+}
+
 .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
 
 /* The nav pill comes from Tailwind's `hover:bg-*` utility, which is not
@@ -303,6 +359,8 @@ details.research-details[open] > summary .chevron { transform: rotate(90deg); }
     .cova-carousel-item { display: block !important; break-inside: avoid; margin-bottom: 0.5rem; }
     /* Contact links already show the address as their label — don't repeat it as a href suffix */
     .contact-link[href]:after { content: "" !important; }
+    /* Image links: the image is already on the page, so don't print its file path */
+    .lightbox-link[href]:after { content: "" !important; }
 }
 
 /* Reduced Motion */
